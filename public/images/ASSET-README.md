@@ -1,21 +1,8 @@
-# Kingdom Factor Website Assets
+# Kingdom Factor image assets
 
-Expected Drive assets from `hello@productchamp.io` inventory. Replace these placeholder paths with the real downloaded binaries before final client preview/deploy.
+Downloaded from the connected Google Drive account via Composio. Keep source file IDs for traceability; do not expose credentials.
 
-## Logos
-- Source: `KF Logo.png`
-- Target: `public/images/brand/kf-logo.png`
-- Source: `KF Background Logo 1.png`
-- Target: `public/images/brand/kf-background-logo-1.png`
-- Source: `KF Background Logo 2.png`
-- Target: `public/images/brand/kf-background-logo-2.png`
-- Source: `PDC Logo.png`
-- Target: `public/images/brand/pdc-logo.png`
-
-## People
-- Source: `John Lybarger 2026.JPG`
-- Target: `public/images/people/john-lybarger-2026.jpg`
-- Source: `Jim Headshot.jpeg`
-- Target: `public/images/people/jim-lybarger-headshot.jpg`
-
-Do not publish with broken images. Use the current CSS monogram fallback until the real files are present.
+- `images/people/john-lybarger-2026.jpg` — Drive source: John Lybarger 2026.JPG — image/jpeg — 44558 bytes — PIL unavailable: No module named 'PIL'
+- `images/people/jim-lybarger-headshot.jpg` — Drive source: Jim Headshot.jpeg — image/jpeg — 203043 bytes — PIL unavailable: No module named 'PIL'
+- `images/brand/kf-logo.png` — Drive source: KF Logo.png — image/png — 51592 bytes — PIL unavailable: No module named 'PIL'
+- `images/brand/kf-background-logo-2.png` — Drive source: KF Background Logo 2.png — image/png — 2369123 bytes — PIL unavailable: No module named 'PIL'

@@ -3,8 +3,8 @@ export const site = {
   url: import.meta.env.PUBLIC_SITE_URL || "https://www.kingdomfactor.us",
   description:
     "Peer advisory, executive coaching, and marketplace ministry for Christian business owners and leaders.",
-  email: "[APPROVAL REQUIRED]",
-  phone: "[APPROVAL REQUIRED]",
+  email: "",
+  phone: "",
 };
 
 export const nav = [
