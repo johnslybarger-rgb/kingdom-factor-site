@@ -1,6 +1,70 @@
 # Kingdom Factor SEO Gap Brief
 
-Status: working SEO brief. DataForSEO credentials are not currently available in the Railway runtime, so this pass uses source strategy plus live web search fallback. Re-run with DataForSEO keyword suggestions, SERP, and competitor endpoints when credentials are connected.
+Status: updated with live Composio/DataForSEO keyword data pulled 2026-05-08 for United States / English Google Ads keyword suggestions. Keep this as strategy guidance, not a guarantee of rankings.
+
+## Data source used
+
+- Source: Composio connected account `dataforseo` via `DATAFORSEO_GET_KW_GOOGLE_ADS_KW_FOR_KW_LIVE`.
+- Location: United States (`location_code: 2840`).
+- Language: English (`language_code: en`).
+- Seed set: Christian business coaching, Christian executive coaching, Christian business peer advisory, Christian CEO peer group, marketplace ministry, faith and business integration, biblical business principles, Christian entrepreneur community.
+- Result set: 46 keyword metric rows.
+
+## Highest-opportunity keyword findings
+
+- `marketplace ministry`
+  - Search volume: 480/mo
+  - CPC: $8.97
+  - Competition: LOW, index 4
+  - Strategic use: build a topical hub around marketplace ministry, then connect it to coaching, peer advisory, and Kingdom Factor’s “Sunday-to-Monday” story.
+
+- `Christian business coaching`
+  - Search volume: 170/mo
+  - CPC: $7.27
+  - Competition: LOW, index 17
+  - Strategic use: primary commercial-intent phrase for the John/executive-coaching lane.
+
+- `biblical business principles`
+  - Search volume: 110/mo
+  - CPC: $3.82
+  - Competition: LOW, index 33
+  - Strategic use: educational/resource hub; strong bridge into book excerpts, frameworks, articles, and lead magnets after approval.
+
+- `Christian executive coaching`
+  - Search volume: 50/mo
+  - CPC: $7.50
+  - Competition: LOW, index 29
+  - Strategic use: support `/executive-coaching/` and create a future exact-match page if needed.
+
+- `christian leadership coaching`
+  - Search volume: 50/mo
+  - CPC: $5.27
+  - Competition: LOW, index 13
+  - Strategic use: supporting phrase for executive coaching and leadership-circle pages.
+
+- `christian business coach near me`
+  - Search volume: 50/mo
+  - CPC: not returned
+  - Competition: LOW, index 4
+  - Strategic use: local-intent FAQ/section if Kingdom Factor wants regional/local discovery.
+
+- `christian business mentors`
+  - Search volume: 30/mo
+  - CPC: $3.21
+  - Competition: LOW, index 33
+  - Strategic use: emerging-owner/community content for Jim’s lane.
+
+- `marketplace ministry examples`
+  - Search volume: 20/mo
+  - CPC: not returned
+  - Competition: LOW, index 1
+  - Strategic use: article/content magnet; likely easy topical-authority win.
+
+- `Christian CEO peer group`
+  - Search volume: 10/mo
+  - CPC: not returned
+  - Competition: LOW, index 3
+  - Strategic use: low volume but very high intent; worth supporting copy on `/peer-advisory-groups/` rather than a standalone page first.
 
 ## Competitor / reference set
 
@@ -10,54 +74,35 @@ Status: working SEO brief. DataForSEO credentials are not currently available in
 - Truth At Work: Christian business peer advisory / chapter leadership model.
 - Existing Kingdom Factor domain: Collective and coach directory pages already index faith-in-business and coach-directory content.
 
-## High-intent seed keyword clusters
+## Recommended page strategy
 
-### Peer advisory / CEO groups
-- Christian business peer advisory groups
-- Christian CEO peer group
-- Christian business owner peer group
-- peer advisory groups for Christian business leaders
-- Christian executive peer group
+1. Strengthen `/marketplace-ministry/` as the highest-volume topical hub.
+   - Target phrase: `marketplace ministry`.
+   - Supporting sections: examples, biblical foundation, business-owner application, peer/community pathway.
 
-### Executive coaching
-- faith based executive coaching
-- Christian executive coaching
-- Christian business coaching
-- executive coaching for Christian business owners
-- biblical leadership coaching
+2. Strengthen `/executive-coaching/` around commercial intent.
+   - Target phrases: `Christian business coaching`, `Christian executive coaching`, `christian leadership coaching`.
+   - Add approval-safe FAQs around coaching fit, advisory vs. consulting, faith integration, and leadership outcomes.
 
-### Marketplace ministry
-- marketplace ministry for business owners
-- faith and business leadership
-- work as worship business leadership
-- biblical principles in business
-- Christian marketplace leadership
+3. Strengthen `/peer-advisory-groups/` around high-intent peer terms.
+   - Target phrases: `Christian CEO peer group`, `Christian business peer advisory`, `Christian business owner peer group`.
+   - Keep the positioning exact but avoid unsupported membership/stat claims.
 
-### Community / emerging owners
-- Christian business owner community
-- Christian entrepreneur community
-- Christian solopreneur community
-- values based business community
-- faith driven entrepreneur group
+4. Add a future resource hub after assets/content approval.
+   - Target phrases: `biblical business principles`, `marketplace ministry examples`, `christian business mentors`.
+   - Possible assets: book excerpts, webinar summaries, business calculators, article library.
 
-### Content hubs to build next
-1. `/christian-business-peer-advisory-groups/` or strengthen `/peer-advisory-groups/` around this exact phrase.
-2. `/christian-ceo-peer-group/` as a future SEO landing page if keyword volume supports it.
-3. `/marketplace-ministry-for-business-owners/` as a supporting topical hub.
-4. `/faith-based-executive-coaching/` as a supporting topical hub.
-5. `/resources/` with source-backed articles from webinars/books after approval.
-6. Preserve/import existing Collective story URLs with redirects or content migration plan so current indexed pages do not lose equity.
+5. Preserve existing indexed equity.
+   - Import or redirect current Collective URLs such as `/collective/faith-in-business` and coach-directory pages before replacing the current domain.
 
-## DataForSEO next run
+## Content gap map
 
-When `DATAFORSEO_LOGIN` and `DATAFORSEO_PASSWORD` are available, run:
-
-- Keyword Suggestions for each seed cluster.
-- SERP competitor capture for target geography: United States and Arizona if geo focus is approved.
-- Ranked Keywords / domain lookup for `kingdomfactor.us` if available.
-- Competitor domain keyword gap for `joinc12.com`, `convenenow.com`, `cbmc.com`, and `truthatwork.org`.
-- Content plan sorted by intent, volume, KD, and funnel stage.
+- Marketplace ministry: strongest volume and low competition; Kingdom Factor can own this with theology + practical business-owner application.
+- Christian business coaching: commercial-intent lane; needs clearer proof, credentials, and conversion path after approval.
+- Biblical business principles: educational lane; ideal for SEO articles and downloadable lead magnets.
+- Peer advisory / CEO group: lower volume but high intent; best as conversion-support copy and FAQ language.
+- Christian business mentors/community: supports Jim’s emerging-owner/community pathway.
 
 ## Public-copy guardrails
 
-Do not publish unsupported stats, member counts, testimonials, conversion rates, revenue claims, or book excerpts until approved and cited.
+Do not publish unsupported stats, member counts, testimonials, conversion rates, revenue claims, book excerpts, calendar links, or form routing until approved and cited.
