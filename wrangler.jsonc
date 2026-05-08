@@ -1,0 +1,15 @@
+{
+  // Placeholder only. Do not create production Cloudflare resources, deploy previews,
+  // change DNS, or connect CRM/forms/calendar routing without Chris approval.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "kingdom-factor-site",
+  "compatibility_date": "2026-05-08",
+  "main": "./dist/_worker.js/index.js",
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "./dist"
+  }
+  // No D1/R2 bindings by default. If the site needs backend/database behavior,
+  // prefer client CRM integration or Convex unless a specific Cloudflare storage
+  // need is approved.
+}

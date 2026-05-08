@@ -1,0 +1,28 @@
+# Kingdom Factor
+
+Kingdom Factor is a draft source-backed website for Christian business owners and leaders exploring peer advisory, executive coaching, peer community, marketplace ministry, and books/resources.
+
+## Primary public pages
+
+- Home: /
+- Christian Peer Advisory Groups: /peer-advisory-groups/
+- Executive Coaching Intensive: /executive-coaching/
+- Peer Community for Emerging Christian Owners: /peer-community/
+- Leadership Circle: /leadership-circle/
+- Marketplace Ministry: /marketplace-ministry/
+- Kingdom Factor Collective: /collective/
+- Books and Resources: /books/
+- About: /about/
+- Apply: /apply/
+- Contact: /contact/
+
+## Positioning
+
+Kingdom Factor is positioned as one unified website with two lanes:
+
+- John lane: established Christian owners, executives, and senior leaders who need executive coaching, peer advisory, and trusted counsel.
+- Jim lane: emerging owners, founders, solopreneurs, and smaller-business leaders building from faith, values, story, and community.
+
+## Approval gates
+
+Do not treat this draft as final public proof for unsupported claims. Stats, pricing, testimonials, case studies, founding/history claims, calendar links, forms, CRM/email routing, downloadable resources, deployment, DNS, and client-facing preview links require explicit approval before use.

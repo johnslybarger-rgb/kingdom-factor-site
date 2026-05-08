@@ -1,0 +1,61 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHero from "./PageHero.astro";
+import CTA from "./CTA.astro";
+import Schema from "./Schema.astro";
+import type { PageSpec } from "../lib/pages";
+
+interface Props { page: PageSpec; }
+const { page } = Astro.props;
+const schemaType = page.faqs?.length ? "FAQPage" : "Service";
+---
+<Base title={page.title} description={page.description} canonical={`/${page.slug}/`}>
+  <Schema
+    type={schemaType}
+    title={page.title}
+    description={page.description}
+    path={`/${page.slug}/`}
+    breadcrumbs={[{ name: "Home", item: "/" }, { name: page.title, item: `/${page.slug}/` }]}
+    faqs={page.faqs}
+  />
+  <PageHero
+    eyebrow={page.eyebrow}
+    title={page.heading}
+    text={page.description}
+    primary={page.primaryCta}
+    secondary={page.secondaryCta}
+  />
+  <section class="content-section">
+    <div class="content-grid">
+      {page.sections.map((section, index) => (
+        <article class="content-card">
+          <span class="card-number">{String(index + 1).padStart(2, "0")}</span>
+          <h2>{section.title}</h2>
+          <p>{section.body}</p>
+          {section.bullets && (
+            <ul class="check-list">
+              {section.bullets.map((bullet) => <li>{bullet}</li>)}
+            </ul>
+          )}
+        </article>
+      ))}
+    </div>
+  </section>
+  {page.faqs && (
+    <section class="faq-section">
+      <div class="section-header center">
+        <p class="eyebrow">Common questions</p>
+        <h2>What to clarify before launch.</h2>
+      </div>
+      <div class="faq-list">
+        {page.faqs.map((faq) => (
+          <details>
+            <summary>{faq.q}</summary>
+            <p>{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  )}
+  <CTA />
+</Base>

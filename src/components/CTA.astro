@@ -1,0 +1,23 @@
+---
+interface Props { eyebrow?: string; title?: string; text?: string; primaryLabel?: string; primaryHref?: string; secondaryLabel?: string; secondaryHref?: string; }
+const {
+  eyebrow = "Next step",
+  title = "Which conversation fits where you are?",
+  text = "Choose the most relevant pathway now. Final form, calendar, and CRM routing remain approval-gated until kickoff confirms the workflow.",
+  primaryLabel = "Request a fit conversation",
+  primaryHref = "/apply/",
+  secondaryLabel = "Explore peer advisory",
+  secondaryHref = "/peer-advisory-groups/",
+} = Astro.props;
+---
+<section class="cta-band">
+  <div>
+    <p class="eyebrow">{eyebrow}</p>
+    <h2>{title}</h2>
+    <p>{text}</p>
+  </div>
+  <div class="cta-actions">
+    <a class="btn btn-light" href={primaryHref}>{primaryLabel}</a>
+    <a class="btn btn-outline-light" href={secondaryHref}>{secondaryLabel}</a>
+  </div>
+</section>

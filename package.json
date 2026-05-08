@@ -1,0 +1,47 @@
+{
+  "name": "kingdom-factor-site",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Kingdom Factor Astro site. Cloudflare Workers/Pages is the deploy target; EmDash CMS/Admin is planned, with CRM/Convex backend integrations added when access/scope is approved.",
+  "emdash": {
+    "label": "Kingdom Factor Website",
+    "seed": "seed/seed.json",
+    "adminPath": "/_emdash/admin",
+    "status": "planned; add runtime dependencies after Railway memory cap is fixed and CMS/runtime provisioning is approved"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "typecheck": "astro check",
+    "verify": "npm run build && npm run typecheck",
+    "emdash:note": "node -e \"console.log('EmDash seed/config present as planned CMS/Admin scaffold. Workers/Pages deploy does not require D1/R2 by default; use CRM or Convex if backend data is needed.')\"",
+    "tailwind:note": "node -e \"console.log('Tailwind token direction is captured in DESIGN.md; current verified build uses authored CSS to avoid Vite/Rolldown plugin mismatch in Railway.')\""
+  },
+  "dependencies": {
+    "astro": "^6.0.1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.7",
+    "typescript": "^5.9.3"
+  },
+  "frontendRuntimeDependencies": {
+    "tailwindcss": "^4.2.2",
+    "@tailwindcss/vite": "^4.2.2"
+  },
+  "optionalRuntimeDependencies": {
+    "cloudflareWorkersPages": {
+      "@astrojs/cloudflare": "^13.1.7",
+      "wrangler": "^4.80.0",
+      "@cloudflare/workers-types": "^4.20260305.1"
+    },
+    "emdashCmsIfApproved": {
+      "@emdash-cms/cloudflare": "^0.6.0",
+      "emdash": "^0.6.0"
+    },
+    "convexIfBackendNeeded": {
+      "convex": "latest"
+    }
+  }
+}

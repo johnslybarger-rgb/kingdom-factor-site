@@ -1,0 +1,16 @@
+---
+import { nav } from "../lib/site";
+---
+<header class="site-header">
+  <a class="brand" href="/" aria-label="Kingdom Factor home">
+    <span class="brand-mark">KF</span>
+    <span>
+      <strong>Kingdom Factor</strong>
+      <small>Business • Faith • Counsel</small>
+    </span>
+  </a>
+  <nav aria-label="Main navigation">
+    {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+  </nav>
+  <a class="header-cta" href="/apply/">Fit Conversation</a>
+</header>

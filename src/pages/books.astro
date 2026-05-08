@@ -1,0 +1,44 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHero from "../components/PageHero.astro";
+import CTA from "../components/CTA.astro";
+import Schema from "../components/Schema.astro";
+import { bookHighlights } from "../lib/site";
+const johnBooks = [
+  "Marketplace Ministry",
+  "The Leadership Circle: Peer Advisory Groups",
+  "Biblical Accountability",
+  "Relational Intelligence",
+  "The Leadership Development Blueprint",
+  "Strategic Influence",
+  "The Coaching Skills Playbook",
+  "Managing Organizational Conflict",
+  "Leading Change One Conversation At A Time",
+];
+const jimBooks = ["Rise in Peer Community", "The Story You're Living", "Soar Like an Eagle"];
+---
+<Base title="Books & Resources" description="Kingdom Factor books, author resources, webinar material, and source-backed pathways for Christian business leaders." canonical="/books/">
+  <Schema type="WebPage" title="Books & Resources" description="Kingdom Factor books, author resources, webinar material, and source-backed pathways for Christian business leaders." path="/books/" breadcrumbs={[{ name: "Home", item: "/" }, { name: "Books & Resources", item: "/books/" }]} />
+  <PageHero eyebrow="Books and resources" title="Source-backed authority for Christian business leadership." text="Kingdom Factor's website can turn John and Jim's source library into clear public pathways, lead magnets, webinars, and content once permissions, covers, links, and excerpt rights are approved." primary={{ label: "Explore Marketplace Ministry", href: "/marketplace-ministry/" }} secondary={{ label: "Request a fit conversation", href: "/apply/" }} />
+  <section class="content-section">
+    <div class="two-column">
+      <article class="content-card">
+        <span class="card-number">John</span>
+        <h2>John Lybarger library</h2>
+        <p>Use approved books to support the executive coaching, peer advisory, biblical accountability, conflict, leadership, coaching, and marketplace ministry lanes.</p>
+        <ul class="check-list">{johnBooks.map((item) => <li>{item}</li>)}</ul>
+      </article>
+      <article class="content-card">
+        <span class="card-number">Jim</span>
+        <h2>Jim Lybarger library</h2>
+        <p>Use Jim's books to support the emerging-owner path around story, values, identity, peer community, and meaning-driven leadership.</p>
+        <ul class="check-list">{jimBooks.map((item) => <li>{item}</li>)}</ul>
+      </article>
+    </div>
+  </section>
+  <section class="authority-section compact">
+    <div class="authority-copy"><p class="eyebrow">Lead magnet candidates</p><h2>Turn source material into useful first steps.</h2><p>Recommended candidates: readiness assessment, Leadership Circle briefing, Marketplace Ministry resource, peer advisory fit checklist, or a permissioned book chapter/reading guide.</p></div>
+    <div class="book-cloud">{bookHighlights.map((book) => <span>{book}</span>)}</div>
+  </section>
+  <CTA />
+</Base>

@@ -1,0 +1,28 @@
+---
+import { nav, approvalGates } from "../lib/site";
+---
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Kingdom Factor</div>
+      <p>Peer advisory, executive coaching, and marketplace ministry for Christian business owners and leaders.</p>
+    </div>
+    <div>
+      <h2>Navigate</h2>
+      <ul>
+        {nav.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Approval gates</h2>
+      <ul>
+        {approvalGates.map((gate) => <li>{gate}</li>)}
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© {new Date().getFullYear()} Kingdom Factor. Draft website build.</span>
+    <span><a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></span>
+  </div>
+</footer>

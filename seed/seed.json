@@ -1,0 +1,77 @@
+{
+  "$schema": "https://emdashcms.com/seed.schema.json",
+  "version": "1",
+  "meta": {
+    "name": "Kingdom Factor",
+    "description": "Editable content schema for the Kingdom Factor advisory website.",
+    "author": "Truly Authentic Marketing"
+  },
+  "settings": {
+    "title": "Kingdom Factor",
+    "tagline": "Peer advisory, executive coaching, and marketplace ministry for Christian business leaders.",
+    "url": "https://kingdomfactor.com",
+    "postsPerPage": 12,
+    "timezone": "America/New_York",
+    "social": {}
+  },
+  "collections": [
+    {
+      "slug": "pages",
+      "label": "Pages",
+      "labelSingular": "Page",
+      "supports": ["drafts", "revisions", "seo"],
+      "fields": [
+        { "slug": "title", "label": "Title", "type": "string", "required": true },
+        { "slug": "meta_title", "label": "Meta Title", "type": "string" },
+        { "slug": "meta_description", "label": "Meta Description", "type": "string" },
+        { "slug": "hero_eyebrow", "label": "Hero Eyebrow", "type": "string" },
+        { "slug": "hero_heading", "label": "Hero Heading", "type": "string" },
+        { "slug": "hero_summary", "label": "Hero Summary", "type": "text" },
+        { "slug": "content", "label": "Content", "type": "portableText" },
+        { "slug": "approval_notes", "label": "Approval Notes", "type": "text" }
+      ]
+    },
+    {
+      "slug": "offers",
+      "label": "Offers",
+      "labelSingular": "Offer",
+      "supports": ["drafts", "revisions", "seo"],
+      "urlPattern": "/{slug}",
+      "fields": [
+        { "slug": "title", "label": "Title", "type": "string", "required": true },
+        { "slug": "audience", "label": "Audience", "type": "string" },
+        { "slug": "short_description", "label": "Short Description", "type": "text" },
+        { "slug": "cta_label", "label": "CTA Label", "type": "string" },
+        { "slug": "cta_href", "label": "CTA URL", "type": "string" },
+        { "slug": "content", "label": "Content", "type": "portableText" },
+        { "slug": "approval_notes", "label": "Approval Notes", "type": "text" }
+      ]
+    },
+    {
+      "slug": "resources",
+      "label": "Resources",
+      "labelSingular": "Resource",
+      "supports": ["drafts", "revisions", "seo"],
+      "fields": [
+        { "slug": "title", "label": "Title", "type": "string", "required": true },
+        { "slug": "author_lane", "label": "Author Lane", "type": "string" },
+        { "slug": "summary", "label": "Summary", "type": "text" },
+        { "slug": "resource_type", "label": "Resource Type", "type": "string" },
+        { "slug": "approval_notes", "label": "Approval Notes", "type": "text" }
+      ]
+    }
+  ],
+  "content": {
+    "pages": [
+      {
+        "id": "home",
+        "title": "Kingdom Factor",
+        "meta_title": "Kingdom Factor | Christian Business Peer Advisory & Executive Coaching",
+        "meta_description": "A trusted advisory circle for Christian business owners who want to lead with wisdom, faith, and accountability.",
+        "hero_eyebrow": "Christian business leadership",
+        "hero_heading": "Lead with wisdom, faith, and trusted counsel.",
+        "hero_summary": "Kingdom Factor helps Christian owners and leaders process real business decisions inside a faith-integrated advisory model."
+      }
+    ]
+  }
+}

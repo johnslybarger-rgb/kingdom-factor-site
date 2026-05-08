@@ -1,0 +1,122 @@
+---
+import Base from "../layouts/Base.astro";
+import CTA from "../components/CTA.astro";
+import Schema from "../components/Schema.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import { offers, pillars, people, bookHighlights, seoOpportunities } from "../lib/site";
+---
+<Base title="Kingdom Factor" description="A trusted advisory circle for Christian business owners who want to lead with wisdom, faith, and accountability.">
+  <Schema />
+  <section class="home-hero polished-hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Christian business leadership</p>
+      <h1>A trusted room for Christian owners carrying real decisions.</h1>
+      <p>Kingdom Factor helps faith-driven owners and leaders integrate biblical conviction with practical business counsel through peer advisory, executive coaching, marketplace ministry, and source-backed leadership resources.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="/apply/">Schedule an introductory conversation</a>
+        <a class="btn btn-secondary" href="/leadership-circle/">Explore the Leadership Circle</a>
+      </div>
+      <div class="trust-strip" aria-label="Kingdom Factor positioning">
+        <span>Peer advisory</span>
+        <span>Executive coaching</span>
+        <span>Marketplace ministry</span>
+      </div>
+    </div>
+    <div class="roundtable-visual premium-visual" aria-label="Abstract advisory circle visual">
+      <div class="ring"></div>
+      <div class="ring ring-two"></div>
+      <div class="center-card">KF</div>
+      <div class="note note-a">Counsel</div>
+      <div class="note note-b">Wisdom</div>
+      <div class="note note-c">Faith</div>
+      <div class="note note-d">Action</div>
+    </div>
+  </section>
+
+  <section class="split-section elevated-split">
+    <div>
+      <p class="eyebrow">The problem</p>
+      <h2>Leadership gets heavy when there is no trusted, faith-integrated room.</h2>
+    </div>
+    <p>Owners carry pressure, blind spots, decision fatigue, lonely choices, and the tension of honoring both stewardship and growth. Kingdom Factor gives that weight a place to be processed with trusted counsel, biblical accountability, and practical business wisdom.</p>
+  </section>
+
+  <section class="pillar-section">
+    <SectionHeader eyebrow="The Kingdom Factor model" title="Three ways leaders get the room they need." text="The public site is built around source-backed positioning and avoids unsupported stats, testimonials, pricing, and claims until approved." align="center" />
+    <div class="three-grid">
+      {pillars.map((pillar) => (
+        <article class="pillar-card premium-card">
+          <h3>{pillar.title}</h3>
+          <p>{pillar.text}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section id="paths" class="lane-section">
+    <SectionHeader eyebrow="Choose your path" title="One Kingdom Factor platform. Two clear leadership lanes." text="The site preserves one SEO authority base while routing established executives and emerging owners into the right next step." align="center" />
+    <div class="lane-grid">
+      {people.map((person) => (
+        <article class={`lane-card leader-lane ${person.lane === "John lane" ? "executive" : "community"}`}>
+          <div class="portrait-fallback" aria-hidden="true">{person.fallbackInitials}</div>
+          <p class="eyebrow">{person.lane}</p>
+          <h3>{person.name}</h3>
+          <p><strong>{person.role}</strong></p>
+          <p>{person.summary}</p>
+          <a class="text-link" href={person.href}>Explore this pathway →</a>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="offer-section">
+    <SectionHeader eyebrow="Offer ecosystem" title="A connected path from curiosity to conversation." text="Awareness should move into a resource, webinar, preview conversation, fit call, and eventually application when routing is approved." align="center" />
+    <div class="offer-grid">
+      {offers.map((offer) => (
+        <article class="offer-card premium-card">
+          <p>{offer.audience}</p>
+          <h3>{offer.title}</h3>
+          <p>{offer.summary}</p>
+          <a href={offer.href}>View pathway →</a>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="authority-section">
+    <div class="authority-copy">
+      <p class="eyebrow">Author authority</p>
+      <h2>Books, webinars, and leadership IP become the trust layer.</h2>
+      <p>John and Jim’s source library gives Kingdom Factor a deeper authority base than a typical coaching website. The first public version should show the breadth of topics while keeping excerpts, covers, download links, and claims permission-gated.</p>
+      <a class="btn btn-secondary" href="/books/">View books and resources</a>
+    </div>
+    <div class="book-cloud">
+      {bookHighlights.map((book) => <span>{book}</span>)}
+    </div>
+  </section>
+
+  <section class="seo-section">
+    <SectionHeader eyebrow="SEO content moat" title="Build around high-intent faith-and-business searches." text="Final volumes should be validated in DataForSEO once credentials are connected. These seed gaps are ready for keyword expansion and content planning." align="center" />
+    <div class="keyword-grid">
+      {seoOpportunities.map((keyword) => <span>{keyword}</span>)}
+    </div>
+  </section>
+
+  <section class="source-section">
+    <div class="source-panel">
+      <p class="eyebrow">Kingdom Factor Collective</p>
+      <h2>Existing public content can support a story-driven authority strategy.</h2>
+      <p>The current Kingdom Factor site already has Collective and coach-directory content. The rebuild should preserve that equity carefully, organize it into stronger topical hubs, and avoid publishing new proof claims until approved.</p>
+      <a class="btn btn-secondary" href="/collective/">Explore the Collective path</a>
+    </div>
+    <div class="source-list">
+      <span>Faith in business stories</span>
+      <span>Leadership Circle webinar</span>
+      <span>Marketplace Ministry teaching</span>
+      <span>Executive Coaching Intensive</span>
+      <span>Readiness assessment path</span>
+    </div>
+  </section>
+
+  <CTA />
+</Base>

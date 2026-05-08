@@ -1,0 +1,14 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHero from "../components/PageHero.astro";
+---
+<Base title="Apply" description="Request a Kingdom Factor fit conversation. Form and calendar routing are pending approval." canonical="/apply/">
+  <PageHero eyebrow="Fit conversation" title="Start with the conversation that fits where you are." text="This page is intentionally not connected to live CRM, calendar, or email routing yet. Once approved, it can become the primary application or fit-call path." primary={{ label: "Email/form routing pending", href: "/contact/" }} secondary={{ label: "Compare the two lanes", href: "/" }} />
+  <section class="content-section">
+    <div class="form-placeholder">
+      <p class="eyebrow">Approval-gated form</p>
+      <h2>Application fields pending confirmation</h2>
+      <p>Suggested fields: name, email, company, role, business stage, preferred lane, current leadership challenge, webinar interest, and consent to be contacted. Do not connect submission routing until Chris approves the destination.</p>
+    </div>
+  </section>
+</Base>
