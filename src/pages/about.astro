@@ -7,12 +7,12 @@ import { people } from "../lib/site";
 ---
 <Base title="About" description="Kingdom Factor brings peer advisory, executive coaching, and marketplace ministry together for Christian business leaders." canonical="/about/">
   <Schema type="WebPage" title="About Kingdom Factor" description="Kingdom Factor brings peer advisory, executive coaching, and marketplace ministry together for Christian business leaders." path="/about/" breadcrumbs={[{ name: "Home", item: "/" }, { name: "About", item: "/about/" }]} />
-  <PageHero eyebrow="About Kingdom Factor" title="A faith-integrated advisory platform for leaders building more than a business." text="Kingdom Factor helps Christian business owners make better decisions, grow with wisdom, and lead in alignment with faith and calling. Final biography, founding, and credential details remain approval-gated before launch." primary={{ label: "Choose your path", href: "/#paths" }} secondary={{ label: "Contact Kingdom Factor", href: "/contact/" }} />
+  <PageHero eyebrow="About Kingdom Factor" title="A faith-integrated advisory platform for leaders building more than a business." text="Kingdom Factor helps Christian business owners make better decisions, grow with wisdom, and lead in alignment with faith, calling, stewardship, and practical counsel." primary={{ label: "Choose your path", href: "/#paths" }} secondary={{ label: "Contact Kingdom Factor", href: "/contact/" }} />
   <section class="content-section">
     <div class="content-grid">
       <article class="content-card"><span class="card-number">01</span><h2>Mission</h2><p>Help Christian business owners make better decisions, grow with wisdom, and integrate faith into the daily realities of leadership, stewardship, culture, and growth.</p></article>
       <article class="content-card"><span class="card-number">02</span><h2>Model</h2><p>Kingdom Factor combines peer advisory groups, private executive coaching, marketplace ministry teaching, and author-driven resources into one practical leadership platform.</p></article>
-      <article class="content-card"><span class="card-number">03</span><h2>Guardrails</h2><p>Detailed founder story, historical claims, statistics, testimonials, pricing, and public proof should be reviewed and approved before publishing.</p></article>
+      <article class="content-card"><span class="card-number">03</span><h2>Posture</h2><p>Bring wisdom, candor, prayerful discernment, and practical execution into the same room so leaders can move forward with clarity.</p></article>
     </div>
   </section>
   <section class="people-section">
@@ -20,7 +20,7 @@ import { people } from "../lib/site";
     <div class="two-column">
       {people.map((person) => (
         <article class="person-card">
-          <div class="portrait-fallback large">{person.fallbackInitials}</div>
+          <img class="person-portrait" src={person.image} alt={person.name} loading="lazy" />
           <p class="eyebrow">{person.lane}</p>
           <h3>{person.name}</h3>
           <p><strong>{person.role}</strong></p>

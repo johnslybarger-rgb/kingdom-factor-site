@@ -3,14 +3,30 @@ import { nav } from "../lib/site";
 ---
 <header class="site-header">
   <a class="brand" href="/" aria-label="Kingdom Factor home">
-    <span class="brand-mark">KF</span>
-    <span>
+    <img class="brand-logo" src="/images/brand/kf-logo.png" alt="Kingdom Factor" width="426" height="140" />
+    <span class="brand-text">
       <strong>Kingdom Factor</strong>
       <small>Business • Faith • Counsel</small>
     </span>
   </a>
-  <nav aria-label="Main navigation">
+
+  <nav class="desktop-nav" aria-label="Main navigation">
     {nav.map((item) => <a href={item.href}>{item.label}</a>)}
   </nav>
+
   <a class="header-cta" href="/apply/">Fit Conversation</a>
+
+  <details class="mobile-nav">
+    <summary aria-label="Open menu">
+      <span></span><span></span><span></span>
+      <strong>Menu</strong>
+    </summary>
+    <div class="mobile-menu-panel">
+      <nav aria-label="Mobile navigation">
+        {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+        <a href="/contact/">Contact</a>
+      </nav>
+      <a class="btn btn-primary" href="/apply/">Request a fit conversation</a>
+    </div>
+  </details>
 </header>

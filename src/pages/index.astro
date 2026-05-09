@@ -11,7 +11,7 @@ import { offers, pillars, people, bookHighlights, seoOpportunities } from "../li
     <div class="hero-copy">
       <p class="eyebrow">Christian business leadership</p>
       <h1>A trusted room for Christian owners carrying real decisions.</h1>
-      <p>Kingdom Factor helps faith-driven owners and leaders integrate biblical conviction with practical business counsel through peer advisory, executive coaching, marketplace ministry, and source-backed leadership resources.</p>
+      <p>Kingdom Factor helps faith-driven owners and leaders integrate biblical conviction with practical business counsel through peer advisory, executive coaching, marketplace ministry, and leadership resources.</p>
       <div class="actions">
         <a class="btn btn-primary" href="/apply/">Schedule an introductory conversation</a>
         <a class="btn btn-secondary" href="/leadership-circle/">Explore the Leadership Circle</a>
@@ -22,14 +22,15 @@ import { offers, pillars, people, bookHighlights, seoOpportunities } from "../li
         <span>Marketplace ministry</span>
       </div>
     </div>
-    <div class="roundtable-visual premium-visual" aria-label="Abstract advisory circle visual">
-      <div class="ring"></div>
-      <div class="ring ring-two"></div>
-      <div class="center-card">KF</div>
+    <div class="roundtable-visual premium-visual brand-showcase" aria-label="Kingdom Factor brand visual">
+      <img class="brand-bg" src="/images/brand/kf-background-logo-2.png" alt="" loading="eager" />
+      <div class="brand-glass-card">
+        <img src="/images/brand/kf-logo.png" alt="Kingdom Factor" />
+        <p>Faith-shaped counsel for decisions that matter.</p>
+      </div>
       <div class="note note-a">Counsel</div>
       <div class="note note-b">Wisdom</div>
       <div class="note note-c">Faith</div>
-      <div class="note note-d">Action</div>
     </div>
   </section>
 
@@ -42,7 +43,7 @@ import { offers, pillars, people, bookHighlights, seoOpportunities } from "../li
   </section>
 
   <section class="pillar-section">
-    <SectionHeader eyebrow="The Kingdom Factor model" title="Three ways leaders get the room they need." text="The public site is built around source-backed positioning and avoids unsupported stats, testimonials, pricing, and claims until approved." align="center" />
+    <SectionHeader eyebrow="The Kingdom Factor model" title="Three ways leaders get the room they need." text="A focused ecosystem for owners and leaders who want practical business counsel without separating strategy from faith." align="center" />
     <div class="three-grid">
       {pillars.map((pillar) => (
         <article class="pillar-card premium-card">
@@ -54,11 +55,11 @@ import { offers, pillars, people, bookHighlights, seoOpportunities } from "../li
   </section>
 
   <section id="paths" class="lane-section">
-    <SectionHeader eyebrow="Choose your path" title="One Kingdom Factor platform. Two clear leadership lanes." text="The site preserves one SEO authority base while routing established executives and emerging owners into the right next step." align="center" />
+    <SectionHeader eyebrow="Choose your path" title="One Kingdom Factor platform. Two clear leadership lanes." text="Established executives and emerging owners can each find a pathway shaped around their leadership season." align="center" />
     <div class="lane-grid">
       {people.map((person) => (
         <article class={`lane-card leader-lane ${person.lane === "John lane" ? "executive" : "community"}`}>
-          <div class="portrait-fallback" aria-hidden="true">{person.fallbackInitials}</div>
+          <img class="leader-portrait" src={person.image} alt={person.name} loading="lazy" />
           <p class="eyebrow">{person.lane}</p>
           <h3>{person.name}</h3>
           <p><strong>{person.role}</strong></p>
@@ -87,7 +88,7 @@ import { offers, pillars, people, bookHighlights, seoOpportunities } from "../li
     <div class="authority-copy">
       <p class="eyebrow">Author authority</p>
       <h2>Books, webinars, and leadership IP become the trust layer.</h2>
-      <p>John and Jim’s source library gives Kingdom Factor a deeper authority base than a typical coaching website. The first public version should show the breadth of topics while keeping excerpts, covers, download links, and claims permission-gated.</p>
+      <p>John and Jim’s resource library gives Kingdom Factor a deeper authority base than a typical coaching website, with topics spanning marketplace ministry, accountability, leadership development, story, and practical faith integration.</p>
       <a class="btn btn-secondary" href="/books/">View books and resources</a>
     </div>
     <div class="book-cloud">
@@ -96,7 +97,7 @@ import { offers, pillars, people, bookHighlights, seoOpportunities } from "../li
   </section>
 
   <section class="seo-section">
-    <SectionHeader eyebrow="SEO content moat" title="Build around high-intent faith-and-business searches." text="Final volumes should be validated in DataForSEO once credentials are connected. These seed gaps are ready for keyword expansion and content planning." align="center" />
+    <SectionHeader eyebrow="Leadership topics" title="Built around the questions Christian owners are already carrying." text="The resource path can grow into practical guides for faith-and-business leadership, peer counsel, accountability, and stewardship." align="center" />
     <div class="keyword-grid">
       {seoOpportunities.map((keyword) => <span>{keyword}</span>)}
     </div>
@@ -106,7 +107,7 @@ import { offers, pillars, people, bookHighlights, seoOpportunities } from "../li
     <div class="source-panel">
       <p class="eyebrow">Kingdom Factor Collective</p>
       <h2>Existing public content can support a story-driven authority strategy.</h2>
-      <p>The current Kingdom Factor site already has Collective and coach-directory content. The rebuild should preserve that equity carefully, organize it into stronger topical hubs, and avoid publishing new proof claims until approved.</p>
+      <p>The Collective path can preserve and organize stories, interviews, and leadership lessons into a stronger topical hub for Christian business owners.</p>
       <a class="btn btn-secondary" href="/collective/">Explore the Collective path</a>
     </div>
     <div class="source-list">

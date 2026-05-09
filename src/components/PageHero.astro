@@ -12,10 +12,8 @@ const { eyebrow, title, text, primary, secondary } = Astro.props;
       {secondary && <a class="btn btn-secondary" href={secondary.href}>{secondary.label}</a>}
     </div>
   </div>
-  <div class="hero-card" aria-hidden="true">
-    <div class="circle one"></div>
-    <div class="circle two"></div>
-    <div class="monogram">KF</div>
+  <div class="hero-card brand-hero-card" aria-label="Kingdom Factor visual identity">
+    <img src="/images/brand/kf-background-logo-1.png" alt="" loading="lazy" />
     <p>Wisdom in the room</p>
   </div>
 </section>

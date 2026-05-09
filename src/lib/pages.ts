@@ -28,7 +28,7 @@ export const pages: Record<string, PageSpec> = {
       },
       {
         title: "What happens in the room",
-        body: "A peer advisory group creates a structured place for honest conversation, shared learning, and prayerful discernment. The first build keeps details high-level until group cadence, eligibility, pricing, and facilitation language are approved.",
+        body: "A peer advisory group creates a structured place for honest conversation, shared learning, and prayerful discernment. The experience is designed to keep conversation practical, confidential, faith-integrated, and oriented toward wise next actions.",
         bullets: ["Confidential conversation", "Real business decisions", "Shared experience", "Clear next actions"],
       },
       {
@@ -37,8 +37,8 @@ export const pages: Record<string, PageSpec> = {
       },
     ],
     faqs: [
-      { q: "Is this coaching or a peer group?", a: "The first version positions Kingdom Factor around both peer advisory and coaching. Final program distinctions should be confirmed in kickoff." },
-      { q: "Are groups in-person or virtual?", a: "Format details are approval-gated until Kingdom Factor confirms the operational model." },
+      { q: "Is this coaching or a peer group?", a: "Kingdom Factor includes both peer advisory and private coaching pathways. The fit conversation helps discern which room is right for the leader's current season." },
+      { q: "Are groups in-person or virtual?", a: "Format and cadence can vary by pathway; the fit conversation is the best way to clarify the next available option." },
     ],
   },
   "executive-coaching": {
@@ -53,7 +53,7 @@ export const pages: Record<string, PageSpec> = {
     sections: [
       {
         title: "A premium advisory path",
-        body: "Source materials reference a 12-week Executive Coaching Intensive with weekly one-on-one sessions, between-session support, and peer advisory integration. Pricing and detailed public terms remain approval-gated.",
+        body: "Source materials reference a 12-week Executive Coaching Intensive with weekly one-on-one sessions, between-session support, and peer advisory integration. The intensive is positioned around consistent one-on-one counsel, leadership clarity, stewardship, and practical next steps.",
         bullets: ["Weekly strategic conversation", "Leadership clarity", "Stewardship and integrity", "Peer advisory integration"],
       },
       {
@@ -61,8 +61,8 @@ export const pages: Record<string, PageSpec> = {
         body: "Established Christian owners and executives who are responsible for people, decisions, money, and culture — and who want faith integrated into how they lead.",
       },
       {
-        title: "Proof and credentials gate",
-        body: "John's public bio, credentials, claims, testimonials, and case studies should be verified before publishing. This build uses careful, source-backed language only.",
+        title: "Leadership and trust",
+        body: "Leaders need counsel they can trust. Kingdom Factor keeps the emphasis on wisdom, integrity, and practical support for decisions that carry real weight.",
       },
     ],
   },
@@ -82,8 +82,8 @@ export const pages: Record<string, PageSpec> = {
         bullets: ["Story and identity", "Values-based decisions", "Community and confidence", "Faith in the everyday work"],
       },
       {
-        title: "Needs kickoff refinement",
-        body: "Jim-specific voice, offers, audience boundaries, pricing, and conversion steps should be confirmed before final public copy.",
+        title: "A grounded growth path",
+        body: "This path gives emerging owners a warmer, accessible place to clarify story, build confidence, and grow alongside peers who understand faith-shaped entrepreneurship.",
       },
     ],
   },
@@ -94,7 +94,7 @@ export const pages: Record<string, PageSpec> = {
     heading: "An introduction to why Christian leaders need a trusted circle.",
     description:
       "A low-friction webinar-style page for leaders exploring a Christ-centered peer advisory model before applying or scheduling a fit conversation.",
-    primaryCta: { label: "Registration link pending", href: "/apply/" },
+    primaryCta: { label: "Explore the Leadership Circle", href: "/apply/" },
     secondaryCta: { label: "Learn about peer advisory", href: "/peer-advisory-groups/" },
     sections: [
       {
@@ -103,8 +103,8 @@ export const pages: Record<string, PageSpec> = {
         bullets: ["The cost of leading alone", "The power of trusted counsel", "What a circle looks like", "A safe next step"],
       },
       {
-        title: "Routing needed",
-        body: "Final webinar dates, form/calendar destination, host cards, and confirmation flow need approval before connection.",
+        title: "A safe next step",
+        body: "Use the Leadership Circle as a low-friction way to understand the model, ask better questions, and discern whether a deeper advisory pathway fits.",
       },
     ],
   },
@@ -125,18 +125,18 @@ export const pages: Record<string, PageSpec> = {
       },
       {
         title: "Source tie-ins",
-        body: "John's Marketplace Ministry material can support this page, but book excerpts, download links, and public claims need permission and QA.",
+        body: "Marketplace Ministry resources can help leaders connect Sunday conviction to Monday decisions with clarity, courage, and practical wisdom.",
       },
     ],
   },
   "collective": {
     slug: "collective",
     title: "Kingdom Factor Collective",
-    eyebrow: "Story archive concept",
+    eyebrow: "Kingdom Factor Collective",
     heading: "Capture real stories of Christian business leaders integrating faith and excellence.",
     description:
-      "The Collective page introduces the interview/archive concept while keeping publication, permissions, and scheduling approval-gated.",
-    primaryCta: { label: "Interview scheduling pending", href: "/contact/" },
+      "The Collective path captures stories and lessons from Christian business leaders integrating faith and excellence.",
+    primaryCta: { label: "Share your story", href: "/contact/" },
     secondaryCta: { label: "Read about Kingdom Factor", href: "/about/" },
     sections: [
       {
@@ -145,8 +145,8 @@ export const pages: Record<string, PageSpec> = {
       },
       {
         title: "How it may work",
-        body: "The source brochure points toward short interviews and story capture. The final workflow needs consent language, publishing permissions, and approved scheduling before going live.",
-        bullets: ["15–20 minute interview", "Recorded virtually or in person", "Featured only after permission", "Consent language required"],
+        body: "The Collective can gather short interviews, practical stories, and leadership lessons that encourage other owners and leaders.",
+        bullets: ["15–20 minute interview", "Recorded virtually or in person", "Featured only after permission", "Encouragement for others"],
       },
     ],
   },
