@@ -352,3 +352,30 @@ details { background: var(--warm-white); border: 1px solid var(--stone); border-
   .mobile-nav summary strong { font-size: .78rem; }
   .mobile-nav summary span { width: 13px; }
 }
+
+/* Structural header fix: only the collapsible menu owns nav links */
+.site-header {
+  flex-wrap: nowrap !important;
+  overflow: visible;
+}
+.site-header .brand { flex: 1 1 auto; min-width: 0; }
+.site-header .desktop-nav { display: none !important; }
+.site-header .global-menu,
+.site-header .mobile-nav.global-menu {
+  display: block !important;
+  flex: 0 0 auto;
+  margin-left: .5rem;
+}
+@media (min-width: 981px) {
+  .site-header .global-menu .mobile-menu-panel {
+    left: auto;
+    right: clamp(1rem, 4vw, 2.5rem);
+    top: 84px;
+    width: min(390px, calc(100vw - 2rem));
+  }
+}
+@media (max-width: 520px) {
+  .site-header .header-cta { display: none !important; }
+  .site-header .brand-logo { max-width: 142px; }
+  .site-header .global-menu { margin-left: .25rem; }
+}
