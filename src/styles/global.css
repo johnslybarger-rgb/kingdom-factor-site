@@ -300,3 +300,55 @@ details { background: var(--warm-white); border: 1px solid var(--stone); border-
   .person-portrait { width: 110px; height: 110px; }
   .refined-footer-grid { gap: 2.2rem; }
 }
+
+/* Screenshot QA fixes: prevent desktop nav leak, fix mobile footer, improve dark-card CTA contrast */
+.site-header .desktop-nav { display: flex; }
+.site-header .mobile-nav { display: none; }
+.footer-logo {
+  filter: none;
+  background: rgba(255,250,242,.94);
+  border-radius: 18px;
+  padding: .75rem 1rem;
+  box-shadow: 0 16px 40px rgba(0,0,0,.16);
+}
+.source-panel .btn-secondary,
+.brand-hero-card .btn-secondary {
+  color: var(--warm-white);
+  border-color: rgba(255,250,242,.62);
+  background: rgba(255,250,242,.06);
+}
+.source-panel .btn-secondary:hover,
+.brand-hero-card .btn-secondary:hover {
+  background: rgba(255,250,242,.14);
+}
+@media (max-width: 980px) {
+  .site-header .desktop-nav,
+  .site-header nav.desktop-nav,
+  .site-header > nav:not(.mobile-menu-panel nav) {
+    display: none !important;
+  }
+  .site-header .mobile-nav { display: block !important; }
+  .site-header {
+    display: flex;
+    flex-wrap: nowrap !important;
+    justify-content: space-between;
+    gap: .75rem;
+    overflow: visible;
+  }
+  .brand { min-width: 0; flex: 1 1 auto; }
+  .brand-logo { max-width: min(52vw, 180px); }
+  .mobile-nav { flex: 0 0 auto; }
+  .mobile-nav summary strong { display: inline; }
+  .footer-grid.refined-footer-grid,
+  .refined-footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem;
+  }
+  .footer-logo { width: min(240px, 100%); }
+}
+@media (max-width: 430px) {
+  .brand-logo { max-width: 148px; }
+  .mobile-nav summary { padding: .55rem .7rem; }
+  .mobile-nav summary strong { font-size: .78rem; }
+  .mobile-nav summary span { width: 13px; }
+}
