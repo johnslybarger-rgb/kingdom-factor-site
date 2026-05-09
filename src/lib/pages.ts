@@ -7,11 +7,15 @@ export type PageSpec = {
   primaryCta?: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
   sections: { title: string; body: string; bullets?: string[] }[];
+  heroImage?: string;
+  heroImageMobile?: string;
   faqs?: { q: string; a: string }[];
 };
 
 export const pages: Record<string, PageSpec> = {
   "peer-advisory-groups": {
+    heroImage: "/images/generated/advisory-room-1440.webp",
+    heroImageMobile: "/images/generated/advisory-room-mobile.webp",
     slug: "peer-advisory-groups",
     title: "Christian Peer Advisory Groups",
     eyebrow: "Peer advisory",
@@ -42,6 +46,8 @@ export const pages: Record<string, PageSpec> = {
     ],
   },
   "executive-coaching": {
+    heroImage: "/images/generated/leadership-table-1440.webp",
+    heroImageMobile: "/images/generated/leadership-table-mobile.webp",
     slug: "executive-coaching",
     title: "Executive Coaching Intensive",
     eyebrow: "John lane",
@@ -67,6 +73,8 @@ export const pages: Record<string, PageSpec> = {
     ],
   },
   "peer-community": {
+    heroImage: "/images/generated/collective-studio-1440.webp",
+    heroImageMobile: "/images/generated/collective-studio-mobile.webp",
     slug: "peer-community",
     title: "Peer Community for Emerging Christian Owners",
     eyebrow: "Jim lane",
@@ -88,6 +96,8 @@ export const pages: Record<string, PageSpec> = {
     ],
   },
   "leadership-circle": {
+    heroImage: "/images/generated/advisory-room-1440.webp",
+    heroImageMobile: "/images/generated/advisory-room-mobile.webp",
     slug: "leadership-circle",
     title: "Leadership Circle",
     eyebrow: "Free webinar / briefing",
@@ -109,6 +119,8 @@ export const pages: Record<string, PageSpec> = {
     ],
   },
   "marketplace-ministry": {
+    heroImage: "/images/generated/marketplace-ministry-1440.webp",
+    heroImageMobile: "/images/generated/marketplace-ministry-mobile.webp",
     slug: "marketplace-ministry",
     title: "Marketplace Ministry",
     eyebrow: "Faith and business integration",
@@ -130,6 +142,8 @@ export const pages: Record<string, PageSpec> = {
     ],
   },
   "collective": {
+    heroImage: "/images/generated/collective-studio-1440.webp",
+    heroImageMobile: "/images/generated/collective-studio-mobile.webp",
     slug: "collective",
     title: "Kingdom Factor Collective",
     eyebrow: "Kingdom Factor Collective",

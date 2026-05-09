@@ -1,6 +1,6 @@
 ---
-interface Props { eyebrow: string; title: string; text: string; primary?: { label: string; href: string }; secondary?: { label: string; href: string }; }
-const { eyebrow, title, text, primary, secondary } = Astro.props;
+interface Props { eyebrow: string; title: string; text: string; primary?: { label: string; href: string }; secondary?: { label: string; href: string }; image?: string; imageMobile?: string; }
+const { eyebrow, title, text, primary, secondary, image = "/images/generated/advisory-room-1440.webp", imageMobile = "/images/generated/advisory-room-mobile.webp" } = Astro.props;
 ---
 <section class="page-hero">
   <div class="hero-content">
@@ -12,8 +12,14 @@ const { eyebrow, title, text, primary, secondary } = Astro.props;
       {secondary && <a class="btn btn-secondary" href={secondary.href}>{secondary.label}</a>}
     </div>
   </div>
-  <div class="hero-card brand-hero-card" aria-label="Kingdom Factor visual identity">
-    <img src="/images/brand/kf-background-logo-1.png" alt="" loading="lazy" />
-    <p>Wisdom in the room</p>
+  <div class="hero-card brand-hero-card photo-hero-card" aria-label="Kingdom Factor visual identity">
+    <picture>
+      <source media="(max-width: 640px)" srcset={imageMobile} />
+      <img src={image} alt="" loading="lazy" />
+    </picture>
+    <div class="photo-card-caption">
+      <img src="/images/brand/kf-logo.png" alt="Kingdom Factor" loading="lazy" />
+      <p>Wisdom in the room</p>
+    </div>
   </div>
 </section>

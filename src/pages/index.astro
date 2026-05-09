@@ -22,9 +22,12 @@ import { offers, pillars, people, bookHighlights, seoOpportunities } from "../li
         <span>Marketplace ministry</span>
       </div>
     </div>
-    <div class="roundtable-visual premium-visual brand-showcase" aria-label="Kingdom Factor brand visual">
-      <img class="brand-bg" src="/images/brand/kf-background-logo-2.png" alt="" loading="eager" />
-      <div class="brand-glass-card">
+    <div class="roundtable-visual premium-visual brand-showcase generated-hero" aria-label="Premium advisory room visual">
+      <picture>
+        <source media="(max-width: 640px)" srcset="/images/generated/advisory-room-mobile.webp" />
+        <img class="brand-bg" src="/images/generated/advisory-room-1440.webp" alt="" loading="eager" />
+      </picture>
+      <div class="brand-glass-card hero-logo-card">
         <img src="/images/brand/kf-logo.png" alt="Kingdom Factor" />
         <p>Faith-shaped counsel for decisions that matter.</p>
       </div>
@@ -91,8 +94,14 @@ import { offers, pillars, people, bookHighlights, seoOpportunities } from "../li
       <p>John and Jim’s resource library gives Kingdom Factor a deeper authority base than a typical coaching website, with topics spanning marketplace ministry, accountability, leadership development, story, and practical faith integration.</p>
       <a class="btn btn-secondary" href="/books/">View books and resources</a>
     </div>
-    <div class="book-cloud">
-      {bookHighlights.map((book) => <span>{book}</span>)}
+    <div class="image-feature-card motion-card">
+      <picture>
+        <source media="(max-width: 640px)" srcset="/images/generated/leadership-table-mobile.webp" />
+        <img src="/images/generated/leadership-table-1440.webp" alt="Leadership table with warm executive counsel materials" loading="lazy" />
+      </picture>
+      <div class="book-cloud overlay-cloud">
+        {bookHighlights.slice(0, 6).map((book) => <span>{book}</span>)}
+      </div>
     </div>
   </section>
 
@@ -110,12 +119,15 @@ import { offers, pillars, people, bookHighlights, seoOpportunities } from "../li
       <p>The Collective path can preserve and organize stories, interviews, and leadership lessons into a stronger topical hub for Christian business owners.</p>
       <a class="btn btn-secondary" href="/collective/">Explore the Collective path</a>
     </div>
-    <div class="source-list">
+    <div class="source-list visual-source-list">
+      <picture class="source-photo">
+        <source media="(max-width: 640px)" srcset="/images/generated/collective-studio-mobile.webp" />
+        <img src="/images/generated/collective-studio-1440.webp" alt="Interview studio for Kingdom Factor stories" loading="lazy" />
+      </picture>
       <span>Faith in business stories</span>
       <span>Leadership Circle webinar</span>
       <span>Marketplace Ministry teaching</span>
       <span>Executive Coaching Intensive</span>
-      <span>Readiness assessment path</span>
     </div>
   </section>
 
