@@ -19,9 +19,9 @@ export const pages: Record<string, PageSpec> = {
     slug: "peer-advisory-groups",
     title: "Christian Peer Advisory Groups",
     eyebrow: "Peer advisory",
-    heading: "A trusted room for Christian owners carrying real decisions.",
+    heading: "A trusted room for Christian owners and executives carrying real decisions.",
     description:
-      "A confidential peer advisory circle where faith, leadership pressure, business decisions, and wise counsel are brought into the same room.",
+      "The confidential peer advisory group where faith, leadership pressures, business decisions, and wise counsel are brought into the room.",
     primaryCta: { label: "Request a fit conversation", href: "/apply/" },
     secondaryCta: { label: "See how peer advisory works", href: "/leadership-circle/" },
     sections: [
@@ -54,10 +54,10 @@ export const pages: Record<string, PageSpec> = {
     heroImageMobile: "/images/generated/leadership-table-mobile.webp",
     slug: "executive-coaching",
     title: "Executive Coaching Intensive",
-    eyebrow: "Private executive advisory with John Lane",
-    heading: "Trusted counsel for Christian leaders carrying real weight.",
+    eyebrow: "Private Executive Coaching with Dr. John Lybarger",
+    heading: "Executive Coaching, Peer Advisory, and Marketplace Ministry.",
     description:
-      "Private advisory with John Lane is for established Christian owners, executives, and senior leaders navigating decisions involving people, money, stewardship, succession, culture, and calling.",
+      "Dr. John Lybarger helps leaders carrying executive-level responsibility gain clarity, make sound decisions, strengthen culture, and lead with disciplined stewardship through expert coaching, pastoral discernment, and executive counsel shaped by real business ownership.",
     primaryCta: { label: "Request a fit conversation", href: "/apply/" },
     secondaryCta: { label: "Compare peer advisory", href: "/peer-advisory-groups/" },
     sections: [
@@ -88,10 +88,10 @@ export const pages: Record<string, PageSpec> = {
     heroImageMobile: "/images/generated/collective-studio-mobile.webp",
     slug: "peer-community",
     title: "Peer Community for Emerging Christian Owners",
-    eyebrow: "Peer community with Jim Lane",
+    eyebrow: "Peer Community with James Lybarger",
     heading: "A peer community for founders building from faith, values, and story.",
     description:
-      "The Jim Lane path helps emerging owners, solopreneurs, startup founders, and smaller-business leaders find practical reflection, confidence, and trusted peers for the journey.",
+      "The James Lybarger path helps emerging owners, solopreneurs, startup founders, and smaller business leaders find practical reflection, confidence, and trusted peers for the journey.",
     primaryCta: { label: "Request a fit conversation", href: "/apply/" },
     secondaryCta: { label: "See how the community works", href: "/leadership-circle/" },
     sections: [
@@ -131,7 +131,7 @@ export const pages: Record<string, PageSpec> = {
     sections: [
       {
         title: "What attendees should learn",
-        body: "Why isolation and decision fatigue are common for owners, what a Leadership Circle is, and how trusted peers can support accountability and renewal.",
+        body: "Why isolation and decision fatigue are common for owners and executives, what a Leadership Circle is, and how trusted peers can support accountability and renewal.",
         bullets: ["The cost of leading alone", "The power of trusted counsel", "What a circle looks like", "A safe next step"],
       },
       {
