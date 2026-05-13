@@ -2,13 +2,36 @@
 import Base from "../layouts/Base.astro";
 import PageHero from "../components/PageHero.astro";
 ---
-<Base title="Apply" description="Request a Kingdom Factor fit conversation. Form and calendar routing are pending approval." canonical="/apply/">
-  <PageHero eyebrow="Fit conversation" title="Start with the conversation that fits where you are." text="This page is intentionally not connected to live CRM, calendar, or email routing yet. Once approved, it can become the primary application or fit-call path." primary={{ label: "Email/form routing pending", href: "/contact/" }} secondary={{ label: "Compare the two lanes", href: "/" }} />
-  <section class="content-section">
-    <div class="form-placeholder">
-      <p class="eyebrow">Approval-gated form</p>
-      <h2>Application fields pending confirmation</h2>
-      <p>Suggested fields: name, email, company, role, business stage, preferred lane, current leadership challenge, webinar interest, and consent to be contacted. Do not connect submission routing until Chris approves the destination.</p>
+<Base title="Apply" description="Request a Kingdom Factor fit conversation and clarify the right next step for your leadership season." canonical="/apply/">
+  <PageHero
+    eyebrow="Fit conversation"
+    title="Start with the conversation that fits where you are."
+    text="A fit conversation helps clarify whether peer advisory, private coaching, community, marketplace ministry resources, or another next step is the right room for the decisions you are carrying."
+    primary={{ label: "See conversation path", href: "#conversation-path" }}
+    secondary={{ label: "Compare the two lanes", href: "/" }}
+  />
+  <section id="conversation-path" class="content-section offer-detail-section apply-path-section">
+    <div class="section-header compact">
+      <p class="eyebrow">What to expect</p>
+      <h2>A simple path to discern the right room.</h2>
+      <p>No pressure, no generic pitch. The first step is clarity about your leadership season, the weight of your decisions, and the kind of counsel that would actually help.</p>
+    </div>
+    <div class="content-grid apply-path-grid">
+      <article class="content-card premium-card">
+        <span class="card-number">01</span>
+        <h3>Share the season</h3>
+        <p>Identify the decisions, pressures, people questions, growth constraints, or faith-and-work tensions that are currently on the table.</p>
+      </article>
+      <article class="content-card premium-card">
+        <span class="card-number">02</span>
+        <h3>Clarify the room</h3>
+        <p>Compare peer advisory, private executive coaching, peer community, marketplace ministry resources, or a lighter leadership-circle path.</p>
+      </article>
+      <article class="content-card premium-card">
+        <span class="card-number">03</span>
+        <h3>Choose the next step</h3>
+        <p>If there is a fit, Kingdom Factor can recommend the right conversation, room, or resource path for the season you are leading through.</p>
+      </article>
     </div>
   </section>
 </Base>

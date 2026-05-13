@@ -1,0 +1,106 @@
+---
+const businessName = "Kingdom Factor";
+---
+
+<form id="feedback-form" class="client-feedback-form" data-business={businessName}>
+  <div class="feedback-honeypot" aria-hidden="true">
+    <label for="website">Website</label>
+    <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+  </div>
+
+  <input type="hidden" name="businessName" value={businessName} />
+
+  <div class="feedback-field-grid">
+    <label class="feedback-field">
+      <span>Your name</span>
+      <input name="submitterName" type="text" autocomplete="name" placeholder="Name" />
+    </label>
+    <label class="feedback-field">
+      <span>Email</span>
+      <input name="submitterEmail" type="email" autocomplete="email" placeholder="you@example.com" />
+    </label>
+  </div>
+
+  <div class="feedback-field-grid">
+    <label class="feedback-field">
+      <span>Request type *</span>
+      <select name="requestType" required>
+        <option value="" selected disabled>Select one</option>
+        <option value="Content change">Content change</option>
+        <option value="Design tweak">Design tweak</option>
+        <option value="Bug fix">Bug fix</option>
+        <option value="New feature">New feature</option>
+        <option value="SEO request">SEO request</option>
+        <option value="Other">Other</option>
+      </select>
+    </label>
+    <label class="feedback-field">
+      <span>Priority *</span>
+      <select name="priority" required>
+        <option value="Normal" selected>Normal</option>
+        <option value="Low">Low</option>
+        <option value="High">High</option>
+        <option value="Urgent">Urgent</option>
+      </select>
+    </label>
+  </div>
+
+  <label class="feedback-field">
+    <span>Page or section</span>
+    <input name="page" type="text" placeholder="Example: homepage hero, /books/, mobile menu" />
+  </label>
+
+  <label class="feedback-field">
+    <span>Request title *</span>
+    <input name="title" type="text" required placeholder="Short summary of the change" />
+  </label>
+
+  <label class="feedback-field">
+    <span>Details *</span>
+    <textarea name="description" rows="7" required placeholder="What should change? Include exact copy, URL, screenshot link, or context if you have it."></textarea>
+  </label>
+
+  <label class="feedback-field">
+    <span>Screenshot or reference link</span>
+    <input name="screenshotUrl" type="url" placeholder="https://..." />
+  </label>
+
+  <button class="feedback-submit" type="submit">
+    <span class="feedback-submit-text">Submit change request</span>
+    <span class="feedback-submit-loading" hidden>Submitting...</span>
+  </button>
+
+  <p class="feedback-status" id="feedback-status" role="status" aria-live="polite"></p>
+</form>
+
+<script>
+  const form = document.getElementById('feedback-form');
+  if (form instanceof HTMLFormElement) {
+    const status = document.getElementById('feedback-status');
+    const text = form.querySelector('.feedback-submit-text');
+    const loading = form.querySelector('.feedback-submit-loading');
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (status) status.textContent = '';
+      text?.setAttribute('hidden', '');
+      loading?.removeAttribute('hidden');
+      try {
+        const response = await fetch('/api/feedback', {
+          method: 'POST',
+          body: new FormData(form),
+        });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok || !result.success) {
+          throw new Error(result.error || 'Request could not be submitted.');
+        }
+        form.reset();
+        if (status) status.textContent = `Submitted. Request ID: ${result.requestId || 'received'}`;
+      } catch (error) {
+        if (status) status.textContent = 'This did not submit. Please copy your notes and send them directly to the project contact.';
+      } finally {
+        loading?.setAttribute('hidden', '');
+        text?.removeAttribute('hidden');
+      }
+    });
+  }
+</script>

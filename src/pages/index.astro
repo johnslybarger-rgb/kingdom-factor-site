@@ -7,63 +7,54 @@ import { offers, pillars, people, bookHighlights, seoOpportunities } from "../li
 ---
 <Base title="Kingdom Factor" description="A trusted advisory circle for Christian business owners who want to lead with wisdom, faith, and accountability.">
   <Schema />
-  <section class="home-hero polished-hero">
-    <div class="hero-copy">
-      <p class="eyebrow">Christian business leadership</p>
-      <h1>A trusted room for Christian owners carrying real decisions.</h1>
-      <p>Kingdom Factor helps faith-driven owners and leaders integrate biblical conviction with practical business counsel through peer advisory, executive coaching, marketplace ministry, and leadership resources.</p>
-      <div class="actions">
-        <a class="btn btn-primary" href="/apply/">Schedule an introductory conversation</a>
-        <a class="btn btn-secondary" href="/leadership-circle/">Explore the Leadership Circle</a>
-      </div>
-      <div class="trust-strip" aria-label="Kingdom Factor positioning">
-        <span>Peer advisory</span>
-        <span>Executive coaching</span>
-        <span>Marketplace ministry</span>
-      </div>
-    </div>
-    <div class="roundtable-visual premium-visual hero-decision-visual" aria-label="Kingdom Factor advisory visual">
-      <picture class="visual-photo">
-        <source media="(max-width: 640px)" srcset="/images/generated/leadership-table-mobile.webp" />
-        <img src="/images/generated/leadership-table-1440.webp" alt="Warm executive advisory table with books and planning materials" loading="eager" />
-      </picture>
-      <div class="visual-panel">
-        <img src="/images/brand/kf-logo.png" alt="Kingdom Factor" />
-        <p>Faith-shaped counsel for decisions that matter.</p>
-        <div class="decision-cues" aria-label="Kingdom Factor pillars">
-          <span>Counsel</span>
-          <span>Wisdom</span>
-          <span>Faith</span>
-        </div>
+  <section class="home-hero polished-hero executive-hero editorial-hero">
+    <div class="hero-copy editorial-hero-copy">
+      <p class="eyebrow">Private counsel for Christian CEOs, owners, and senior leaders</p>
+      <h1>Make the hard call with a wiser room around you.</h1>
+      <p>Kingdom Factor helps faith-driven owners process high-stakes decisions with qualified peers, seasoned coaching, and biblical wisdom around growth, culture, stewardship, and leadership pressure.</p>
+      <div class="actions hero-actions">
+        <a class="btn btn-primary" href="/apply/">Request a fit conversation</a>
+        <a class="btn btn-secondary" href="/peer-advisory-groups/">See the advisory path</a>
       </div>
     </div>
   </section>
 
-  <section class="split-section elevated-split">
-    <div>
-      <p class="eyebrow">The problem</p>
-      <h2>Leadership gets heavy when there is no trusted, faith-integrated room.</h2>
+  <section class="decision-room-section" aria-label="Kingdom Factor advisory setting">
+    <div class="decision-room-copy">
+      <p class="eyebrow">What changes in the room</p>
+      <h2>The conversation moves from encouragement to judgment, counsel, and action.</h2>
     </div>
-    <p>Owners carry pressure, blind spots, decision fatigue, lonely choices, and the tension of honoring both stewardship and growth. Kingdom Factor gives that weight a place to be processed with trusted counsel, biblical accountability, and practical business wisdom.</p>
+    <div class="decision-room-lines">
+      <p><strong>Isolation gets named.</strong> Owners can speak plainly about decisions that affect people, money, culture, family, faith, and the future of the business.</p>
+      <p><strong>Blind spots get challenged.</strong> Qualified peers and seasoned advisors help pressure-test the next move before it becomes expensive.</p>
+      <p><strong>Stewardship becomes practical.</strong> The point is not inspiration. The point is wiser decisions, faithful execution, and clear next steps.</p>
+    </div>
   </section>
 
-  <section class="pillar-section">
-    <SectionHeader eyebrow="The Kingdom Factor model" title="Three ways leaders get the room they need." text="A focused ecosystem for owners and leaders who want practical business counsel without separating strategy from faith." align="center" />
-    <div class="three-grid">
-      {pillars.map((pillar) => (
-        <article class="pillar-card premium-card">
-          <h3>{pillar.title}</h3>
-          <p>{pillar.text}</p>
+  <section class="council-model-section model-section">
+    <div class="council-model-intro">
+      <p class="eyebrow">The Kingdom Factor model</p>
+      <h2>Three lanes, one purpose: do not lead alone.</h2>
+      <p>Peer advisory, private coaching, and marketplace ministry form a practical path from owner isolation into qualified counsel.</p>
+    </div>
+    <div class="council-model-list">
+      {pillars.map((pillar, index) => (
+        <article class="council-lane">
+          <span>0{index + 1}</span>
+          <div>
+            <h3>{pillar.title}</h3>
+            <p>{pillar.text}</p>
+          </div>
         </article>
       ))}
     </div>
   </section>
 
   <section id="paths" class="lane-section">
-    <SectionHeader eyebrow="Choose your path" title="One Kingdom Factor platform. Two clear leadership lanes." text="Established executives and emerging owners can each find a pathway shaped around their leadership season." align="center" />
+    <SectionHeader eyebrow="Choose your path" title="Built for established executives and emerging owners in different seasons." text="The right next step depends on the weight of your decisions, the maturity of your business, and the kind of counsel you need now." align="center" />
     <div class="lane-grid">
       {people.map((person) => (
-        <article class={`lane-card leader-lane ${person.lane === "John lane" ? "executive" : "community"}`}>
+        <article class={`lane-card leader-lane ${person.lane === "Executive advisory" ? "executive" : "community"}`}>
           <img class="leader-portrait" src={person.image} alt={person.name} loading="lazy" />
           <p class="eyebrow">{person.lane}</p>
           <h3>{person.name}</h3>
@@ -75,9 +66,9 @@ import { offers, pillars, people, bookHighlights, seoOpportunities } from "../li
     </div>
   </section>
 
-  <section class="offer-section">
-    <SectionHeader eyebrow="Offer ecosystem" title="A connected path from curiosity to conversation." text="Awareness should move into a resource, webinar, preview conversation, fit call, and eventually application when routing is approved." align="center" />
-    <div class="offer-grid">
+  <section class="offer-section pathway-section">
+    <SectionHeader eyebrow="Offer ecosystem" title="Move from curiosity to a qualified conversation." text="Resources and preview paths help leaders understand the model before they request a fit conversation or apply for a room." align="center" />
+    <div class="offer-grid pathway-grid">
       {offers.map((offer) => (
         <article class="offer-card premium-card">
           <p>{offer.audience}</p>
@@ -91,9 +82,9 @@ import { offers, pillars, people, bookHighlights, seoOpportunities } from "../li
 
   <section class="authority-section">
     <div class="authority-copy">
-      <p class="eyebrow">Author authority</p>
-      <h2>Books, webinars, and leadership IP become the trust layer.</h2>
-      <p>John and Jim’s resource library gives Kingdom Factor a deeper authority base than a typical coaching website, with topics spanning marketplace ministry, accountability, leadership development, story, and practical faith integration.</p>
+      <p class="eyebrow">Authority layer</p>
+      <h2>Books, webinars, and leadership IP should build trust before the first call.</h2>
+      <p>Kingdom Factor can use John and Jim’s resource library to answer the questions Christian owners already carry about accountability, marketplace ministry, leadership development, and faithful execution.</p>
       <a class="btn btn-secondary" href="/books/">View books and resources</a>
     </div>
     <div class="image-feature-card motion-card">
@@ -114,24 +105,57 @@ import { offers, pillars, people, bookHighlights, seoOpportunities } from "../li
     </div>
   </section>
 
-  <section class="source-section">
-    <div class="source-panel">
+  <section class="source-section story-section">
+    <div class="source-panel story-panel">
       <p class="eyebrow">Kingdom Factor Collective</p>
-      <h2>Existing public content can support a story-driven authority strategy.</h2>
-      <p>The Collective path can preserve and organize stories, interviews, and leadership lessons into a stronger topical hub for Christian business owners.</p>
-      <a class="btn btn-secondary" href="/collective/">Explore the Collective path</a>
+      <h2>Real stories help leaders see faithful business in practice.</h2>
+      <p>The Collective gives Christian owners a place to learn from grounded conversations about calling, courage, stewardship, culture, and the decisions leaders rarely process alone.</p>
+      <a class="btn btn-secondary" href="/collective/">Explore leadership stories</a>
     </div>
-    <div class="source-list visual-source-list">
-      <picture class="source-photo">
-        <source media="(max-width: 640px)" srcset="/images/generated/collective-studio-mobile.webp" />
-        <img src="/images/generated/collective-studio-1440.webp" alt="Interview studio for Kingdom Factor stories" loading="lazy" />
-      </picture>
-      <span>Faith in business stories</span>
-      <span>Leadership Circle webinar</span>
-      <span>Marketplace Ministry teaching</span>
-      <span>Executive Coaching Intensive</span>
+    <div class="story-list" aria-label="Kingdom Factor story themes">
+      <article>
+        <span>01</span>
+        <h3>Faith in business</h3>
+        <p>Conversations about integrating conviction into decisions, culture, people, and growth.</p>
+      </article>
+      <article>
+        <span>02</span>
+        <h3>Leadership under pressure</h3>
+        <p>Stories for owners carrying risk, responsibility, conflict, and stewardship.</p>
+      </article>
+      <article>
+        <span>03</span>
+        <h3>Marketplace ministry</h3>
+        <p>Practical examples of serving people well while building a healthy business.</p>
+      </article>
     </div>
   </section>
 
-  <CTA />
+  <section class="faq-section closing-faq" aria-labelledby="homepage-faq-title">
+    <div class="faq-intro">
+      <p class="eyebrow">Questions before a fit conversation</p>
+      <h2 id="homepage-faq-title">A few things Christian owners usually ask first.</h2>
+      <p>Serious leaders can get clear context without pressure. These questions explain who the rooms are for, how the paths differ, and what a fit conversation is meant to clarify.</p>
+    </div>
+    <div class="faq-list compact-faq">
+      <details open>
+        <summary>Who is Kingdom Factor designed for?</summary>
+        <p>Christian CEOs, business owners, senior executives, founders, and emerging owners who want qualified counsel around decisions that affect business performance, people, stewardship, and faith.</p>
+      </details>
+      <details>
+        <summary>Is this coaching, peer advisory, or ministry?</summary>
+        <p>It can be any of those paths depending on the leader. The fit conversation helps determine whether peer advisory, private executive coaching, marketplace ministry resources, or a lighter community path is most appropriate.</p>
+      </details>
+      <details>
+        <summary>What happens after I request a fit conversation?</summary>
+        <p>The goal is discernment, not pressure. Kingdom Factor can learn what kind of decisions you are carrying, explain the available rooms, and recommend the next step only if there is a real fit.</p>
+      </details>
+      <details>
+        <summary>Are the groups confidential?</summary>
+        <p>Confidentiality is treated as a core expectation for serious peer counsel. Fit conversations can clarify the room structure, membership criteria, and operating details before anyone joins.</p>
+      </details>
+    </div>
+  </section>
+
+  <CTA title="Find the right room for the season you are leading through." text="Start with a fit conversation and leave with clarity on whether peer advisory, private coaching, or a lighter leadership path fits the pressure you are carrying now." />
 </Base>

@@ -1,0 +1,39 @@
+---
+/**
+ * Hidden client change request portal.
+ * noindex, nofollow. Not in nav. Not in sitemap.
+ * Posts to /api/feedback, which can forward to Notion when Worker vars are set.
+ */
+import Base from "../layouts/Base.astro";
+import FeedbackForm from "../components/FeedbackForm.astro";
+---
+
+<Base
+  title="Website Change Request"
+  description="Hidden client change request portal for Kingdom Factor website edits."
+  canonical="/feedback/"
+  noindex
+  hideChrome
+>
+  <section class="client-feedback-page">
+    <div class="client-feedback-shell">
+      <header class="client-feedback-header">
+        <a href="/" class="client-feedback-back">← kingdomfactor.us</a>
+        <p class="eyebrow">Client portal</p>
+        <h1>Website Change Request</h1>
+        <p>
+          Submit content changes, design tweaks, bug fixes, SEO requests, or new feature notes for the Kingdom Factor website. Each request is structured so it can move into the project change queue.
+        </p>
+      </header>
+
+      <div class="client-feedback-card">
+        <FeedbackForm />
+      </div>
+
+      <aside class="client-feedback-note" aria-label="How feedback is handled">
+        <strong>How this works</strong>
+        <span>Use one request per issue when possible. Include the page, the exact copy or design concern, and a screenshot/reference link if available.</span>
+      </aside>
+    </div>
+  </section>
+</Base>

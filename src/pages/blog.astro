@@ -1,0 +1,88 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHero from "../components/PageHero.astro";
+import Schema from "../components/Schema.astro";
+
+const resourceTopics = [
+  {
+    title: "Why Christian business owners need a trusted room",
+    category: "Peer advisory",
+    summary: "A practical guide to wise counsel, accountability, decision fatigue, and the value of processing leadership pressure with qualified peers.",
+  },
+  {
+    title: "Marketplace ministry beyond slogans",
+    category: "Faith and work",
+    summary: "How faith can shape culture, conflict, stewardship, pricing, hiring, generosity, and the daily decisions that form a company.",
+  },
+  {
+    title: "Coaching, peer advisory, or community",
+    category: "Next steps",
+    summary: "A clear comparison for leaders deciding whether they need private counsel, a peer advisory room, or a lighter community path.",
+  },
+  {
+    title: "Biblical accountability for owners",
+    category: "Leadership",
+    summary: "A leadership resource on honesty, responsibility, counsel, and integrity for owners carrying decisions that affect people and outcomes.",
+  },
+  {
+    title: "Stories from kingdom-minded leaders",
+    category: "Collective",
+    summary: "Conversations with Christian leaders about calling, pressure, faithful execution, and the lessons learned in real business seasons.",
+  },
+  {
+    title: "Books and resources for faithful leadership",
+    category: "Resources",
+    summary: "A curated path through Kingdom Factor books, teachings, and practical leadership questions for owners and senior leaders.",
+  },
+];
+
+const principles = [
+  "Practical counsel for decisions leaders are already carrying.",
+  "Clear next steps toward peer advisory, coaching, community, or resources.",
+  "Faith-integrated leadership without hype, pressure, or generic inspiration.",
+  "Stories and teaching that strengthen stewardship, culture, and execution.",
+];
+---
+<Base title="Blog" description="Kingdom Factor resources for Christian business owners, peer advisory, marketplace ministry, and faith-integrated leadership." canonical="/blog/">
+  <Schema type="WebPage" title="Kingdom Factor Blog" description="Kingdom Factor resources for Christian business owners, peer advisory, marketplace ministry, and faith-integrated leadership." path="/blog/" breadcrumbs={[{ name: "Home", item: "/" }, { name: "Blog", item: "/blog/" }]} />
+  <PageHero
+    eyebrow="Blog and resources"
+    title="Wisdom for Christian owners who want counsel in the room."
+    text="Kingdom Factor resources help business owners think clearly about peer advisory, marketplace ministry, stewardship, culture, accountability, and the decisions that shape faithful leadership."
+    primary={{ label: "Explore resource topics", href: "#resource-topics" }}
+    secondary={{ label: "Books and resources", href: "/books/" }}
+  />
+
+  <section id="resource-topics" class="content-section blog-section">
+    <div class="section-header center">
+      <p class="eyebrow">Resource topics</p>
+      <h2>Practical guidance for the questions leaders carry.</h2>
+      <p>Use this hub to explore the themes Kingdom Factor is built around: trusted counsel, faithful execution, ownership pressure, and wisdom for the marketplace.</p>
+    </div>
+    <div class="content-grid blog-grid">
+      {resourceTopics.map((post) => (
+        <article class="content-card premium-card blog-card">
+          <p class="eyebrow">{post.category}</p>
+          <h2>{post.title}</h2>
+          <p>{post.summary}</p>
+          <span class="draft-status">Resource topic</span>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="authority-section compact blog-authority-section">
+    <div class="authority-copy">
+      <p class="eyebrow">Publishing approach</p>
+      <h2>Clear, grounded, and useful before the first conversation.</h2>
+      <p>The resource library is designed to help Christian owners understand their options, ask better questions, and discern whether a peer room, private coaching, community, or books are the right next step.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="/apply/">Request a fit conversation</a>
+        <a class="btn btn-secondary" href="/marketplace-ministry/">Marketplace ministry</a>
+      </div>
+    </div>
+    <div class="source-list editorial-rule-list">
+      {principles.map((rule) => <span>{rule}</span>)}
+    </div>
+  </section>
+</Base>

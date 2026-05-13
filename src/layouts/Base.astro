@@ -8,9 +8,11 @@ interface Props {
   title: string;
   description?: string;
   canonical?: string;
+  noindex?: boolean;
+  hideChrome?: boolean;
 }
 
-const { title, description = site.description, canonical = Astro.url.pathname } = Astro.props;
+const { title, description = site.description, canonical = Astro.url.pathname, noindex = false, hideChrome = false } = Astro.props;
 const pageTitle = title === site.name ? site.name : `${title} | ${site.name}`;
 const canonicalUrl = new URL(canonical, site.url).toString();
 ---
@@ -22,6 +24,7 @@ const canonicalUrl = new URL(canonical, site.url).toString();
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={canonicalUrl} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
@@ -31,10 +34,35 @@ const canonicalUrl = new URL(canonical, site.url).toString();
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <Header />
+    {!hideChrome && <Header />}
     <main id="main">
       <slot />
     </main>
-    <Footer />
+    {!hideChrome && <Footer />}
+    <script is:inline>
+      (() => {
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const targets = [
+          ...document.querySelectorAll('main > section:not(.editorial-hero), .section-header, .decision-room-lines p, .council-lane, .lane-card, .offer-card, .content-card, .person-card, .story-list article, .faq-list details, .keyword-grid span, .book-cloud span, .cta-band')
+        ];
+        targets.forEach((el, index) => {
+          el.classList.add('kf-reveal');
+          el.style.setProperty('--kf-reveal-delay', `${Math.min(index % 6, 5) * 70}ms`);
+        });
+        if (reduce || !('IntersectionObserver' in window)) {
+          targets.forEach((el) => el.classList.add('is-visible'));
+          return;
+        }
+        document.documentElement.classList.add('js-reveal-ready');
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          });
+        }, { rootMargin: '0px 0px -12% 0px', threshold: 0.14 });
+        targets.forEach((el) => observer.observe(el));
+      })();
+    </script>
   </body>
 </html>

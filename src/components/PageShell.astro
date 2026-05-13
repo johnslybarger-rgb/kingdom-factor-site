@@ -27,12 +27,17 @@ const schemaType = page.faqs?.length ? "FAQPage" : "Service";
     image={page.heroImage}
     imageMobile={page.heroImageMobile}
   />
-  <section class="content-section">
-    <div class="content-grid">
+  <section class="content-section offer-detail-section">
+    <div class="section-header compact">
+      <p class="eyebrow">How this path helps</p>
+      <h2>A clearer room for decisions, pressure, and next steps.</h2>
+      <p>Each pathway is intentionally shaped around the leader’s season, the weight they carry, and the kind of counsel that will actually help.</p>
+    </div>
+    <div class="content-grid offer-detail-grid">
       {page.sections.map((section, index) => (
-        <article class="content-card">
+        <article class="content-card offer-detail-card">
           <span class="card-number">{String(index + 1).padStart(2, "0")}</span>
-          <h2>{section.title}</h2>
+          <h3>{section.title}</h3>
           <p>{section.body}</p>
           {section.bullets && (
             <ul class="check-list">

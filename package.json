@@ -3,27 +3,38 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Kingdom Factor Astro site. Cloudflare Workers/Pages is the deploy target; EmDash CMS/Admin is planned, with CRM/Convex backend integrations added when access/scope is approved.",
+  "description": "Kingdom Factor Astro + EmDash CMS site for Cloudflare Workers.",
   "emdash": {
     "label": "Kingdom Factor Website",
     "seed": "seed/seed.json",
     "adminPath": "/_emdash/admin",
-    "status": "planned; add runtime dependencies after Railway memory cap is fixed and CMS/runtime provisioning is approved"
+    "status": "runtime wired for Cloudflare; admin at /_emdash/admin"
   },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "typecheck": "astro check",
-    "verify": "npm run build && npm run typecheck",
+    "verify": "npm run build && npm run typecheck && npm run emdash:seed:validate",
     "emdash:note": "node -e \"console.log('EmDash seed/config present as planned CMS/Admin scaffold. Workers/Pages deploy does not require D1/R2 by default; use CRM or Convex if backend data is needed.')\"",
-    "tailwind:note": "node -e \"console.log('Tailwind token direction is captured in DESIGN.md; current verified build uses authored CSS to avoid Vite/Rolldown plugin mismatch in Railway.')\""
+    "tailwind:note": "node -e \"console.log('Tailwind token direction is captured in DESIGN.md; current verified build uses authored CSS to avoid Vite/Rolldown plugin mismatch in Railway.')\"",
+    "emdash:seed:validate": "emdash seed seed/seed.json --validate --database ./.emdash/kingdom-factor.db",
+    "emdash:seed:local": "emdash seed seed/seed.json --database ./.emdash/kingdom-factor.db --on-conflict update"
   },
   "dependencies": {
-    "astro": "^6.0.1"
+    "@astrojs/cloudflare": "13.5.0",
+    "@cloudflare/workers-types": "^4.20260510.1",
+    "@emdash-cms/cloudflare": "^0.10.0",
+    "astro": "^6.0.1",
+    "emdash": "^0.10.0",
+    "wrangler": "^4.90.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.7",
+    "esbuild-wasm": "^0.28.0",
+    "impeccable": "^2.1.8",
+    "playwright": "^1.59.1",
+    "puppeteer": "^24.43.0",
     "sharp": "^0.34.5",
     "typescript": "^5.9.3"
   },

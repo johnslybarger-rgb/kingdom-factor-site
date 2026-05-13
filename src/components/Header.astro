@@ -10,24 +10,65 @@ import { nav } from "../lib/site";
     </span>
   </a>
 
+  <nav class="desktop-nav" aria-label="Primary navigation">
+    {nav.filter((item) => item.href !== "/apply/").map((item) => <a href={item.href}>{item.label}</a>)}
+  </nav>
+
   <a class="header-cta" href="/apply/">Fit Conversation</a>
 
-  <details class="mobile-nav global-menu">
-    <summary aria-label="Open menu">
+  <div class="mobile-nav global-menu" data-mobile-menu>
+    <button
+      id="kf-menu-button"
+      class="menu-trigger"
+      type="button"
+      aria-label="Open menu"
+      aria-controls="kf-mobile-menu-panel"
+      aria-expanded="false"
+      data-mobile-menu-button
+    >
       <span class="menu-glyph" aria-hidden="true">
-        <svg viewBox="0 0 24 24" role="presentation">
+        <svg viewBox="0 0 24 24" role="presentation" focusable="false">
           <path d="M6 8.5h12" />
           <path d="M6 15.5h12" />
         </svg>
       </span>
-      <strong>Menu</strong>
-    </summary>
-    <div class="mobile-menu-panel">
+    </button>
+    <div id="kf-mobile-menu-panel" class="mobile-menu-panel" hidden data-mobile-menu-panel>
       <nav aria-label="Mobile navigation">
         {nav.map((item) => <a href={item.href}>{item.label}</a>)}
         <a href="/contact/">Contact</a>
       </nav>
       <a class="btn btn-primary" href="/apply/">Request a fit conversation</a>
     </div>
-  </details>
+  </div>
 </header>
+
+<script is:inline>
+  (() => {
+    const root = document.querySelector('[data-mobile-menu]');
+    if (!root) return;
+
+    const button = root.querySelector('[data-mobile-menu-button]');
+    const panel = root.querySelector('[data-mobile-menu-panel]');
+    if (!button || !panel) return;
+
+    const setOpen = (open) => {
+      root.toggleAttribute('data-open', open);
+      button.setAttribute('aria-expanded', open ? 'true' : 'false');
+      button.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      panel.hidden = !open;
+      document.documentElement.classList.toggle('mobile-menu-open', open);
+    };
+
+    button.addEventListener('click', () => setOpen(button.getAttribute('aria-expanded') !== 'true'));
+    panel.addEventListener('click', (event) => {
+      if (event.target.closest('a')) setOpen(false);
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') setOpen(false);
+    });
+    window.matchMedia('(min-width: 981px)').addEventListener('change', (event) => {
+      if (event.matches) setOpen(false);
+    });
+  })();
+</script>

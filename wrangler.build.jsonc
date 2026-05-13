@@ -2,9 +2,7 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "kingdom-factor-site",
   "compatibility_date": "2026-05-08",
-  "compatibility_flags": [
-    "nodejs_compat"
-  ],
+  "compatibility_flags": ["nodejs_compat"],
   "vars": {
     "PUBLIC_SITE_URL": "https://kingdom-factor-site.ciglesia.workers.dev",
     "SITE_URL": "https://kingdom-factor-site.ciglesia.workers.dev"
@@ -27,17 +25,5 @@
       "binding": "SESSION",
       "id": "4a0e5833c41d43f680f4c8bf0d16f381"
     }
-  ],
-  "main": "./dist/server/entry.mjs",
-  "rules": [
-    {
-      "type": "ESModule",
-      "globs": ["**/*.js", "**/*.mjs"]
-    }
-  ],
-  "no_bundle": true,
-  "assets": {
-    "binding": "ASSETS",
-    "directory": "./dist/client"
-  }
+  ]
 }

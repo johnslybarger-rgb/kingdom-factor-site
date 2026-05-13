@@ -12,6 +12,7 @@ export const nav = [
   { href: "/executive-coaching/", label: "Executive Coaching" },
   { href: "/peer-community/", label: "Peer Community" },
   { href: "/books/", label: "Books" },
+  { href: "/blog/", label: "Blog" },
   { href: "/about/", label: "About" },
   { href: "/apply/", label: "Apply" },
 ];
@@ -25,6 +26,7 @@ export const publicRoutes = [
   { path: "/marketplace-ministry/", label: "Marketplace Ministry", priority: "0.8" },
   { path: "/collective/", label: "Kingdom Factor Collective", priority: "0.7" },
   { path: "/books/", label: "Books and Resources", priority: "0.8" },
+  { path: "/blog/", label: "Blog and Resources", priority: "0.7" },
   { path: "/about/", label: "About Kingdom Factor", priority: "0.7" },
   { path: "/apply/", label: "Apply", priority: "0.7" },
   { path: "/contact/", label: "Contact", priority: "0.6" },
@@ -103,21 +105,21 @@ export const people = [
   {
     name: "Dr. John Lybarger",
     role: "Executive coaching, peer advisory, and marketplace ministry",
-    lane: "John lane",
+    lane: "Executive advisory",
     image: "/images/people/john-lybarger-2026.jpg",
     fallbackInitials: "JL",
     summary:
-      "Public sources describe Dr. John Lybarger as an ICF Master Certified Coach, Industrial/Organizational Psychologist, ordained minister, and founder of Purpose Driven Consulting LLC. Final credential wording should be approved before launch.",
+      "Dr. John Lybarger brings coach-level discernment, organizational psychology, ministry perspective, and executive counsel to leaders carrying owner-level responsibility.",
     href: "/executive-coaching/",
   },
   {
     name: "James “Jim” Lybarger",
     role: "Peer community, story, values, and emerging-owner pathway",
-    lane: "Jim lane",
+    lane: "Peer community",
     image: "/images/people/jim-lybarger-headshot.jpg",
     fallbackInitials: "JL",
     summary:
-      "Jim’s lane supports Christian owners and leaders who are earlier in the growth curve and need story, values alignment, confidence, and peer community. Final bio and positioning should be approved before launch.",
+      "Jim supports Christian owners and emerging leaders who need story, values alignment, confidence, and a grounded peer community as they build the next stage.",
     href: "/peer-community/",
   },
 ];
