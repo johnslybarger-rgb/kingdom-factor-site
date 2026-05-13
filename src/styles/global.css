@@ -700,10 +700,10 @@ details { background: var(--warm-white); border: 1px solid var(--stone); border-
   grid-template-columns: minmax(0, .98fr) minmax(330px, .74fr);
   gap: clamp(2rem, 5vw, 4rem);
   overflow: hidden;
-  color: var(--warm-white);
+  color: var(--ink);
   background:
-    radial-gradient(circle at 82% 18%, rgba(213,178,111,.22), transparent 30%),
-    linear-gradient(90deg, rgba(28,14,14,.94) 0%, rgba(43,18,19,.82) 47%, rgba(45,20,20,.58) 100%),
+    radial-gradient(circle at 82% 18%, rgba(213,178,111,.22), transparent 36%),
+    linear-gradient(95deg, rgba(247,240,229,.94) 0%, rgba(247,240,229,.78) 42%, rgba(247,240,229,.42) 78%, rgba(247,240,229,.20) 100%),
     url('/images/generated/advisory-room-1440.webp') center / cover no-repeat;
 }
 .executive-hero::before {
@@ -725,7 +725,7 @@ details { background: var(--warm-white); border: 1px solid var(--stone); border-
 }
 .executive-hero .hero-copy { max-width: 760px; }
 .executive-hero .eyebrow {
-  color: #e9c981;
+  color: var(--burgundy);
   margin-bottom: 1rem;
   letter-spacing: .16em;
 }
@@ -738,7 +738,7 @@ details { background: var(--warm-white); border: 1px solid var(--stone); border-
 }
 .executive-hero .hero-copy > p:not(.eyebrow) {
   max-width: 62ch;
-  color: rgba(255,250,242,.86);
+  color: #504741;
   font-size: clamp(1.05rem, 1.45vw, 1.26rem);
   line-height: 1.65;
   margin-top: 1.25rem;
@@ -754,24 +754,24 @@ details { background: var(--warm-white); border: 1px solid var(--stone); border-
   box-shadow: 0 18px 44px rgba(0,0,0,.18);
 }
 .executive-hero .btn-secondary {
-  color: var(--warm-white);
-  border-color: rgba(255,250,242,.55);
-  background: rgba(255,250,242,.08);
+  color: var(--burgundy-dark);
+  border-color: rgba(100,31,36,.40);
+  background: rgba(255,250,242,.78);
   backdrop-filter: blur(12px);
 }
 .executive-hero .hero-proof-strip { margin-top: 1.25rem; }
 .executive-hero .hero-proof-strip span {
-  background: rgba(255,250,242,.1);
-  color: rgba(255,250,242,.92);
-  border-color: rgba(255,250,242,.24);
+  background: rgba(255,250,242,.82);
+  color: var(--burgundy-dark);
+  border-color: rgba(100,31,36,.22);
   backdrop-filter: blur(12px);
 }
 .executive-hero-panel {
   min-height: 440px;
   align-self: stretch;
-  border: 1px solid rgba(255,250,242,.18);
-  background: rgba(255,250,242,.08);
-  box-shadow: 0 30px 90px rgba(0,0,0,.26);
+  border: 1px solid var(--stone);
+  background: rgba(255,250,242,.78);
+  box-shadow: 0 24px 60px rgba(64,32,22,.14);
   backdrop-filter: blur(8px);
 }
 .executive-hero-panel .visual-photo { min-height: 250px; }

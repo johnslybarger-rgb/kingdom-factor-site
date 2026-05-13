@@ -54,10 +54,10 @@ export const pages: Record<string, PageSpec> = {
     heroImageMobile: "/images/generated/leadership-table-mobile.webp",
     slug: "executive-coaching",
     title: "Executive Coaching Intensive",
-    eyebrow: "Private Executive Coaching with Dr. John Lybarger",
-    heading: "Executive Coaching, Peer Advisory, and Marketplace Ministry.",
+    eyebrow: "Executive Advisory",
+    heading: "Dr. John Lybarger",
     description:
-      "Dr. John Lybarger helps leaders carrying executive-level responsibility gain clarity, make sound decisions, strengthen culture, and lead with disciplined stewardship through expert coaching, pastoral discernment, and executive counsel shaped by real business ownership.",
+      "Executive Coaching, Peer Advisory, and Marketplace Ministry. Dr. John Lybarger helps leaders carrying executive-level responsibility gain clarity, make sound decisions, strengthen culture, and lead with disciplined stewardship through expert coaching, pastoral discernment, and executive counsel shaped by real business ownership.",
     primaryCta: { label: "Request a fit conversation", href: "/apply/" },
     secondaryCta: { label: "Compare peer advisory", href: "/peer-advisory-groups/" },
     sections: [
