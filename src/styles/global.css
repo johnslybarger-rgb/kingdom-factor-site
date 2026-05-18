@@ -3480,3 +3480,54 @@ img, svg, video, canvas, picture {
   .site-header .mobile-nav.global-menu { margin-top: -23px !important; }
 }
 
+/* ============================================================
+   2026-05-18 — Horizontal logo lockup
+   Replaces the square stacked KF + PDC badge with a wide
+   transparent lockup: "Purpose Driven Consulting | Kingdom Factor"
+   Overrides all earlier width-based .brand-logo / .footer-logo
+   sizing rules so the horizontal logo scales by height.
+   ============================================================ */
+.brand.brand-horizontal { gap: 0 !important; }
+
+.site-header .brand-logo-horizontal {
+  display: block !important;
+  height: clamp(28px, 3.8vw, 46px) !important;
+  width: auto !important;
+  max-width: none !important;
+  border-radius: 0 !important;
+  background: none !important;
+  filter: none !important;
+}
+
+@media (max-width: 760px) {
+  .site-header .brand-logo-horizontal {
+    height: 30px !important;
+    max-height: 30px !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .site-header .brand-logo-horizontal {
+    height: 26px !important;
+    max-height: 26px !important;
+  }
+}
+
+.site-footer .footer-logo-horizontal {
+  display: block !important;
+  height: clamp(56px, 7vw, 84px) !important;
+  width: auto !important;
+  max-width: min(280px, 80vw) !important;
+  border-radius: 0 !important;
+  background: none !important;
+  padding: 0 !important;
+  margin-bottom: 1rem !important;
+  filter: none !important;
+}
+@media (max-width: 760px) {
+  .site-footer .footer-logo-horizontal {
+    height: 56px !important;
+    max-height: 56px !important;
+  }
+}
+
