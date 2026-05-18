@@ -1,0 +1,220 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHero from "../components/PageHero.astro";
+import CTA from "../components/CTA.astro";
+import Schema from "../components/Schema.astro";
+
+const services = [
+  {
+    name: "Organizational Development Consulting",
+    body: "Build healthier, higher-performing organizations. We help leaders clarify mission and structure, align teams to strategy, design culture that actually shapes behavior, and lead through transition without losing the people who make the business work.",
+    bullets: [
+      "Mission, vision, and values clarification",
+      "Org design and team structure",
+      "Culture diagnostics and change",
+      "Leadership development and succession",
+    ],
+  },
+  {
+    name: "Human Resources Consulting",
+    body: "Bring biblical principles of justice, dignity, and stewardship into the way you hire, develop, evaluate, and care for your people. We help you upgrade people systems so they reflect both excellence and your convictions.",
+    bullets: [
+      "Hiring, onboarding, and talent strategy",
+      "Performance review and feedback systems",
+      "Compensation philosophy and policy",
+      "Employee handbook and HR policy review",
+    ],
+  },
+  {
+    name: "Operations Consulting",
+    body: "Translate strategy into systems. We help you tighten the operations that quietly run your business — meeting rhythms, decision frameworks, accountability structures, and reporting — so faithful execution is built into the company, not dependent on heroics.",
+    bullets: [
+      "Leadership meeting cadence and agenda design",
+      "Operating rhythm and KPI design",
+      "Process documentation and SOPs",
+      "Decision frameworks for high-stakes calls",
+    ],
+  },
+];
+
+const aboutCards = [
+  {
+    label: "Our story",
+    body: "Purpose Driven Consulting was founded to help Christian business owners and senior leaders build companies that honor God in how they grow, decide, and lead. Decades of executive coaching, organizational psychology, and senior-leadership experience are at the heart of every engagement.",
+  },
+  {
+    label: "Our services",
+    body: "Organizational Development, Human Resources, and Operations consulting — each engagement shaped to your specific stage, season, and people. We bring practical frameworks, biblical conviction, and real business experience into the same room.",
+  },
+  {
+    label: "Our approach",
+    body: "We work alongside you, not above you. Engagements begin with honest diagnosis, move to clear strategy, and end with installed systems your team can actually run. Faith, performance, and care for people are integrated — never treated as competing priorities.",
+  },
+];
+---
+<Base title="Purpose Driven Consulting" description="Faith-integrated organizational development, human resources, and operations consulting for Christian business owners and senior leaders, in partnership with Kingdom Factor." canonical="/purpose-driven-consulting/">
+  <Schema
+    type="Service"
+    title="Purpose Driven Consulting"
+    description="Faith-integrated organizational development, human resources, and operations consulting for Christian business owners and senior leaders."
+    path="/purpose-driven-consulting/"
+    breadcrumbs={[{ name: "Home", item: "/" }, { name: "Purpose Driven Consulting", item: "/purpose-driven-consulting/" }]}
+  />
+
+  <PageHero
+    eyebrow="Purpose Driven Consulting"
+    title="Faith-integrated consulting for owners and senior leaders."
+    subheading="Organizational Development · Human Resources · Operations"
+    text="Purpose Driven Consulting, LLC partners with Christian business owners and senior leaders to clarify strategy, strengthen culture, and install the people and operating systems that translate conviction into faithful, high-performing execution."
+    primary={{ label: "Request a fit conversation", href: "/apply/" }}
+    secondary={{ label: "Explore Kingdom Factor", href: "/" }}
+  />
+
+  <section class="pdc-mission">
+    <div class="pdc-mission-inner">
+      <p class="eyebrow">Our mission</p>
+      <h2>Help Christian owners and leaders build companies where faith, people, and performance are not at war.</h2>
+      <p>Most owners aren't choosing between conviction and results — they're carrying both at once and looking for a way to honor both. Purpose Driven Consulting exists to walk that road with you: clarifying vision, surfacing the truth about your culture and operations, and installing the leadership systems that turn what you believe into how you actually lead.</p>
+    </div>
+  </section>
+
+  <section class="content-section offer-detail-section">
+    <div class="section-header compact">
+      <p class="eyebrow">About Purpose Driven Consulting, LLC</p>
+      <h2>Decades of leadership experience, shaped by faith.</h2>
+      <p>Three lenses into who we are and how we work.</p>
+    </div>
+    <div class="content-grid offer-detail-grid">
+      {aboutCards.map((card, i) => (
+        <article class="content-card offer-detail-card">
+          <span class="card-number">{String(i + 1).padStart(2, "0")}</span>
+          <h3>{card.label}</h3>
+          <p>{card.body}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="pdc-partnership">
+    <div class="pdc-partnership-inner">
+      <p class="eyebrow">Partnership</p>
+      <h2>Purpose Driven Consulting + Kingdom Factor.</h2>
+      <p>Purpose Driven Consulting and Kingdom Factor operate as one integrated platform for Christian business leaders. Kingdom Factor is the relational home — peer advisory groups, executive coaching, marketplace ministry resources, and the Kingdom Factor Collective. Purpose Driven Consulting is the consulting arm — the hands-on diagnostic, strategy, and systems work that turns the wisdom of the room into installed practice inside your company.</p>
+      <p>The two together give you something rare: trusted counsel from peers and coaches who understand your weight, and a consulting partner who can build the systems your leadership needs to be sustainable.</p>
+    </div>
+  </section>
+
+  <section class="pdc-services">
+    <div class="section-header compact">
+      <p class="eyebrow">Business consulting services</p>
+      <h2>Three lanes of consulting work.</h2>
+      <p>Engagements can be scoped narrowly to a specific need or designed as an integrated package across all three lanes.</p>
+    </div>
+    <div class="pdc-services-grid">
+      {services.map((service, i) => (
+        <article class="pdc-service-card">
+          <header>
+            <span class="pdc-service-num">0{i + 1}</span>
+            <h3>{service.name}</h3>
+          </header>
+          <p>{service.body}</p>
+          <ul class="check-list">
+            {service.bullets.map((b) => <li>{b}</li>)}
+          </ul>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <CTA title="Ready to talk through the right starting point?" text="Every Purpose Driven Consulting engagement begins with a fit conversation. We'll talk through what you're carrying, where your business is now, and which lane — organizational development, HR, operations, or an integrated package — best fits the season you're leading through." />
+</Base>
+
+<style>
+  .pdc-mission,
+  .pdc-partnership {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: clamp(2.75rem, 5vw, 4.5rem) clamp(1rem, 4vw, 2rem);
+  }
+  .pdc-partnership {
+    background: rgba(255, 250, 242, 0.62);
+    max-width: none;
+    padding-left: clamp(1rem, 4vw, 2rem);
+    padding-right: clamp(1rem, 4vw, 2rem);
+  }
+  .pdc-mission-inner,
+  .pdc-partnership-inner {
+    max-width: 880px;
+    margin: 0 auto;
+  }
+  .pdc-mission h2,
+  .pdc-partnership h2 {
+    font-size: clamp(2.05rem, 3.6vw, 3.1rem);
+    text-wrap: balance;
+    margin-bottom: 1.1rem;
+  }
+  .pdc-mission p,
+  .pdc-partnership p {
+    font-size: clamp(1.04rem, 1.2vw, 1.16rem);
+    line-height: 1.72;
+    color: #4d423b;
+    margin-bottom: 1rem;
+  }
+
+  .pdc-services {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: clamp(3rem, 6vw, 5rem) clamp(1rem, 4vw, 2rem);
+  }
+  .pdc-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+    gap: clamp(1.25rem, 2.4vw, 1.85rem);
+    margin-top: clamp(2rem, 3.6vw, 2.8rem);
+  }
+  .pdc-service-card {
+    background: rgba(255, 250, 242, 0.55);
+    border: 1px solid rgba(168, 148, 131, 0.32);
+    border-radius: 24px;
+    padding: clamp(1.5rem, 3vw, 2.2rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.32s ease, border-color 0.32s ease;
+  }
+  .pdc-service-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(100, 31, 36, 0.45);
+    box-shadow: 0 18px 40px rgba(100, 31, 36, 0.12);
+  }
+  .pdc-service-card header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid rgba(168, 148, 131, 0.32);
+  }
+  .pdc-service-num {
+    font-size: clamp(1.5rem, 2.3vw, 2rem);
+    font-weight: 800;
+    color: var(--burgundy, #641f24);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .pdc-service-card header h3 {
+    font-size: clamp(1.25rem, 1.7vw, 1.55rem);
+    margin: 0;
+    color: var(--burgundy-dark, #4a0f15);
+    text-wrap: balance;
+  }
+  .pdc-service-card > p {
+    font-size: clamp(1rem, 1.15vw, 1.1rem);
+    line-height: 1.65;
+    color: #4d423b;
+    margin: 0;
+  }
+  .pdc-service-card .check-list {
+    margin: 0;
+    padding: 0;
+  }
+</style>

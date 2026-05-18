@@ -11,6 +11,7 @@ export const nav = [
   { href: "/peer-advisory-groups/", label: "Peer Advisory" },
   { href: "/executive-coaching/", label: "Executive Coaching" },
   { href: "/peer-community/", label: "Peer Community" },
+  { href: "/purpose-driven-consulting/", label: "Consulting" },
   { href: "/books/", label: "Books" },
   { href: "/blog/", label: "Blog" },
   { href: "/about/", label: "About" },
@@ -25,6 +26,7 @@ export const publicRoutes = [
   { path: "/leadership-circle/", label: "Leadership Circle", priority: "0.8" },
   { path: "/marketplace-ministry/", label: "Marketplace Ministry", priority: "0.8" },
   { path: "/collective/", label: "Kingdom Factor Collective", priority: "0.7" },
+  { path: "/purpose-driven-consulting/", label: "Purpose Driven Consulting", priority: "0.8" },
   { path: "/books/", label: "Books and Resources", priority: "0.8" },
   { path: "/blog/", label: "Blog and Resources", priority: "0.7" },
   { path: "/about/", label: "About Kingdom Factor", priority: "0.7" },
@@ -76,6 +78,13 @@ export const offers = [
     audience: "Christian business leaders with stories to share",
     summary:
       "A story and interview archive concept for capturing real examples of faithful leadership in the marketplace.",
+  },
+  {
+    title: "Purpose Driven Consulting",
+    href: "/purpose-driven-consulting/",
+    audience: "Owners and senior leaders ready to install systems",
+    summary:
+      "Faith-integrated organizational development, human resources, and operations consulting — the hands-on partner that turns Kingdom-shaped vision into installed practice.",
   },
 ];
 
