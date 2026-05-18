@@ -2764,15 +2764,24 @@ img, svg, video, canvas, picture {
 }
 .decision-room-section {
   display: grid;
-  grid-template-columns: minmax(0, .9fr) minmax(420px, 1fr);
-  gap: clamp(1.6rem, 5vw, 4.3rem);
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4.3rem);
   align-items: start;
   border-bottom: 1px solid rgba(168,148,131,.26);
 }
+.decision-room-copy,
+.decision-room-lines,
+.council-model-intro,
+.council-model-list {
+  min-width: 0;
+}
 .decision-room-copy h2,
 .council-model-intro h2 {
-  font-size: clamp(2.3rem, 4.6vw, 4.55rem) !important;
+  font-size: clamp(2.2rem, 4.2vw, 4.2rem) !important;
   text-wrap: balance;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 .decision-room-lines {
   display: grid;
@@ -2792,8 +2801,8 @@ img, svg, video, canvas, picture {
 }
 .council-model-section {
   display: grid;
-  grid-template-columns: minmax(0, .74fr) minmax(460px, 1fr);
-  gap: clamp(1.8rem, 5vw, 4.5rem);
+  grid-template-columns: minmax(0, .74fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
   align-items: start;
 }
 .council-model-intro {
