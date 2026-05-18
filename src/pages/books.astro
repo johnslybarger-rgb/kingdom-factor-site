@@ -3,48 +3,149 @@ import Base from "../layouts/Base.astro";
 import PageHero from "../components/PageHero.astro";
 import CTA from "../components/CTA.astro";
 import Schema from "../components/Schema.astro";
-import { bookHighlights } from "../lib/site";
-const johnBooks = [
-  "The Leadership Circle: Peer Advisory Groups — A Christian Leader's Guide to Accountability, Authentic Connections, Action, and Spiritual Growth",
-  "Marketplace Ministry: The Christian Leader's Guidebook for Building a Kingdom Business",
-  "Lead Like Jesus: A Biblical Blueprint for Spiritual Servant Leadership Excellence",
-  "Biblical Accountability: A Practical Guide for Creating an Accountability Culture and Instilling Trust in Ministries",
-  "Relational Intelligence: The Leader's Guide to Building High-Trust, High-Performance Teams",
-  "The Resilient Team: A Leader's Guide to Building Psychological Safety and Holistic Well-Being at Work",
-  "Speaking the Language of Change: A Leader's Guide to Powerful Dialogue and Collective Action",
-  "The Small Business Learning Revolution: A Field Guide to Talent Development in the Digital Age",
-  "Leading with Purpose: The Small Business Management Playbook",
-  "Leading Change One Conversation at a Time: How to Coach Individuals and Teams Through Transformation",
-  "The Coaching Skills Playbook: A Practical Guide for Supervisors, Managers, and Executives to Develop People, Potential, and Careers",
-  "The Peer Coaches Handbook: Aligning Leaders Through Collaborative Learning",
-  "Managing Organizational Conflict: Turning Tension into Trust and Collaboration",
-  "From Navigator to Mapmaker: Leading Your Organization's Future Journey — How to Stop Managing Daily Crises, and Start Building Systems that Lead Themselves",
-  "Beyond Boundaries: The Essential Guide to Spanning Silos and Unifying Your Organization",
+
+type BookEntry = { title: string; url?: string | null };
+
+const johnBooks: BookEntry[] = [
+  { title: "The Leadership Circle: Peer Advisory Groups — A Christian Leader's Guide to Accountability, Authentic Connections, Action, and Spiritual Growth", url: null },
+  { title: "Marketplace Ministry: The Christian Leader's Guidebook for Building a Kingdom Business", url: null },
+  { title: "Lead Like Jesus: A Biblical Blueprint for Spiritual Servant Leadership Excellence", url: null },
+  { title: "Biblical Accountability: A Practical Guide for Creating an Accountability Culture and Instilling Trust in Ministries", url: null },
+  { title: "Relational Intelligence: The Leader's Guide to Building High-Trust, High-Performance Teams", url: null },
+  { title: "The Resilient Team: A Leader's Guide to Building Psychological Safety and Holistic Well-Being at Work", url: null },
+  { title: "Speaking the Language of Change: A Leader's Guide to Powerful Dialogue and Collective Action", url: null },
+  { title: "The Small Business Learning Revolution: A Field Guide to Talent Development in the Digital Age", url: null },
+  { title: "Leading with Purpose: The Small Business Management Playbook", url: null },
+  { title: "Leading Change One Conversation at a Time: How to Coach Individuals and Teams Through Transformation", url: null },
+  { title: "The Coaching Skills Playbook: A Practical Guide for Supervisors, Managers, and Executives to Develop People, Potential, and Careers", url: null },
+  { title: "The Peer Coaches Handbook: Aligning Leaders Through Collaborative Learning", url: null },
+  { title: "Managing Organizational Conflict: Turning Tension into Trust and Collaboration", url: null },
+  { title: "From Navigator to Mapmaker: Leading Your Organization's Future Journey — How to Stop Managing Daily Crises, and Start Building Systems that Lead Themselves", url: null },
+  { title: "Beyond Boundaries: The Essential Guide to Spanning Silos and Unifying Your Organization", url: null },
 ];
-const jimBooks = ["Rise in Peer Community", "The Story You're Living", "Soar Like an Eagle"];
+
+const jimBooks: BookEntry[] = [
+  { title: "Rise in Peer Community", url: null },
+  { title: "The Story You're Living", url: null },
+  { title: "Soar Like an Eagle", url: null },
+];
 ---
-<Base title="Books & Resources" description="Kingdom Factor books, author resources, webinar material, and source-backed pathways for Christian business leaders." canonical="/books/">
-  <Schema type="WebPage" title="Books & Resources" description="Kingdom Factor books, author resources, webinar material, and source-backed pathways for Christian business leaders." path="/books/" breadcrumbs={[{ name: "Home", item: "/" }, { name: "Books & Resources", item: "/books/" }]} />
-  <PageHero eyebrow="Books and resources" title="Source-backed authority for Christian business leadership." text="Kingdom Factor's website can turn John and Jim's source library into clear public pathways, lead magnets, webinars, and content once permissions, covers, links, and excerpt rights are approved." primary={{ label: "Explore Marketplace Ministry", href: "/marketplace-ministry/" }} secondary={{ label: "Request a fit conversation", href: "/apply/" }} />
-  <section class="content-section">
-    <div class="two-column">
-      <article class="content-card">
-        <span class="card-number">John</span>
-        <h2>Dr. Lybarger's Books</h2>
-        <p>Use approved books to support the executive coaching, peer advisory, biblical accountability, conflict, leadership, coaching, and marketplace ministry lanes.</p>
-        <ul class="check-list">{johnBooks.map((item) => <li>{item}</li>)}</ul>
-      </article>
-      <article class="content-card">
-        <span class="card-number">Jim</span>
-        <h2>Jim Lybarger's Books</h2>
-        <p>Use Jim's books to support the emerging-owner path around story, values, identity, peer community, and meaning-driven leadership.</p>
-        <ul class="check-list">{jimBooks.map((item) => <li>{item}</li>)}</ul>
-      </article>
+<Base title="Books by Dr. John S. Lybarger and Jim Lybarger" description="Published books from Dr. John S. Lybarger and Jim Lybarger on Christian leadership, marketplace ministry, peer advisory, coaching, culture, and stewardship." canonical="/books/">
+  <Schema type="WebPage" title="Books by Dr. John S. Lybarger and Jim Lybarger" description="Published books from Dr. John S. Lybarger and Jim Lybarger on Christian leadership, marketplace ministry, peer advisory, coaching, culture, and stewardship." path="/books/" breadcrumbs={[{ name: "Home", item: "/" }, { name: "Books", item: "/books/" }]} />
+  <PageHero
+    eyebrow="Books by Dr. John S. Lybarger and Jim Lybarger"
+    title="Practical wisdom for Christian owners and executives seeking to expand their marketplace ministry."
+    text="Decades of leadership wisdom in print — covering peer advisory, marketplace ministry, executive coaching, culture, biblical accountability, conflict, change, and Christ-centered leadership. Each title links out to its publisher or retailer."
+    primary={{ label: "Request a fit conversation", href: "/apply/" }}
+    secondary={{ label: "Explore marketplace ministry", href: "/marketplace-ministry/" }}
+  />
+
+  <section class="content-section books-section">
+    <div class="section-header">
+      <p class="eyebrow">Dr. John S. Lybarger</p>
+      <h2>Books by Dr. Lybarger</h2>
+      <p>Dr. Lybarger's library spans peer advisory, marketplace ministry, executive coaching, biblical accountability, organizational change, and Christ-centered leadership development.</p>
+    </div>
+    <div class="books-grid">
+      {johnBooks.map((book) => (
+        <article class="book-card">
+          <h3>{book.title}</h3>
+          {book.url ? (
+            <a class="book-link" href={book.url} target="_blank" rel="noopener">View this book →</a>
+          ) : (
+            <span class="book-link book-link-pending">Purchase link coming soon</span>
+          )}
+        </article>
+      ))}
     </div>
   </section>
-  <section class="authority-section compact">
-    <div class="authority-copy"><p class="eyebrow">Lead magnet candidates</p><h2>Turn source material into useful first steps.</h2><p>Recommended candidates: readiness assessment, Leadership Circle briefing, Marketplace Ministry resource, peer advisory fit checklist, or a permissioned book chapter/reading guide.</p></div>
-    <div class="book-cloud">{bookHighlights.map((book) => <span>{book}</span>)}</div>
+
+  <section class="content-section books-section">
+    <div class="section-header">
+      <p class="eyebrow">James C. "Jim" Lybarger</p>
+      <h2>Books by Jim Lybarger</h2>
+      <p>Jim's work supports emerging owners, founders, and Christian professionals walking through transition, identity, and second-chance leadership.</p>
+    </div>
+    <div class="books-grid">
+      {jimBooks.map((book) => (
+        <article class="book-card">
+          <h3>{book.title}</h3>
+          {book.url ? (
+            <a class="book-link" href={book.url} target="_blank" rel="noopener">View this book →</a>
+          ) : (
+            <span class="book-link book-link-pending">Purchase link coming soon</span>
+          )}
+        </article>
+      ))}
+    </div>
   </section>
+
   <CTA />
 </Base>
+
+<style>
+  .books-section {
+    padding-top: clamp(3rem, 5.5vw, 5rem);
+    padding-bottom: clamp(3rem, 5.5vw, 5rem);
+  }
+  .books-section .section-header {
+    max-width: 820px;
+    margin: 0 auto clamp(2rem, 4vw, 3rem);
+    text-align: center;
+  }
+  .books-section .section-header h2 {
+    font-size: clamp(2.1rem, 3.6vw, 3.2rem);
+    text-wrap: balance;
+  }
+  .books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+    gap: clamp(1rem, 2vw, 1.5rem);
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 4vw, 2rem);
+  }
+  .book-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: clamp(1.25rem, 2.2vw, 1.65rem);
+    background: rgba(255, 250, 242, 0.7);
+    border: 1px solid rgba(168, 148, 131, 0.32);
+    border-radius: 22px;
+    transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.32s ease, border-color 0.32s ease;
+    min-height: 200px;
+  }
+  .book-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(100, 31, 36, 0.45);
+    box-shadow: 0 18px 40px rgba(100, 31, 36, 0.12);
+  }
+  .book-card h3 {
+    font-size: clamp(1.05rem, 1.3vw, 1.18rem);
+    line-height: 1.32;
+    color: var(--burgundy-dark, #4a0f15);
+    text-wrap: balance;
+    max-width: 30ch;
+  }
+  .book-link {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 0.92rem;
+    color: var(--burgundy, #641f24);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    padding-top: 0.4rem;
+    border-top: 1px solid rgba(168, 148, 131, 0.32);
+  }
+  .book-link:hover {
+    color: var(--burgundy-dark, #4a0f15);
+  }
+  .book-link-pending {
+    color: rgba(81, 70, 63, 0.62);
+    font-weight: 500;
+    font-style: italic;
+    cursor: default;
+  }
+</style>
