@@ -1202,6 +1202,18 @@ h3 { font-size: var(--display-h3); line-height: 1.05; letter-spacing: -.032em; }
   max-width: 58ch;
   font-size: clamp(1.05rem, 1.25vw, 1.18rem);
 }
+.page-hero .hero-content .hero-subheading {
+  font-family: var(--display, "Cormorant Garamond", "Source Serif Pro", Georgia, serif);
+  font-size: clamp(1.45rem, 2vw, 1.95rem);
+  line-height: 1.25;
+  letter-spacing: -.01em;
+  color: var(--burgundy, #641f24);
+  font-weight: 500;
+  margin-top: .9rem;
+  margin-bottom: .25rem;
+  max-width: 32ch;
+  text-wrap: balance;
+}
 .page-hero .photo-hero-card,
 .page-hero .hero-card {
   min-height: clamp(420px, 38vw, 540px);
@@ -2127,14 +2139,14 @@ img, svg, video, canvas, picture {
   }
 }
 
-/* Hero and motion recovery pass: remove contrast-scan card treatment and restore designed movement. */
+/* Hero brightness pass 2026-05-18: cream wash, dark ink. Homepage now matches the other pages. */
 @media (min-width: 761px) {
   .home-hero.executive-hero {
     background:
-      radial-gradient(circle at 82% 14%, rgba(248,229,170,.26), transparent 28%),
-      linear-gradient(90deg, rgba(28,14,14,.92) 0%, rgba(54,19,22,.78) 48%, rgba(50,22,22,.46) 100%),
+      radial-gradient(circle at 82% 14%, rgba(213,178,111,.22), transparent 36%),
+      linear-gradient(95deg, rgba(247,240,229,.94) 0%, rgba(247,240,229,.80) 48%, rgba(247,240,229,.55) 100%),
       url('/images/generated/advisory-room-1440.webp') center / cover no-repeat !important;
-    color: var(--warm-white) !important;
+    color: var(--ink) !important;
   }
   .home-hero .hero-copy,
   .executive-hero .hero-copy {
@@ -2142,43 +2154,45 @@ img, svg, video, canvas, picture {
     border: 0 !important;
     border-radius: 0 !important;
     padding: 0 !important;
-    color: var(--warm-white) !important;
+    color: var(--ink) !important;
     max-width: 760px !important;
   }
   .home-hero .hero-copy h1,
   .executive-hero .hero-copy h1 {
-    color: var(--warm-white) !important;
-    text-shadow: 0 2px 24px rgba(0,0,0,.22);
+    color: var(--ink) !important;
+    text-shadow: none !important;
   }
   .home-hero .hero-copy .eyebrow,
   .executive-hero .hero-copy .eyebrow {
-    color: #f8e5aa !important;
+    color: var(--burgundy, #641f24) !important;
   }
   .home-hero .hero-copy > p:not(.eyebrow),
   .executive-hero .hero-copy > p:not(.eyebrow) {
-    color: rgba(255,250,242,.9) !important;
+    color: #504741 !important;
     max-width: 58ch !important;
   }
   .home-hero .btn-primary,
   .executive-hero .btn-primary {
-    background: #fff3df !important;
-    color: var(--burgundy-dark) !important;
+    background: var(--burgundy, #641f24) !important;
+    color: var(--warm-white, #fff7eb) !important;
+    box-shadow: 0 18px 44px rgba(100,31,36,.22);
   }
   .home-hero .btn-secondary,
   .executive-hero .btn-secondary {
-    color: var(--warm-white) !important;
-    background: rgba(255,250,242,.08) !important;
-    border-color: rgba(255,250,242,.52) !important;
+    color: var(--burgundy-dark, #4a0f15) !important;
+    background: rgba(255,250,242,.78) !important;
+    border-color: rgba(100,31,36,.40) !important;
+    backdrop-filter: blur(12px);
   }
   .home-hero .hero-proof-strip span,
   .executive-hero .hero-proof-strip span {
-    color: rgba(255,250,242,.94) !important;
-    background: rgba(255,250,242,.09) !important;
-    border-color: rgba(255,250,242,.22) !important;
+    color: var(--burgundy-dark, #4a0f15) !important;
+    background: rgba(255,250,242,.82) !important;
+    border-color: rgba(100,31,36,.22) !important;
   }
   .executive-hero-panel {
-    background: rgba(255,250,242,.08) !important;
-    border: 1px solid rgba(255,250,242,.18) !important;
+    background: rgba(255,250,242,.62) !important;
+    border: 1px solid rgba(100,31,36,.16) !important;
     backdrop-filter: blur(6px);
   }
   .executive-hero-panel .visual-panel {
@@ -2191,10 +2205,10 @@ img, svg, video, canvas, picture {
   .home-hero.executive-hero {
     position: relative;
     background:
-      linear-gradient(180deg, rgba(38,16,18,.84), rgba(63,18,22,.76)),
+      linear-gradient(180deg, rgba(247,240,229,.92), rgba(247,240,229,.74)),
       url('/images/generated/advisory-room-mobile.webp') center top / cover no-repeat !important;
     padding: 1.15rem .95rem 1.35rem !important;
-    color: var(--warm-white) !important;
+    color: var(--ink) !important;
   }
   .home-hero .hero-copy,
   .executive-hero .hero-copy {
@@ -2202,38 +2216,38 @@ img, svg, video, canvas, picture {
     border: 0 !important;
     border-radius: 0 !important;
     padding: .35rem 0 .15rem !important;
-    color: var(--warm-white) !important;
+    color: var(--ink) !important;
   }
   .home-hero .hero-copy h1,
   .executive-hero .hero-copy h1 {
-    color: var(--warm-white) !important;
+    color: var(--ink) !important;
     max-width: 11.5ch !important;
-    text-shadow: 0 2px 20px rgba(0,0,0,.24);
+    text-shadow: none !important;
   }
   .home-hero .hero-copy .eyebrow,
   .executive-hero .hero-copy .eyebrow {
-    color: #f8e5aa !important;
+    color: var(--burgundy, #641f24) !important;
   }
   .home-hero .hero-copy > p:not(.eyebrow),
   .executive-hero .hero-copy > p:not(.eyebrow) {
-    color: rgba(255,250,242,.92) !important;
+    color: #504741 !important;
   }
   .home-hero .btn-primary,
   .executive-hero .btn-primary {
-    background: #fff3df !important;
-    color: var(--burgundy-dark) !important;
+    background: var(--burgundy, #641f24) !important;
+    color: var(--warm-white, #fff7eb) !important;
   }
   .home-hero .btn-secondary,
   .executive-hero .btn-secondary {
-    background: rgba(255,250,242,.1) !important;
-    color: var(--warm-white) !important;
-    border-color: rgba(255,250,242,.48) !important;
+    background: rgba(255,250,242,.78) !important;
+    color: var(--burgundy-dark, #4a0f15) !important;
+    border-color: rgba(100,31,36,.40) !important;
   }
   .home-hero .hero-proof-strip span,
   .executive-hero .hero-proof-strip span {
-    color: var(--warm-white) !important;
-    background: rgba(255,250,242,.12) !important;
-    border-color: rgba(255,250,242,.22) !important;
+    color: var(--burgundy-dark, #4a0f15) !important;
+    background: rgba(255,250,242,.82) !important;
+    border-color: rgba(100,31,36,.22) !important;
   }
   .home-hero .hero-decision-visual,
   .home-hero .executive-hero-panel {
@@ -2427,7 +2441,7 @@ img, svg, video, canvas, picture {
   inset: auto 0 0;
   height: 34%;
   z-index: -1;
-  background: linear-gradient(180deg, transparent, rgba(38,16,18,.46));
+  background: linear-gradient(180deg, transparent, rgba(247,240,229,.42));
   pointer-events: none;
 }
 @media (min-width: 981px) {
@@ -2633,17 +2647,17 @@ img, svg, video, canvas, picture {
   gap: clamp(1.4rem, 4vw, 3rem);
   padding: clamp(4rem, 7vw, 6.25rem) max(clamp(1.15rem, 6vw, 5rem), calc((100vw - var(--max)) / 2)) clamp(1.65rem, 4vw, 3rem) !important;
   overflow: hidden;
-  color: var(--warm-white);
+  color: var(--ink);
   background:
-    radial-gradient(circle at 88% 18%, rgba(213,178,111,.24), transparent 28%),
-    linear-gradient(90deg, rgba(26,13,13,.94) 0%, rgba(37,16,17,.82) 48%, rgba(44,19,20,.46) 100%),
+    radial-gradient(circle at 82% 18%, rgba(213,178,111,.22), transparent 36%),
+    linear-gradient(95deg, rgba(247,240,229,.94) 0%, rgba(247,240,229,.78) 42%, rgba(247,240,229,.42) 78%, rgba(247,240,229,.20) 100%),
     url('/images/generated/advisory-room-1440.webp') center / cover no-repeat;
 }
 .editorial-hero::before {
   content: "";
   position: absolute;
   inset: clamp(.7rem, 2vw, 1.2rem);
-  border: 1px solid rgba(255,250,242,.18);
+  border: 1px solid rgba(100,31,36,.16);
   border-radius: clamp(24px, 4vw, 52px);
   pointer-events: none;
 }
@@ -2654,7 +2668,7 @@ img, svg, video, canvas, picture {
   right: 0;
   bottom: 0;
   height: 28%;
-  background: linear-gradient(180deg, transparent, rgba(247,240,229,.18));
+  background: linear-gradient(180deg, transparent, rgba(247,240,229,.32));
   pointer-events: none;
 }
 .editorial-hero-copy {
@@ -2665,7 +2679,7 @@ img, svg, video, canvas, picture {
 }
 .editorial-hero .eyebrow {
   max-width: 62ch;
-  color: #e6c377 !important;
+  color: var(--burgundy, #641f24) !important;
   letter-spacing: .12em;
   font-size: clamp(.72rem, .82vw, .84rem);
 }
@@ -2678,7 +2692,7 @@ img, svg, video, canvas, picture {
 }
 .editorial-hero .hero-copy > p:not(.eyebrow) {
   max-width: 58ch !important;
-  color: rgba(255,250,242,.9) !important;
+  color: #504741 !important;
   font-size: clamp(1.08rem, 1.35vw, 1.24rem) !important;
   line-height: 1.66 !important;
   margin-top: clamp(1rem, 2vw, 1.35rem) !important;
@@ -2698,9 +2712,10 @@ img, svg, video, canvas, picture {
   box-shadow: 0 18px 46px rgba(0,0,0,.18) !important;
 }
 .editorial-hero .btn-secondary {
-  background: rgba(255,250,242,.08) !important;
-  border-color: rgba(255,250,242,.48) !important;
-  color: var(--warm-white) !important;
+  background: rgba(255,250,242,.78) !important;
+  border-color: rgba(100,31,36,.40) !important;
+  color: var(--burgundy-dark, #4a0f15) !important;
+  backdrop-filter: blur(12px);
 }
 .hero-aside {
   position: relative;
@@ -3052,7 +3067,8 @@ img, svg, video, canvas, picture {
 }
 
 
-/* 2026-05-10 desktop hero correction: no right-side badge/panel, no split hero. */
+/* 2026-05-10 desktop hero correction: no right-side badge/panel, no split hero.
+   2026-05-18 brightness pass: cream wash to match the other pages. */
 .home-hero.editorial-hero,
 .editorial-hero.executive-hero {
   min-height: min(760px, calc(100svh - 74px)) !important;
@@ -3064,9 +3080,10 @@ img, svg, video, canvas, picture {
   gap: 0 !important;
   padding: clamp(5.6rem, 9vw, 8.25rem) max(clamp(1.2rem, 6vw, 5rem), calc((100vw - var(--max)) / 2)) clamp(4.4rem, 7vw, 6.75rem) !important;
   text-align: center !important;
+  color: var(--ink) !important;
   background:
-    radial-gradient(circle at 50% 18%, rgba(213,178,111,.18), transparent 30%),
-    linear-gradient(90deg, rgba(24,12,12,.88) 0%, rgba(40,17,18,.72) 48%, rgba(24,12,12,.86) 100%),
+    radial-gradient(circle at 50% 18%, rgba(213,178,111,.22), transparent 36%),
+    linear-gradient(95deg, rgba(247,240,229,.92) 0%, rgba(247,240,229,.80) 48%, rgba(247,240,229,.62) 100%),
     url('/images/generated/advisory-room-1440.webp') center / cover no-repeat !important;
 }
 .editorial-hero .editorial-hero-copy,
@@ -3090,7 +3107,7 @@ img, svg, video, canvas, picture {
 .editorial-hero .editorial-hero-copy > p:not(.eyebrow) {
   max-width: 58ch !important;
   margin-inline: auto !important;
-  color: rgba(255,250,242,.86) !important;
+  color: #504741 !important;
 }
 .editorial-hero .actions,
 .editorial-hero .hero-actions {

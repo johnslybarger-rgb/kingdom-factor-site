@@ -1,11 +1,12 @@
 ---
-interface Props { eyebrow: string; title: string; text: string; primary?: { label: string; href: string }; secondary?: { label: string; href: string }; image?: string; imageMobile?: string; }
-const { eyebrow, title, text, primary, secondary, image = "/images/generated/advisory-room-1440.webp", imageMobile = "/images/generated/advisory-room-mobile.webp" } = Astro.props;
+interface Props { eyebrow: string; title: string; subheading?: string; text: string; primary?: { label: string; href: string }; secondary?: { label: string; href: string }; image?: string; imageMobile?: string; }
+const { eyebrow, title, subheading, text, primary, secondary, image = "/images/generated/advisory-room-1440.webp", imageMobile = "/images/generated/advisory-room-mobile.webp" } = Astro.props;
 ---
 <section class="page-hero">
   <div class="hero-content">
     <p class="eyebrow">{eyebrow}</p>
     <h1>{title}</h1>
+    {subheading && <p class="hero-subheading">{subheading}</p>}
     <p>{text}</p>
     <div class="actions">
       {primary && <a class="btn btn-primary" href={primary.href}>{primary.label}</a>}

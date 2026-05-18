@@ -3,6 +3,7 @@ export type PageSpec = {
   title: string;
   eyebrow: string;
   heading: string;
+  subheading?: string;
   description: string;
   primaryCta?: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
@@ -56,8 +57,9 @@ export const pages: Record<string, PageSpec> = {
     title: "Executive Coaching Intensive",
     eyebrow: "Executive Advisory",
     heading: "Dr. John Lybarger",
+    subheading: "Executive Coaching, Peer Advisory, and Marketplace Ministry.",
     description:
-      "Executive Coaching, Peer Advisory, and Marketplace Ministry. Dr. John Lybarger helps leaders carrying executive-level responsibility gain clarity, make sound decisions, strengthen culture, and lead with disciplined stewardship through expert coaching, pastoral discernment, and executive counsel shaped by real business ownership.",
+      "Dr. John Lybarger helps leaders carrying executive-level responsibility gain clarity, make sound decisions, strengthen culture, and lead with disciplined stewardship through expert coaching, pastoral discernment, and executive counsel shaped by real business ownership.",
     primaryCta: { label: "Request a fit conversation", href: "/apply/" },
     secondaryCta: { label: "Compare peer advisory", href: "/peer-advisory-groups/" },
     sections: [
