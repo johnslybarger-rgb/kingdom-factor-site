@@ -265,18 +265,19 @@ const phases = [
 
   <section class="kci-pricing">
     <div class="kci-pricing-inner">
-      <p class="eyebrow">Investment</p>
-      <h2>Two coaches, two price points.</h2>
+      <p class="eyebrow">Choose your coach</p>
+      <h2>Two seasoned coaches. One framework. Different seasons of leadership.</h2>
+      <p class="kci-pricing-lede">The Kingdom Culture Intensive runs the same 90-day arc with either coach. Who you work with depends on the season you're in, the kind of decisions you're carrying, and the leader who's the right fit for you. Start with a fit conversation and we'll help you decide.</p>
       <div class="kci-pricing-grid">
         <article class="kci-price-card">
           <p class="kci-price-coach">Dr. John S. Lybarger</p>
-          <p class="kci-price-amount">$6,000</p>
+          <p class="kci-price-role">Executive coaching for established owners, executives, and senior leaders.</p>
           <p class="kci-price-note">Full 90-day intensive, all tools and templates, access to a peer advisory group and monthly coaching during the intensive.</p>
           <a class="btn btn-primary" href="/apply/">Request a fit conversation</a>
         </article>
         <article class="kci-price-card">
           <p class="kci-price-coach">James C. "Jim" Lybarger</p>
-          <p class="kci-price-amount">$3,000</p>
+          <p class="kci-price-role">Coaching for emerging owners, founders, and bi-vocational leaders.</p>
           <p class="kci-price-note">Full 90-day intensive, all tools and templates, access to a peer advisory group and monthly coaching during the intensive.</p>
           <a class="btn btn-primary" href="/apply/">Request a fit conversation</a>
         </article>
@@ -519,20 +520,29 @@ const phases = [
     gap: 0.75rem;
   }
   .kci-price-coach {
-    font-size: 0.85rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--burgundy, #641f24);
-    font-weight: 700;
-    margin: 0;
-  }
-  .kci-price-amount {
     font-family: var(--display, "Cormorant Garamond", "Source Serif Pro", Georgia, serif);
-    font-size: clamp(2.6rem, 4vw, 3.6rem);
-    line-height: 1;
+    font-size: clamp(1.5rem, 2.2vw, 2rem);
+    line-height: 1.15;
     color: var(--burgundy-dark, #4a0f15);
     margin: 0;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  .kci-price-role {
+    font-size: 0.86rem;
+    letter-spacing: 0.04em;
+    color: var(--burgundy, #641f24);
+    font-weight: 600;
+    margin: 0;
+    text-transform: uppercase;
+    line-height: 1.45;
+  }
+  .kci-pricing-lede {
+    max-width: 760px;
+    margin-bottom: clamp(1.5rem, 3vw, 2.4rem);
+    font-size: clamp(1.02rem, 1.2vw, 1.14rem);
+    line-height: 1.65;
+    color: #4d423b;
   }
   .kci-price-note {
     font-size: 0.96rem;
