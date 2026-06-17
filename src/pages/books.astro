@@ -4,30 +4,61 @@ import PageHero from "../components/PageHero.astro";
 import CTA from "../components/CTA.astro";
 import Schema from "../components/Schema.astro";
 
-type BookEntry = { title: string; url?: string | null };
+type BookEntry = { title: string; subtitle?: string; url?: string | null };
+type BookGroup = { category: string; books: BookEntry[] };
 
-const johnBooks: BookEntry[] = [
-  { title: "The Leadership Circle: Peer Advisory Groups — A Christian Leader's Guide to Accountability, Authentic Connections, Action, and Spiritual Growth", url: null },
-  { title: "Marketplace Ministry: The Christian Leader's Guidebook for Building a Kingdom Business", url: null },
-  { title: "Lead Like Jesus: A Biblical Blueprint for Spiritual Servant Leadership Excellence", url: null },
-  { title: "Biblical Accountability: A Practical Guide for Creating an Accountability Culture and Instilling Trust in Ministries", url: null },
-  { title: "Relational Intelligence: The Leader's Guide to Building High-Trust, High-Performance Teams", url: null },
-  { title: "The Resilient Team: A Leader's Guide to Building Psychological Safety and Holistic Well-Being at Work", url: null },
-  { title: "Speaking the Language of Change: A Leader's Guide to Powerful Dialogue and Collective Action", url: null },
-  { title: "The Small Business Learning Revolution: A Field Guide to Talent Development in the Digital Age", url: null },
-  { title: "Leading with Purpose: The Small Business Management Playbook", url: null },
-  { title: "Leading Change One Conversation at a Time: How to Coach Individuals and Teams Through Transformation", url: null },
-  { title: "The Coaching Skills Playbook: A Practical Guide for Supervisors, Managers, and Executives to Develop People, Potential, and Careers", url: null },
-  { title: "The Peer Coaches Handbook: Aligning Leaders Through Collaborative Learning", url: null },
-  { title: "Managing Organizational Conflict: Turning Tension into Trust and Collaboration", url: null },
-  { title: "From Navigator to Mapmaker: Leading Your Organization's Future Journey — How to Stop Managing Daily Crises, and Start Building Systems that Lead Themselves", url: null },
-  { title: "Beyond Boundaries: The Essential Guide to Spanning Silos and Unifying Your Organization", url: null },
+const johnAuthorPage = "https://www.amazon.com/author/drjohnslybarger";
+
+const johnBookGroups: BookGroup[] = [
+  {
+    category: "Faith-based leadership",
+    books: [
+      { title: "The Leadership Circle: Peer Advisory Groups: A Christian Leader's Guide to Accountability, Authentic Connection, and Spiritual Growth", url: "https://www.amazon.com/dp/B0GQNS8Q4W" },
+      { title: "Marketplace Ministry: The Christian Leader's Guidebook for Building a Kingdom Business", url: "https://www.amazon.com/dp/B0G45WDJL8" },
+      { title: "Lead Like Jesus: A Biblical Blueprint for Servant Leadership Excellence", url: "https://www.amazon.com/dp/B0GM8VMQ3P" },
+      { title: "Biblical Accountability: A Practical Guide for Creating an Accountability Culture and Instilling Trust in Ministries", url: "https://www.amazon.com/dp/B0GFY35SHH" },
+      { title: "Relational Intelligence for Church Leaders: Practical Wisdom from Paul's Letters for Christian Leadership, Team Building, and Ministry Growth", url: "https://www.amazon.com/dp/B0GD2S7FWM" },
+      { title: "From Wounds to Wisdom: A Faith-Based Framework for Post-Traumatic Growth and Pastoral Coaching", url: "https://www.amazon.com/dp/B0G4XS4ST9" },
+      { title: "Rebuilding Life Beyond: From Potential to Presence: A Practical Guide for Christian Coaches and Spiritual Directors—Bridging Church, Community, Contemporary Life, and Digital Realities", url: "https://www.amazon.com/dp/B0G45NJ6Q8" },
+      { title: "Rebuilding Life Beyond: Creating Connection and Belonging in a Lonely World: A Biblical Guide for Creating Relationship, Fellowship, Stewardship, Leadership, Discipleship, and Worship", url: "https://www.amazon.com/dp/B0G45NKTVS" },
+      { title: "Rebuilding Life Beyond: Discipleship in Community: A Step-By-Step Guide for Small Group Leaders", url: "https://www.amazon.com/dp/B0FP46DP7H" },
+      { title: "Rebuilding Life Beyond: Forgiving Oneself and Moving Forward with a Renewed Sense of Purpose: A Practical Christian Guide for Breaking Free from Guilt, Shame, Resentment, and Unforgiveness", url: "https://www.amazon.com/dp/B0G45K2QN7" },
+      { title: "Rebuilding Life Beyond: From Hurt to Hope—Rebuilding Relationships in Your Church: A Pastor's Guide to Emotional Intelligence as a Leadership Skill—Cultivating Self-Awareness and Conflict Resolution", url: "https://www.amazon.com/dp/B0G45JCQNQ" },
+    ],
+  },
+  {
+    category: "Leadership",
+    books: [
+      { title: "Relational Intelligence: The Leader's Guide to Building High-Trust, High-Performance Teams", url: "https://www.amazon.com/dp/B0GDRVN3T5" },
+      { title: "The Resilient Team: A Leader's Guide to Building Psychological Safety and Holistic Well-Being at Work", url: "https://www.amazon.com/dp/B0GDGFSCT7" },
+      { title: "Speaking the Language of Change: A Leader's Guide to Powerful Dialogue and Collective Action", url: "https://www.amazon.com/dp/B0GDCPGGTG" },
+      { title: "Leading with Purpose: The Small Business Management Playbook", url: "https://www.amazon.com/dp/B0GCL65GXB" },
+      { title: "The Small Business Learning Revolution: A Field Guide to Talent Development in the Digital Age", url: "https://www.amazon.com/dp/B0GD4RM3VN" },
+      { title: "Leading Change One Conversation at a Time: How to Coach Individuals and Teams Through Transformation", url: "https://www.amazon.com/dp/B0GC7XSXYQ" },
+      { title: "The Coaching Skills Playbook: A Practical Guide for Supervisors, Managers, and Executives to Develop People, Potential, and Careers", url: "https://www.amazon.com/dp/B0G5MNKVXM" },
+      { title: "The Peer Coach's Handbook: Aligning Leaders Through Collaborative Learning", url: "https://www.amazon.com/dp/B0G4SVB9LV" },
+      { title: "Managing Organizational Conflict: Turning Tension into Trust and Collaboration", url: "https://www.amazon.com/dp/B0G6JRZQ26" },
+      { title: "From Navigator to Mapmaker: Leading Your Organization's Future Journey: How to Stop Managing Daily Crises and Start Building Systems That Lead Themselves", url: "https://www.amazon.com/dp/B0G69WTK2V" },
+      { title: "Beyond Boundaries: The Essential Guide to Spanning Siloes and Unifying Your Organization", url: "https://www.amazon.com/dp/B0G4BRYZHB" },
+      { title: "Critical Self-Reflection in Coaching: A Practitioner's Guide to Professional Development and Client Learning", url: "https://www.amazon.com/dp/B0GR8L4P96" },
+      { title: "The Shadow Side of Emotional Intelligence: From Self-Awareness to Control and Boundary Violations: The Manipulative Power of Emotional Intelligence in Toxic Relationships", url: "https://www.amazon.com/dp/B0FNKVCCHN" },
+    ],
+  },
+  {
+    category: "Self-help",
+    books: [
+      { title: "Rebuilding Life Beyond: Anxiety Relief and Confidence Building for Adults: A Self-Help Guide to Overcoming Fear of Failure and Overthinking", url: "https://www.amazon.com/dp/B0G4644VSB" },
+      { title: "Rebuilding Life Beyond: Recovery From Losing Your Job: A Practical Guide for Finding Your Purpose, Passion, and Path Leading to Your Ideal Career", url: "https://www.amazon.com/dp/B0FT213VHW" },
+      { title: "Rebuilding Life Beyond: Managing Narcissistic Relationships: A Practical Guide for Healing, Recovery, and Emotional Freedom After Narcissistic Abuse", url: "https://www.amazon.com/dp/B0G45KJ9HD" },
+      { title: "Rebuilding Life Beyond: Managing Dementia Caregiving for Family Members: A Practical Guide to Navigate Alzheimer's, Self-Care, Emotional Support, and Building Resilience with Compassion and Coping", url: "https://www.amazon.com/dp/B0G45NJ4DX" },
+    ],
+  },
 ];
 
 const jimBooks: BookEntry[] = [
-  { title: "Rise in Peer Community", url: null },
-  { title: "The Story You're Living", url: null },
-  { title: "Soar Like an Eagle", url: null },
+  { title: "Rise in Peer Community", subtitle: "Soar Together as Christian Leaders", url: null },
+  { title: "The Story You're Living", subtitle: "A Step-by-Step Guide to Matching Your Life With Your Deepest Values", url: null },
+  { title: "Soar Like an Eagle", subtitle: "Finding Meaning and Confidence Through Life's Struggles", url: null },
 ];
 ---
 <Base title="Books by Dr. John S. Lybarger and Jim Lybarger" description="Published books from Dr. John S. Lybarger and Jim Lybarger on Christian leadership, marketplace ministry, peer advisory, coaching, culture, and stewardship." canonical="/books/">
@@ -45,19 +76,26 @@ const jimBooks: BookEntry[] = [
       <p class="eyebrow">Dr. John S. Lybarger</p>
       <h2>Books by Dr. Lybarger</h2>
       <p>Dr. Lybarger's library spans peer advisory, marketplace ministry, executive coaching, biblical accountability, organizational change, and Christ-centered leadership development.</p>
+      <a class="author-page-link" href={johnAuthorPage} target="_blank" rel="noopener">See Dr. Lybarger's full Amazon author page →</a>
     </div>
-    <div class="books-grid">
-      {johnBooks.map((book) => (
-        <article class="book-card">
-          <h3>{book.title}</h3>
-          {book.url ? (
-            <a class="book-link" href={book.url} target="_blank" rel="noopener">View this book →</a>
-          ) : (
-            <span class="book-link book-link-pending">Purchase link coming soon</span>
-          )}
-        </article>
-      ))}
-    </div>
+    {johnBookGroups.map((group) => (
+      <div class="book-group">
+        <h3 class="book-group-title">{group.category}</h3>
+        <div class="books-grid">
+          {group.books.map((book) => (
+            <article class="book-card">
+              <h3>{book.title}</h3>
+              {book.subtitle && <p class="book-subtitle">{book.subtitle}</p>}
+              {book.url ? (
+                <a class="book-link" href={book.url} target="_blank" rel="noopener">View this book →</a>
+              ) : (
+                <span class="book-link book-link-pending">Purchase link coming soon</span>
+              )}
+            </article>
+          ))}
+        </div>
+      </div>
+    ))}
   </section>
 
   <section class="content-section books-section">
@@ -70,6 +108,7 @@ const jimBooks: BookEntry[] = [
       {jimBooks.map((book) => (
         <article class="book-card">
           <h3>{book.title}</h3>
+          {book.subtitle && <p class="book-subtitle">{book.subtitle}</p>}
           {book.url ? (
             <a class="book-link" href={book.url} target="_blank" rel="noopener">View this book →</a>
           ) : (
@@ -97,6 +136,38 @@ const jimBooks: BookEntry[] = [
     font-size: clamp(2.1rem, 3.6vw, 3.2rem);
     text-wrap: balance;
   }
+  .author-page-link {
+    display: inline-block;
+    margin-top: 1rem;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--burgundy, #641f24);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(100, 31, 36, 0.32);
+    padding-bottom: 1px;
+    transition: color 0.25s ease, border-color 0.25s ease;
+  }
+  .author-page-link:hover {
+    color: var(--burgundy-dark, #4a0f15);
+    border-color: rgba(100, 31, 36, 0.7);
+  }
+  .book-group {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 4vw, 2rem);
+  }
+  .book-group + .book-group {
+    margin-top: clamp(2.25rem, 4vw, 3.25rem);
+  }
+  .book-group-title {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: clamp(1.15rem, 1.7vw, 1.5rem);
+    color: var(--burgundy-dark, #4a0f15);
+    margin: 0 0 clamp(1rem, 2vw, 1.4rem);
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid rgba(168, 148, 131, 0.4);
+    letter-spacing: -0.01em;
+  }
   .books-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
@@ -104,6 +175,9 @@ const jimBooks: BookEntry[] = [
     max-width: var(--max);
     margin: 0 auto;
     padding: 0 clamp(1rem, 4vw, 2rem);
+  }
+  .book-group .books-grid {
+    padding: 0;
   }
   .book-card {
     display: flex;
@@ -128,6 +202,14 @@ const jimBooks: BookEntry[] = [
     color: var(--burgundy-dark, #4a0f15);
     text-wrap: balance;
     max-width: 30ch;
+  }
+  .book-subtitle {
+    margin-top: -0.35rem;
+    font-size: 0.92rem;
+    line-height: 1.4;
+    color: rgba(81, 70, 63, 0.85);
+    font-style: italic;
+    text-wrap: pretty;
   }
   .book-link {
     display: inline-block;

@@ -2,46 +2,47 @@
 import Base from "../layouts/Base.astro";
 import PageHero from "../components/PageHero.astro";
 import Schema from "../components/Schema.astro";
+import { getEmDashCollection } from "emdash";
 
-const resourceTopics = [
-  {
-    title: "Why Christian business owners need a trusted room",
-    category: "Peer advisory",
-    summary: "A practical guide to wise counsel, accountability, decision fatigue, and the value of processing leadership pressure with qualified peers.",
-  },
-  {
-    title: "Marketplace ministry beyond slogans",
-    category: "Faith and work",
-    summary: "How faith can shape culture, conflict, stewardship, pricing, hiring, generosity, and the daily decisions that form a company.",
-  },
-  {
-    title: "Coaching, peer advisory, or community",
-    category: "Next steps",
-    summary: "A clear comparison for leaders deciding whether they need private counsel, a peer advisory room, or a lighter community path.",
-  },
-  {
-    title: "Biblical accountability for owners",
-    category: "Leadership",
-    summary: "A leadership resource on honesty, responsibility, counsel, and integrity for owners carrying decisions that affect people and outcomes.",
-  },
-  {
-    title: "Stories from kingdom-minded leaders",
-    category: "Collective",
-    summary: "Conversations with Christian leaders about calling, pressure, faithful execution, and the lessons learned in real business seasons.",
-  },
-  {
-    title: "Books and resources for faithful leadership",
-    category: "Resources",
-    summary: "A curated path through Kingdom Factor books, teachings, and practical leadership questions for owners and senior leaders.",
-  },
+// Kingdom Factor blog categories (also defined as a select field in seed/seed.json).
+const CATEGORIES = [
+  "Executive Peer Advisory Groups",
+  "Leadership Peer Advisory Groups",
+  "Executive Coaching",
+  "Leadership Coaching",
+  "Marketplace Ministry",
+  "Servant Leadership",
 ];
 
-const principles = [
-  "Practical counsel for decisions leaders are already carrying.",
-  "Clear next steps toward peer advisory, coaching, community, or resources.",
-  "Faith-integrated leadership without hype, pressure, or generic inspiration.",
-  "Stories and teaching that strengthen stewardship, culture, and execution.",
-];
+// Load published posts + authors from EmDash. Defensive: the CMS database (D1)
+// may not be provisioned yet, so any failure degrades to a graceful empty state
+// instead of breaking the build or the live page.
+let posts: any[] = [];
+const authorsBySlug: Record<string, any> = {};
+try {
+  const [postsRes, authorsRes] = await Promise.all([
+    getEmDashCollection("posts", { status: "published", orderBy: { published_at: "desc" } }),
+    getEmDashCollection("authors"),
+  ]);
+  posts = postsRes?.entries ?? [];
+  for (const a of authorsRes?.entries ?? []) {
+    const slug = String((a as any)?.data?.slug ?? (a as any)?.id ?? "");
+    if (slug) authorsBySlug[slug] = a;
+  }
+} catch {
+  posts = [];
+}
+
+const postSlug = (p: any) => p?.data?.slug ?? p?.id;
+const authorOf = (p: any) => authorsBySlug[p?.data?.author];
+const authorName = (p: any) => authorOf(p)?.data?.name ?? "Kingdom Factor";
+const fmtDate = (v: unknown) => {
+  if (!v) return "";
+  const d = new Date(v as string);
+  return Number.isNaN(d.getTime())
+    ? ""
+    : d.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+};
 ---
 <Base title="Blog" description="Kingdom Factor resources for Christian business owners, peer advisory, marketplace ministry, and faith-integrated leadership." canonical="/blog/">
   <Schema type="WebPage" title="Kingdom Factor Blog" description="Kingdom Factor resources for Christian business owners, peer advisory, marketplace ministry, and faith-integrated leadership." path="/blog/" breadcrumbs={[{ name: "Home", item: "/" }, { name: "Blog", item: "/blog/" }]} />
@@ -49,25 +50,56 @@ const principles = [
     eyebrow="Blog and resources"
     title="Practical wisdom for Christian owners and executives seeking to expand their marketplace ministry."
     text="Kingdom Factor resources equip leaders to think with greater clarity about stewardship, culture, accountability, peer advisory, and the decisions that shape faithful servant leadership."
-    primary={{ label: "Explore resource topics", href: "#resource-topics" }}
-    secondary={{ label: "Books and resources", href: "/books/" }}
+    primary={{ label: "Books and resources", href: "/books/" }}
+    secondary={{ label: "Request a fit conversation", href: "/apply/" }}
   />
 
-  <section id="resource-topics" class="content-section blog-section">
+  <section class="content-section blog-section">
     <div class="section-header center">
-      <p class="eyebrow">Resource topics</p>
+      <p class="eyebrow">What we write about</p>
       <h2>Practical guidance for the questions leaders carry.</h2>
-      <p>Use this hub to explore the themes Kingdom Factor is built around: trusted counsel, faithful execution, ownership pressure, and wisdom for the marketplace.</p>
+      <p>Articles from Dr. John Lybarger, Jim Lybarger, and the Kingdom Factor team across the themes our leaders live in.</p>
     </div>
-    <div class="content-grid blog-grid">
-      {resourceTopics.map((post) => (
-        <article class="content-card premium-card blog-card">
-          <p class="eyebrow">{post.category}</p>
-          <h2>{post.title}</h2>
-          <p>{post.summary}</p>
-          <span class="draft-status">Resource topic</span>
-        </article>
-      ))}
+    <div class="blog-category-bar" aria-label="Blog categories">
+      {CATEGORIES.map((category) => <span class="blog-category-chip">{category}</span>)}
+    </div>
+
+    {posts.length > 0 ? (
+      <div class="content-grid blog-grid">
+        {posts.map((post) => (
+          <article class="content-card premium-card blog-card">
+            {post.data?.category && <p class="eyebrow">{post.data.category}</p>}
+            <h2 class="blog-card-title">
+              <a href={`/blog/${postSlug(post)}/`}>{post.data?.title}</a>
+            </h2>
+            {post.data?.excerpt && <p>{post.data.excerpt}</p>}
+            <p class="blog-byline">
+              By {authorOf(post)
+                ? <a href={`/blog/author/${post.data.author}/`}>{authorName(post)}</a>
+                : <span>{authorName(post)}</span>}
+              {fmtDate(post.data?.published_at) && <span class="blog-dot"> · {fmtDate(post.data?.published_at)}</span>}
+            </p>
+            <a class="blog-card-link" href={`/blog/${postSlug(post)}/`}>Read the article →</a>
+          </article>
+        ))}
+      </div>
+    ) : (
+      <div class="blog-empty">
+        <p>New articles are publishing soon. In the meantime, explore our books and the leadership stories in the Kingdom Factor Collective.</p>
+        <div class="actions">
+          <a class="btn btn-secondary" href="/books/">Books & resources</a>
+          <a class="btn btn-secondary" href="https://collective.kingdomfactor.us/" target="_blank" rel="noopener">Leader stories →</a>
+        </div>
+      </div>
+    )}
+  </section>
+
+  <section class="source-section story-section blog-collective-callout">
+    <div class="source-panel story-panel">
+      <p class="eyebrow">Kingdom Factor Collective</p>
+      <h2>Stories from kingdom-minded leaders.</h2>
+      <p>Read how Christian owners and executives are integrating faith and excellence in the marketplace — calling, pressure, faithful execution, and the lessons learned in real business seasons.</p>
+      <a class="btn btn-secondary" href="https://collective.kingdomfactor.us/" target="_blank" rel="noopener">Explore the Collective →</a>
     </div>
   </section>
 
@@ -81,8 +113,55 @@ const principles = [
         <a class="btn btn-secondary" href="/marketplace-ministry/">Marketplace ministry</a>
       </div>
     </div>
-    <div class="source-list editorial-rule-list">
-      {principles.map((rule) => <span>{rule}</span>)}
-    </div>
   </section>
 </Base>
+
+<style>
+  .blog-category-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: center;
+    max-width: 880px;
+    margin: 0 auto clamp(2rem, 4vw, 3rem);
+  }
+  .blog-category-chip {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--burgundy, #641f24);
+    background: rgba(255, 250, 242, 0.8);
+    border: 1px solid rgba(168, 148, 131, 0.4);
+    border-radius: 999px;
+    padding: 0.4rem 0.95rem;
+    letter-spacing: 0.01em;
+  }
+  .blog-card { display: flex; flex-direction: column; gap: 0.6rem; }
+  .blog-card-title { font-size: clamp(1.25rem, 1.8vw, 1.6rem); line-height: 1.25; }
+  .blog-card-title a { color: var(--burgundy-dark, #4a0f15); text-decoration: none; }
+  .blog-card-title a:hover { color: var(--burgundy, #641f24); }
+  .blog-byline { font-size: 0.92rem; color: rgba(81, 70, 63, 0.9); margin-top: 0.25rem; }
+  .blog-byline a { color: var(--burgundy, #641f24); font-weight: 600; text-decoration: none; }
+  .blog-byline a:hover { text-decoration: underline; }
+  .blog-byline .blog-dot { color: rgba(81, 70, 63, 0.7); }
+  .blog-card-link {
+    display: inline-block;
+    margin-top: auto;
+    font-weight: 700;
+    font-size: 0.92rem;
+    color: var(--burgundy, #641f24);
+    text-decoration: none;
+    transition: color 0.25s ease, transform 0.25s ease;
+  }
+  .blog-card-link:hover { color: var(--burgundy-dark, #4a0f15); transform: translateX(2px); }
+  .blog-empty {
+    max-width: 620px;
+    margin: 0 auto;
+    text-align: center;
+    padding: clamp(2rem, 4vw, 3rem);
+    background: rgba(255, 250, 242, 0.6);
+    border: 1px solid rgba(168, 148, 131, 0.32);
+    border-radius: 24px;
+  }
+  .blog-empty .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; margin-top: 1.25rem; }
+  .blog-collective-callout { padding-top: 0; }
+</style>

@@ -16,7 +16,10 @@ const coreOutcomes = [
   { name: "Personal decision framework", body: "A repeatable framework for hard calls — hiring and firing, restructuring, conflict — rooted in Scripture and wise stewardship." },
 ];
 
-const phases = [
+type Session = { title: string; bullets: string[]; between?: string; deliverable?: string };
+type Phase = { label: string; weeks: string; sessions: Session[] };
+
+const phases: Phase[] = [
   {
     label: "Phase 1 · Clarify",
     weeks: "Weeks 1–4",

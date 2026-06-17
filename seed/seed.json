@@ -154,6 +154,125 @@
           "type": "text"
         }
       ]
+    },
+    {
+      "slug": "authors",
+      "label": "Authors",
+      "labelSingular": "Author",
+      "description": "Blog authors with byline bios and author profile pages.",
+      "supports": [
+        "drafts",
+        "revisions"
+      ],
+      "urlPattern": "/blog/author/{slug}",
+      "fields": [
+        {
+          "slug": "name",
+          "label": "Name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "slug": "role",
+          "label": "Role / Title",
+          "type": "string"
+        },
+        {
+          "slug": "bio",
+          "label": "Short Bio (byline)",
+          "type": "text"
+        },
+        {
+          "slug": "full_bio",
+          "label": "Full Bio (author page + post footer)",
+          "type": "text"
+        },
+        {
+          "slug": "photo",
+          "label": "Photo",
+          "type": "image"
+        },
+        {
+          "slug": "linkedin",
+          "label": "LinkedIn URL",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "slug": "posts",
+      "label": "Blog Posts",
+      "labelSingular": "Post",
+      "description": "Multi-author blog. 6-8 posts/month across the Kingdom Factor categories.",
+      "supports": [
+        "drafts",
+        "revisions",
+        "seo",
+        "scheduling",
+        "search"
+      ],
+      "urlPattern": "/blog/{slug}",
+      "fields": [
+        {
+          "slug": "title",
+          "label": "Title",
+          "type": "string",
+          "required": true
+        },
+        {
+          "slug": "meta_title",
+          "label": "Meta Title",
+          "type": "string"
+        },
+        {
+          "slug": "meta_description",
+          "label": "Meta Description",
+          "type": "string"
+        },
+        {
+          "slug": "excerpt",
+          "label": "Excerpt",
+          "type": "text"
+        },
+        {
+          "slug": "category",
+          "label": "Category",
+          "type": "select",
+          "options": {
+            "options": [
+              "Executive Peer Advisory Groups",
+              "Leadership Peer Advisory Groups",
+              "Executive Coaching",
+              "Leadership Coaching",
+              "Marketplace Ministry",
+              "Servant Leadership"
+            ]
+          }
+        },
+        {
+          "slug": "author",
+          "label": "Author",
+          "type": "reference",
+          "options": {
+            "collection": "authors"
+          }
+        },
+        {
+          "slug": "featured_image",
+          "label": "Featured Image",
+          "type": "image"
+        },
+        {
+          "slug": "published_at",
+          "label": "Published Date",
+          "type": "datetime"
+        },
+        {
+          "slug": "content",
+          "label": "Body",
+          "type": "portableText"
+        }
+      ]
     }
   ],
   "content": {
@@ -169,6 +288,64 @@
           "hero_eyebrow": "Christian business leadership",
           "hero_heading": "Lead with wisdom, faith, and trusted counsel.",
           "hero_summary": "Kingdom Factor helps Christian owners and leaders process real business decisions inside a faith-integrated advisory model."
+        }
+      }
+    ],
+    "authors": [
+      {
+        "id": "author-john",
+        "slug": "john-lybarger",
+        "status": "published",
+        "data": {
+          "name": "Dr. John S. Lybarger",
+          "role": "Executive coaching, peer advisory, and marketplace ministry",
+          "bio": "Dr. John Lybarger brings coach-level discernment, organizational psychology, ministry perspective, and executive counsel to leaders carrying owner-level responsibility.",
+          "full_bio": "Dr. John S. Lybarger is the founder of Kingdom Factor and a faith-integrated executive coach, peer advisory facilitator, and author of more than two dozen books on Christian leadership, marketplace ministry, biblical accountability, and coaching. He helps established Christian owners and senior leaders lead with wisdom, stewardship, and conviction.",
+          "linkedin": ""
+        }
+      },
+      {
+        "id": "author-jim",
+        "slug": "jim-lybarger",
+        "status": "published",
+        "data": {
+          "name": "James \"Jim\" Lybarger",
+          "role": "Peer community, story, values, and emerging-owner pathway",
+          "bio": "Jim supports Christian owners and emerging leaders who need story, values alignment, confidence, and a grounded peer community as they build the next stage.",
+          "full_bio": "James \"Jim\" Lybarger writes and coaches for emerging Christian owners, founders, and solopreneurs. The author of Rise in Peer Community, The Story You're Living, and Soar Like an Eagle, Jim helps earlier-stage leaders find language, confidence, and peers for the journey.",
+          "linkedin": ""
+        }
+      }
+    ],
+    "posts": [
+      {
+        "id": "post-welcome",
+        "slug": "why-christian-leaders-need-a-trusted-room",
+        "status": "draft",
+        "data": {
+          "title": "Why Christian Business Leaders Need a Trusted Room",
+          "meta_title": "Why Christian Business Leaders Need a Trusted Room | Kingdom Factor",
+          "meta_description": "Leadership gets heavy when there is no trusted room. Here is why Christian owners need qualified peers, wise counsel, and faith-integrated accountability.",
+          "excerpt": "Leadership gets heavy when there is no trusted room. Here is why Christian owners need qualified peers, wise counsel, and faith-integrated accountability.",
+          "category": "Executive Peer Advisory Groups",
+          "author": "john-lybarger",
+          "published_at": "2026-06-17T13:00:00.000Z",
+          "content": [
+            {
+              "_type": "block",
+              "_key": "b1",
+              "style": "normal",
+              "markDefs": [],
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "s1",
+                  "text": "Most Christian business owners are not lacking information. They are lacking a room — a place where someone else understands both the quarterly pressure and the question underneath it.",
+                  "marks": []
+                }
+              ]
+            }
+          ]
         }
       }
     ]

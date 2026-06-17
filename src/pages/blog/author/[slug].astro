@@ -1,0 +1,114 @@
+---
+import Base from "../../../layouts/Base.astro";
+import Schema from "../../../components/Schema.astro";
+import CTA from "../../../components/CTA.astro";
+import { getEmDashEntry, getEmDashCollection } from "emdash";
+import { Image as EmDashImage } from "emdash/ui";
+
+const { slug } = Astro.params;
+
+// Load the author + their published posts defensively.
+let author: any = null;
+let posts: any[] = [];
+try {
+  const res = await getEmDashEntry("authors", slug ?? "");
+  author = res?.entry ?? null;
+  if (author) {
+    const postsRes = await getEmDashCollection("posts", { status: "published", orderBy: { published_at: "desc" } });
+    posts = (postsRes?.entries ?? []).filter((p: any) => p?.data?.author === slug);
+  }
+} catch {
+  author = null;
+}
+
+if (!author) {
+  return Astro.redirect("/blog/");
+}
+
+const name = author.data?.name ?? "Kingdom Factor author";
+const metaTitle = `${name} | Kingdom Factor`;
+const metaDescription = author.data?.bio ?? `Articles by ${name} on Christian leadership, peer advisory, and marketplace ministry.`;
+const postSlug = (p: any) => p?.data?.slug ?? p?.id;
+const fmtDate = (v: unknown) => {
+  if (!v) return "";
+  const d = new Date(v as string);
+  return Number.isNaN(d.getTime())
+    ? ""
+    : d.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+};
+---
+<Base title={metaTitle} description={metaDescription} canonical={`/blog/author/${slug}/`}>
+  <Schema type="WebPage" title={metaTitle} description={metaDescription} path={`/blog/author/${slug}/`} breadcrumbs={[{ name: "Home", item: "/" }, { name: "Blog", item: "/blog/" }, { name, item: `/blog/author/${slug}/` }]} />
+
+  <section class="author-hero">
+    <p class="author-breadcrumb"><a href="/blog/">← Back to all articles</a></p>
+    <div class="author-hero-inner">
+      {author.data?.photo && (
+        <span class="author-hero-photo"><EmDashImage image={author.data.photo} /></span>
+      )}
+      <div>
+        <p class="eyebrow">Author</p>
+        <h1>{name}</h1>
+        {author.data?.role && <p class="author-role">{author.data.role}</p>}
+        {author.data?.full_bio
+          ? <p class="author-bio">{author.data.full_bio}</p>
+          : author.data?.bio && <p class="author-bio">{author.data.bio}</p>}
+        {author.data?.linkedin && (
+          <a class="author-link" href={author.data.linkedin} target="_blank" rel="noopener">Connect on LinkedIn →</a>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="section-header">
+      <p class="eyebrow">Articles</p>
+      <h2>Posts by {name}</h2>
+    </div>
+    {posts.length > 0 ? (
+      <div class="content-grid blog-grid">
+        {posts.map((post) => (
+          <article class="content-card premium-card blog-card">
+            {post.data?.category && <p class="eyebrow">{post.data.category}</p>}
+            <h2 class="blog-card-title"><a href={`/blog/${postSlug(post)}/`}>{post.data?.title}</a></h2>
+            {post.data?.excerpt && <p>{post.data.excerpt}</p>}
+            {fmtDate(post.data?.published_at) && <p class="blog-byline">{fmtDate(post.data?.published_at)}</p>}
+            <a class="blog-card-link" href={`/blog/${postSlug(post)}/`}>Read the article →</a>
+          </article>
+        ))}
+      </div>
+    ) : (
+      <p class="author-empty">No published articles yet — new writing is on the way.</p>
+    )}
+  </section>
+
+  <CTA />
+</Base>
+
+<style>
+  .author-hero {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: clamp(2.5rem, 6vw, 5rem) clamp(1rem, 4vw, 2rem) 0;
+  }
+  .author-breadcrumb { margin: 0 0 1.5rem; }
+  .author-breadcrumb a { color: var(--burgundy, #641f24); font-weight: 600; text-decoration: none; font-size: 0.92rem; }
+  .author-hero-inner { display: flex; gap: 1.5rem; align-items: flex-start; }
+  .author-hero-photo { width: 120px; height: 120px; border-radius: 50%; overflow: hidden; flex: 0 0 auto; border: 1px solid rgba(181, 138, 68, 0.4); }
+  .author-hero-photo :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .author-hero h1 { font-size: clamp(2.2rem, 4.4vw, 3.4rem); margin: 0.2rem 0 0.6rem; }
+  .author-role { font-size: 1rem; color: var(--burgundy, #641f24); font-weight: 600; margin: 0 0 0.9rem; }
+  .author-bio { font-size: clamp(1rem, 1.3vw, 1.15rem); line-height: 1.7; color: #3f3833; max-width: 68ch; }
+  .author-link { display: inline-block; margin-top: 0.9rem; font-weight: 700; color: var(--burgundy, #641f24); text-decoration: none; }
+  .author-empty { text-align: center; color: rgba(81, 70, 63, 0.8); padding: 2rem 0; }
+  .blog-card { display: flex; flex-direction: column; gap: 0.6rem; }
+  .blog-card-title { font-size: clamp(1.2rem, 1.7vw, 1.5rem); line-height: 1.25; }
+  .blog-card-title a { color: var(--burgundy-dark, #4a0f15); text-decoration: none; }
+  .blog-card-title a:hover { color: var(--burgundy, #641f24); }
+  .blog-byline { font-size: 0.9rem; color: rgba(81, 70, 63, 0.75); }
+  .blog-card-link { display: inline-block; margin-top: auto; font-weight: 700; font-size: 0.92rem; color: var(--burgundy, #641f24); text-decoration: none; }
+  .blog-card-link:hover { color: var(--burgundy-dark, #4a0f15); }
+  @media (max-width: 560px) {
+    .author-hero-inner { flex-direction: column; }
+  }
+</style>

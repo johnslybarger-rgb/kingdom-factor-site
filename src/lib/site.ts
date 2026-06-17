@@ -8,6 +8,7 @@ export const site = {
 };
 
 export const nav = [
+  { href: "/", label: "Home" },
   { href: "/peer-advisory-groups/", label: "Peer Advisory" },
   { href: "/executive-coaching/", label: "Executive Coaching" },
   { href: "/peer-community/", label: "Peer Community" },
