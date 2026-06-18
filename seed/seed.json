@@ -263,11 +263,6 @@
           "type": "image"
         },
         {
-          "slug": "published_at",
-          "label": "Published Date",
-          "type": "datetime"
-        },
-        {
           "slug": "content",
           "label": "Body",
           "type": "portableText"
