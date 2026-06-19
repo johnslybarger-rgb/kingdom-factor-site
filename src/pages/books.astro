@@ -65,7 +65,7 @@ const jimBooks: BookEntry[] = [
   <Schema type="WebPage" title="Books by Dr. John S. Lybarger and Jim Lybarger" description="Published books from Dr. John S. Lybarger and Jim Lybarger on Christian leadership, marketplace ministry, peer advisory, coaching, culture, and stewardship." path="/books/" breadcrumbs={[{ name: "Home", item: "/" }, { name: "Books", item: "/books/" }]} />
   <PageHero
     eyebrow="Books by Dr. John S. Lybarger and Jim Lybarger"
-    title="Practical wisdom for Christian owners and executives seeking to expand their marketplace ministry."
+    title="Practical wisdom for Christian owners and executives."
     text="Decades of leadership wisdom in print — covering peer advisory, marketplace ministry, executive coaching, culture, biblical accountability, conflict, change, and Christ-centered leadership. Each title links out to its publisher or retailer."
     primary={{ label: "Request a fit conversation", href: "/apply/" }}
     secondary={{ label: "Explore marketplace ministry", href: "/marketplace-ministry/" }}
@@ -229,5 +229,11 @@ const jimBooks: BookEntry[] = [
     font-weight: 500;
     font-style: italic;
     cursor: default;
+  }
+  @media (max-width: 760px) {
+    .book-group, .books-grid { width: 100%; max-width: 100%; padding-inline: 0; }
+    .book-card { width: 100%; max-width: none; min-height: 0; }
+    .book-card h3 { font-size: 1.02rem; line-height: 1.42; max-width: 100%; letter-spacing: -0.005em; }
+    .books-section .section-header { width: 100%; max-width: 100%; padding-inline: 0; text-align: left; }
   }
 </style>
