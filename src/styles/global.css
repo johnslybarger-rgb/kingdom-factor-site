@@ -1352,9 +1352,11 @@ h3 { font-size: var(--display-h3); line-height: 1.12; letter-spacing: -.018em; }
 .offer-detail-grid {
   justify-content: center;
 }
-.content-grid:has(.content-card:nth-child(3)),
-.offer-detail-grid:has(.offer-detail-card:nth-child(3)) {
-  grid-template-columns: repeat(3, minmax(0, 390px));
+@media (min-width: 981px) {
+  .content-grid:has(.content-card:nth-child(3)),
+  .offer-detail-grid:has(.offer-detail-card:nth-child(3)) {
+    grid-template-columns: repeat(3, minmax(0, 390px));
+  }
 }
 .cta-band {
   box-shadow: none !important;
@@ -1432,9 +1434,11 @@ h3 { font-size: var(--display-h3); line-height: 1.12; letter-spacing: -.018em; }
 .offer-detail-card {
   max-width: 360px !important;
 }
-.content-grid:has(.content-card:nth-child(3)),
-.offer-detail-grid:has(.offer-detail-card:nth-child(3)) {
-  grid-template-columns: repeat(3, minmax(0, 360px)) !important;
+@media (min-width: 981px) {
+  .content-grid:has(.content-card:nth-child(3)),
+  .offer-detail-grid:has(.offer-detail-card:nth-child(3)) {
+    grid-template-columns: repeat(3, minmax(0, 360px)) !important;
+  }
 }
 .source-panel .eyebrow,
 .cta-band .eyebrow,
