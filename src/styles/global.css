@@ -1693,12 +1693,16 @@ body p, body li, body span, body a, body summary, body small {
 }
 /* Audit pass 2: grid rhythm + section-heading polish */
 .pathway-grid .offer-card { display: flex; flex-direction: column; }
-.pathway-grid .offer-card > p:first-child { min-height: 2.7rem; }
 .pathway-grid .offer-card a { margin-top: auto; }
-.pathway-grid:has(.offer-card:nth-child(7):last-child) .offer-card:nth-child(7) { grid-column: 2 !important; }
 .content-grid, .offer-detail-grid { align-items: start; }
 .section-header.center h2 { line-height: 1.1; }
 .authority-copy h2 { font-size: clamp(1.9rem, 2.7vw, 2.7rem); }
+/* Desktop-only: align audience pills + center the orphaned 7th offer card.
+   Scoped to >=761px so it never forces a phantom 2nd column on the mobile single-column grid. */
+@media (min-width: 761px) {
+  .pathway-grid .offer-card > p:first-child { min-height: 2.7rem; }
+  .pathway-grid:has(.offer-card:nth-child(7):last-child) .offer-card:nth-child(7) { grid-column: 2 !important; }
+}
 .apply-path-section {
   padding-top: clamp(2.75rem, 5vw, 5rem) !important;
 }
