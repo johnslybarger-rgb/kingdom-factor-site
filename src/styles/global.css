@@ -2798,13 +2798,20 @@ img, svg, video, canvas, picture {
 .council-model-list {
   min-width: 0;
 }
-.decision-room-copy h2,
 .council-model-intro h2 {
   font-size: clamp(2.2rem, 4.2vw, 4.2rem) !important;
   text-wrap: balance;
   max-width: 100%;
   overflow-wrap: break-word;
   hyphens: auto;
+}
+.decision-room-copy h2 {
+  font-size: clamp(2rem, 3vw, 3.15rem) !important;
+  text-wrap: balance;
+  max-width: 100%;
+  overflow-wrap: normal;
+  hyphens: none;
+  line-height: 1.12;
 }
 .decision-room-lines {
   display: grid;
