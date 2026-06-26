@@ -3,15 +3,14 @@ export const site = {
   url: import.meta.env.PUBLIC_SITE_URL || "https://www.kingdomfactor.us",
   description:
     "Peer advisory, executive coaching, and marketplace ministry for Christian business owners and leaders.",
-  email: "",
-  phone: "",
+  email: "john@purpose-drivenconsulting.net",
+  phone: "(928) 273-8939",
 };
 
 export const nav = [
   { href: "/", label: "Home" },
   { href: "/peer-advisory-groups/", label: "Peer Advisory" },
   { href: "/executive-coaching/", label: "Executive Coaching" },
-  { href: "/peer-community/", label: "Peer Community" },
   { href: "/purpose-driven-consulting/", label: "Consulting" },
   { href: "/books/", label: "Books" },
   { href: "/blog/", label: "Blog" },
@@ -23,14 +22,12 @@ export const publicRoutes = [
   { path: "/", label: "Home", priority: "1.0" },
   { path: "/peer-advisory-groups/", label: "Christian Peer Advisory Groups", priority: "0.9" },
   { path: "/executive-coaching/", label: "Executive Coaching Intensive", priority: "0.9" },
-  { path: "/peer-community/", label: "Peer Community", priority: "0.9" },
-  { path: "/leadership-circle/", label: "Leadership Circle", priority: "0.8" },
-  { path: "/marketplace-ministry/", label: "Marketplace Ministry", priority: "0.8" },
+  { path: "/marketplace-ministry/", label: "Marketplace Ministry Consulting", priority: "0.8" },
   { path: "/collective/", label: "Kingdom Factor Collective", priority: "0.7" },
   { path: "/purpose-driven-consulting/", label: "Purpose Driven Consulting", priority: "0.8" },
   { path: "/books/", label: "Books and Resources", priority: "0.8" },
   { path: "/blog/", label: "Blog and Resources", priority: "0.7" },
-  { path: "/about/", label: "About Kingdom Factor", priority: "0.7" },
+  { path: "/about/", label: "About Purpose Driven Consulting and Kingdom Factor", priority: "0.7" },
   { path: "/apply/", label: "Apply", priority: "0.7" },
   { path: "/contact/", label: "Contact", priority: "0.6" },
   { path: "/privacy/", label: "Privacy", priority: "0.3" },
@@ -41,7 +38,7 @@ export const offers = [
   {
     title: "Peer Advisory Groups",
     href: "/peer-advisory-groups/",
-    audience: "Christian owners and senior leaders",
+    audience: "Christian owners, senior executives, emerging owners, founders, and solopreneurs",
     summary:
       "A trusted circle for wise counsel, accountability, shared learning, and faith-integrated decision-making.",
   },
@@ -53,32 +50,18 @@ export const offers = [
       "Private advisory for leaders carrying real responsibility, structured around clarity, stewardship, resilience, and faithful execution.",
   },
   {
-    title: "Peer Community",
-    href: "/peer-community/",
-    audience: "Emerging owners, founders, and solopreneurs",
-    summary:
-      "A practical community lane for leaders building from story, values, identity, and shared encouragement.",
-  },
-  {
-    title: "Leadership Circle",
-    href: "/leadership-circle/",
-    audience: "Leaders exploring peer counsel",
-    summary:
-      "A low-friction webinar-style introduction to the Leadership Circle model and why leaders need a trusted room.",
-  },
-  {
-    title: "Marketplace Ministry",
+    title: "Marketplace Ministry Consulting",
     href: "/marketplace-ministry/",
     audience: "Owners integrating faith and business",
     summary:
-      "Practical teaching on bringing faith into decisions, culture, conflict, stewardship, pricing, hiring, and calling.",
+      "Coaching and consulting on bringing faith into decisions, culture, conflict, stewardship, pricing, hiring, and calling.",
   },
   {
     title: "Kingdom Factor Collective",
     href: "/collective/",
     audience: "Christian business leaders with stories to share",
     summary:
-      "A story and interview archive concept for capturing real examples of faithful leadership in the marketplace.",
+      "Building the world's largest collection of Christian business leadership stories—equipping, inspiring, and glorifying God in the marketplace.",
   },
   {
     title: "Purpose Driven Consulting",
@@ -95,11 +78,15 @@ export const pillars = [
     text: "Trusted counsel for leaders who do not want to carry major decisions alone.",
   },
   {
-    title: "Executive Coaching",
-    text: "Private advisory and structured reflection for established Christian owners and executives.",
+    title: "Kingdom Culture Intensive",
+    text: "A bespoke, confidential 90-day intensive for Christian owners and senior leaders who are serious about aligning culture and leadership with the Kingdom while still competing and winning in the marketplace.",
   },
   {
-    title: "Marketplace Ministry",
+    title: "Executive Coaching",
+    text: "One-on-one coaching and structured reflection for Christian leaders.",
+  },
+  {
+    title: "Marketplace Ministry Consulting",
     text: "Faith integration for the daily realities of business, leadership, culture, and stewardship.",
   },
 ];
@@ -130,7 +117,7 @@ export const people = [
     fallbackInitials: "JL",
     summary:
       "Jim supports Christian owners and emerging leaders who need story, values alignment, confidence, and a grounded peer community as they build the next stage.",
-    href: "/peer-community/",
+    href: "/peer-advisory-groups/",
   },
 ];
 
