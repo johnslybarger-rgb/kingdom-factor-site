@@ -3562,3 +3562,25 @@ img, svg, video, canvas, picture {
   }
 }
 
+/* 2026-06-26 — Square navy KF + PDC logo in the footer (header keeps the
+   horizontal lockup). The image carries its own navy background, so no cream
+   card; just a rounded badge with depth on the charcoal footer. */
+.site-footer .footer-logo-square {
+  display: block !important;
+  width: min(168px, 58%) !important;
+  height: auto !important;
+  max-width: 168px !important;
+  background: none !important;
+  padding: 0 !important;
+  border-radius: 16px !important;
+  margin-bottom: 1.15rem !important;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.34) !important;
+  filter: none !important;
+}
+@media (max-width: 760px) {
+  .site-footer .footer-logo-square {
+    width: min(150px, 46vw) !important;
+    max-width: 150px !important;
+  }
+}
+
