@@ -23,10 +23,11 @@ import { people } from "../lib/site";
   </section>
 
   <section class="content-section">
-    <div class="content-grid">
-      <article class="content-card"><span class="card-number">01</span><h2>Mission</h2><p>Help Christian business owners and leaders make better decisions.</p></article>
-      <article class="content-card"><span class="card-number">02</span><h2>Model</h2><p>Kingdom Factor combines peer advisory groups, private executive coaching, marketplace ministry teaching, and author-driven resources into one practical leadership platform.</p></article>
-      <article class="content-card"><span class="card-number">03</span><h2>Posture</h2><p>Bring wisdom, candor, prayerful discernment, and practical execution into the same room so leaders can move forward with clarity.</p></article>
+    <div class="content-grid values-grid">
+      <article class="content-card"><span class="card-number">01</span><h2>Vision</h2><p>To cultivate a world where leaders build trust, grow through relationships, lead with reflection, and multiply their influence for the good of organizations, communities, and future generations.</p></article>
+      <article class="content-card"><span class="card-number">02</span><h2>Mission</h2><p>We equip leaders to build trust, cultivate meaningful relationships, practice intentional reflection, and multiply healthy leadership through peer advisory, coaching, consulting, speaking, and transformational learning experiences.</p></article>
+      <article class="content-card"><span class="card-number">03</span><h2>Brand Promise</h2><p>Building Trust. Growing Leaders. Multiplying Impact.</p></article>
+      <article class="content-card"><span class="card-number">04</span><h2>Guiding Philosophy</h2><p>Leadership flourishes where trust is built, relationships are cultivated, reflection is practiced, and leaders intentionally multiply others.</p><ul class="check-list"><li>Trust is the foundation.</li><li>Relationships are the context.</li><li>Reflection is the discipline.</li><li>Multiplication is the legacy.</li></ul></article>
     </div>
   </section>
   <section class="people-section">
@@ -74,4 +75,7 @@ import { people } from "../lib/site";
     color: #4d423b;
     margin-bottom: 1rem;
   }
+  .values-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  @media (max-width: 1080px) { .values-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 620px) { .values-grid { grid-template-columns: 1fr; } }
 </style>
