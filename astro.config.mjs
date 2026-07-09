@@ -1,5 +1,6 @@
 import { defineConfig } from "astro/config";
 import cloudflare from "@astrojs/cloudflare";
+import react from "@astrojs/react";
 import emdash from "emdash/astro";
 import { d1, r2, sandbox } from "@emdash-cms/cloudflare";
 
@@ -30,6 +31,7 @@ export default defineConfig({
     },
   },
   integrations: process.env.SKIP_EMDASH === "1" ? [] : [
+    react(),
     emdash({
       siteUrl: site,
       database: d1({ binding: "DB", session: "auto" }),
