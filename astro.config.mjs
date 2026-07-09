@@ -3,7 +3,7 @@ import cloudflare from "@astrojs/cloudflare";
 import emdash from "emdash/astro";
 import { d1, r2, sandbox } from "@emdash-cms/cloudflare";
 
-const site = process.env.PUBLIC_SITE_URL || process.env.SITE_URL || "https://kingdom-factor-site.ciglesia.workers.dev";
+const site = process.env.PUBLIC_SITE_URL || process.env.SITE_URL || "https://www.purpose-drivenconsulting.net";
 
 export default defineConfig({
   site,

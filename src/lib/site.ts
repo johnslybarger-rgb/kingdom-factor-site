@@ -1,6 +1,6 @@
 export const site = {
   name: "Kingdom Factor",
-  url: import.meta.env.PUBLIC_SITE_URL || "https://www.kingdomfactor.us",
+  url: import.meta.env.PUBLIC_SITE_URL || "https://www.purpose-drivenconsulting.net",
   description:
     "Peer advisory, executive coaching, and marketplace ministry for Christian business owners and leaders.",
   email: "john@purpose-drivenconsulting.net",
