@@ -24,4 +24,6 @@ npm run verify
 
 ## Safety boundary
 
-Routine source patches are the agent's responsibility. Publishing, merging, deployment, DNS, Cloudflare resources, secrets, billing, and other external-impact actions remain human approval-gated.
+Routine source patches are the agent's responsibility. Publishing, merging, DNS, Cloudflare resources, secrets, billing, and other external-impact actions remain human approval-gated.
+
+An approved merge into `main` automatically runs the complete verification suite and deploys the newest merged commit to the existing Cloudflare Worker. John does not need Cloudflare credentials or dashboard access for routine website changes. Initial secret provisioning, credential rotation, incident response, and infrastructure recovery remain TAM Cloudflare-administrator responsibilities.
