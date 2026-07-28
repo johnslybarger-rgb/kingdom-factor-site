@@ -2,15 +2,47 @@
 import Base from "../layouts/Base.astro";
 import PageHero from "../components/PageHero.astro";
 import Schema from "../components/Schema.astro";
+
+const contactDescription =
+  "Reach Purpose Driven Consulting, LLC and Kingdom Factor. Call, email, or schedule a meeting directly with Dr. John Lybarger or James \"Jim\" Lybarger.";
 ---
-<Base title="Contact" description="Contact Kingdom Factor. Public contact details and routing are pending approval." canonical="/contact/">
-  <Schema type="WebPage" title="Contact Kingdom Factor" description="Contact Kingdom Factor. Public contact details and routing are pending approval." path="/contact/" breadcrumbs={[{ name: "Home", item: "/" }, { name: "Contact", item: "/contact/" }]} />
-  <PageHero eyebrow="Contact" title="Reach the Kingdom Factor team." text="Public contact details, inbox routing, and form destination are pending approval. This draft keeps the page ready without creating external commitments." primary={{ label: "Fit conversation", href: "/apply/" }} secondary={{ label: "Back to home", href: "/" }} />
+<Base title="Contact" description={contactDescription} canonical="/contact/">
+  <Schema type="WebPage" title="Contact Purpose Driven Consulting and Kingdom Factor" description={contactDescription} path="/contact/" breadcrumbs={[{ name: "Home", item: "/" }, { name: "Contact", item: "/contact/" }]} />
+  <PageHero eyebrow="Contact" title="Reach our team." text="Call, email, or book a meeting directly with Dr. John Lybarger or James &quot;Jim&quot; Lybarger. Real contact details and scheduling links are below." primary={{ label: "Request a fit conversation", href: "/apply/" }} secondary={{ label: "Back to home", href: "/" }} />
   <section class="content-section">
-    <div class="form-placeholder">
-      <p class="eyebrow">Routing pending</p>
-      <h2>Contact destination to confirm</h2>
-      <p>Before launch, confirm the public email, phone, contact form endpoint, CRM workflow, calendar link, John/Jim routing rules, and response expectations.</p>
+    <div class="section-header center">
+      <p class="eyebrow">Contact</p>
+      <h2>How to reach us.</h2>
+      <p>Reach out by phone or email, or schedule a meeting at a time that works for you.</p>
+    </div>
+    <div class="content-grid">
+      <article class="content-card">
+        <h3>Purpose Driven Consulting, LLC</h3>
+        <ul class="check-list">
+          <li>Website: <a href="https://www.purpose-drivenconsulting.net" target="_blank" rel="noopener">purpose-drivenconsulting.net</a></li>
+          <li>Phone: <a href="tel:+19282738939">(928) 273-8939</a></li>
+          <li>Fax: <a href="tel:+19283612637">(928) 361-2637</a></li>
+          <li>Email: <a href="mailto:john@purpose-drivenconsulting.net">john@purpose-drivenconsulting.net</a></li>
+        </ul>
+      </article>
+      <article class="content-card">
+        <h3>Dr. John Lybarger</h3>
+        <ul class="check-list">
+          <li>Mobile: <a href="tel:+19282738939">(928) 273-8939</a></li>
+          <li>Fax: <a href="tel:+19283612637">(928) 361-2637</a></li>
+          <li>Email: <a href="mailto:jlybarger@kingdomfactor.us">jlybarger@kingdomfactor.us</a></li>
+          <li>Schedule a meeting: <a href="https://jlybarger.kingdomfactor.us/meeting-length" target="_blank" rel="noopener">Book with Dr. John Lybarger</a></li>
+        </ul>
+      </article>
+      <article class="content-card">
+        <h3>James &quot;Jim&quot; Lybarger</h3>
+        <ul class="check-list">
+          <li>Mobile: <a href="tel:+19282166058">(928) 216-6058</a></li>
+          <li>Fax: <a href="tel:+19283612637">(928) 361-2637</a></li>
+          <li>Email: <a href="mailto:jclybarger@kingdomfactor.us">jclybarger@kingdomfactor.us</a></li>
+          <li>Schedule a meeting: <a href="https://api.gohighroad.com/widget/bookings/jclybarger-60" target="_blank" rel="noopener">Book with Jim Lybarger</a></li>
+        </ul>
+      </article>
     </div>
   </section>
 </Base>

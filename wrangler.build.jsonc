@@ -4,8 +4,8 @@
   "compatibility_date": "2026-05-08",
   "compatibility_flags": ["nodejs_compat"],
   "vars": {
-    "PUBLIC_SITE_URL": "https://kingdom-factor-site.ciglesia.workers.dev",
-    "SITE_URL": "https://kingdom-factor-site.ciglesia.workers.dev"
+    "PUBLIC_SITE_URL": "https://www.purpose-drivenconsulting.net",
+    "SITE_URL": "https://www.purpose-drivenconsulting.net"
   },
   "d1_databases": [
     {

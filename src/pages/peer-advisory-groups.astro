@@ -1,6 +1,147 @@
 ---
-import PageShell from "../components/PageShell.astro";
-import { pages } from "../lib/pages";
-const page = pages["peer-advisory-groups"];
+import Base from "../layouts/Base.astro";
+import PageHero from "../components/PageHero.astro";
+import CTA from "../components/CTA.astro";
+import Schema from "../components/Schema.astro";
+
+const title = "Christian Peer Advisory Groups";
+const description =
+  "Our confidential peer advisory groups where faith, leadership pressures, business decisions, and wise counsel are brought into the room.";
+
+const ownerGroup = [
+  {
+    title: "The weight of leadership",
+    body: "Leadership gets costly when blind spots, decision fatigue, conflict, and stewardship questions are processed alone. The room creates a confidential place to test decisions with people who understand business pressure and faith.",
+    bullets: ["Decisions tested before they become costly", "Confidential counsel from peers", "Faith-integrated discernment", "Practical next actions"],
+  },
+  {
+    title: "What the room provides",
+    body: "Members bring current decisions, not theoretical case studies. The conversation is structured, confidential, prayerful where appropriate, and oriented toward clear next steps.",
+    bullets: ["Current decisions, not hypotheticals", "Shared experience from other leaders", "Prayerful, faith-aware discernment", "Specific follow-through"],
+  },
+  {
+    title: "Who belongs here",
+    body: "Christian owners, executives, and senior leaders navigating growth, transition, people pressure, culture questions, or decisions where business and faith cannot be separated.",
+    bullets: ["Owners carrying real responsibility", "Executives and senior leaders", "Leaders navigating growth or transition", "Faith and strategy in one room"],
+  },
+];
+
+const emergingGroup = [
+  {
+    title: "For leaders still forming the path",
+    body: "This path gives emerging owners a lower-pressure room for story, values alignment, confidence, community, and practical faith integration before a heavier advisory or coaching commitment.",
+    bullets: ["Story and identity", "Values-based decisions", "Community and confidence", "Faith in the everyday work"],
+  },
+  {
+    title: "A grounded growth path",
+    body: "Members clarify what they are building, why it matters, and how faith shapes daily decisions while growing alongside peers who understand the founder journey.",
+    bullets: ["Story and identity work", "Values-based decisions", "Peer encouragement", "Practical founder momentum"],
+  },
+  {
+    title: "What the community includes",
+    body: "A guided peer path for emerging Christian business owners who want practical reflection, honest conversation, and a warm entry point before heavier advisory or coaching.",
+    bullets: ["Guided peer conversations", "Founder-focused prompts", "Faith-and-work reflection", "A pathway toward advisory when ready"],
+  },
+];
+
+const faqs = [
+  { q: "What are Kingdom Factor Peer Advisory Groups?", a: "Kingdom Factor Peer Advisory Groups are Christ-centered circles of business leaders who meet regularly for prayer, honest conversation, godly counsel, and practical problem-solving. They offer a safe place to bring real issues, receive wise feedback, and discern next faithful steps together." },
+  { q: "How do peer advisory group meetings typically run?", a: "A typical meeting includes personal and business check-ins, sharing prayer requests and praises, reviewing key 'imperatives,' engaging with a focused content discussion or exercise, processing one or two crucial conversations, and offering godly counsel around real-time issues before closing in prayer and planning next steps." },
+  { q: "How much do the peer advisory groups cost?", a: "Pricing varies between John's and Jim's groups depending on the cohort, format, and season. Request a fit conversation and we'll share current rates and walk you through which group is the right fit for you." },
+  { q: "How are these groups different from networking or a Bible study?", a: "Peer advisory groups go much deeper than networking and are more focused on real decision-making than a typical Bible study. You'll experience confidential, Christ-centered conversations about live business and leadership issues, not just theory, while still grounding everything in Scripture, prayer, and character formation." },
+  { q: "Who are peer advisory groups best suited for?", a: "They're best suited for Christian business owners, executives, and senior leaders who feel the weight of leadership, don't want to lead alone, and are willing to be honest and vulnerable to grow. If you're ready for peers who both encourage and challenge you, a group like this can be a lifeline." },
+  { q: "Do I have to be a Christian to participate?", a: "No. We simply ask that you sign our statement of faith to acknowledge that our teaching, philosophy, values, and practices are grounded in a faith-based approach to leadership in the marketplace. If you are comfortable with that, you are welcome to participate." },
+  { q: "Are Kingdom Factor peer advisory groups confidential?", a: "Yes. Confidentiality is a core part of the experience, creating the trust leaders need to share openly and grow together." },
+  { q: "How do I get started?", a: "Getting started is simple: connect with us through the website, and we'll help you explore whether Kingdom Factor is the right fit for you." },
+];
 ---
-<PageShell page={page} />
+<Base title={title} description={description} canonical="/peer-advisory-groups/">
+  <Schema
+    type="FAQPage"
+    title={title}
+    description={description}
+    path="/peer-advisory-groups/"
+    breadcrumbs={[{ name: "Home", item: "/" }, { name: title, item: "/peer-advisory-groups/" }]}
+    faqs={faqs}
+  />
+
+  <PageHero
+    eyebrow="Peer advisory"
+    title="A trusted room for Christian owners and executives carrying real decisions."
+    text={description}
+    primary={{ label: "Request a fit conversation", href: "/apply/" }}
+    secondary={{ label: "See how peer advisory works", href: "#how-peer-advisory-works" }}
+    image="/images/generated/advisory-room-1440.webp"
+    imageMobile="/images/generated/advisory-room-mobile.webp"
+  />
+
+  <section id="how-peer-advisory-works" class="content-section offer-detail-section">
+    <div class="section-header compact">
+      <p class="eyebrow">How this path helps</p>
+      <h2>A clearer room for decisions, pressure, and next steps.</h2>
+      <p>We offer two peer advisory groups: one for Christian owners and executives, and one for emerging owners, solopreneurs, startup founders, and small-business leaders.</p>
+      <p>Our peer advisory groups are intentionally shaped around the leader’s season, the weight they carry, and the kind of counsel that will actually help.</p>
+    </div>
+  </section>
+
+  <section class="content-section offer-detail-section">
+    <div class="section-header compact">
+      <p class="eyebrow">Group one</p>
+      <h2>For Christian owners and executives.</h2>
+      <p>A confidential room for established owners, executives, and senior leaders who carry real responsibility and want faith and strategy in the same conversation.</p>
+    </div>
+    <div class="content-grid offer-detail-grid">
+      {ownerGroup.map((section, index) => (
+        <article class="content-card offer-detail-card">
+          <span class="card-number">{String(index + 1).padStart(2, "0")}</span>
+          <h3>{section.title}</h3>
+          <p>{section.body}</p>
+          {section.bullets && (
+            <ul class="check-list">
+              {section.bullets.map((bullet) => <li>{bullet}</li>)}
+            </ul>
+          )}
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="content-section offer-detail-section">
+    <div class="section-header compact">
+      <p class="eyebrow">Group two</p>
+      <h2>For emerging owners, solopreneurs, startup founders, and small-business leaders.</h2>
+      <p>This path helps emerging owners, solopreneurs, startup founders, and smaller business leaders find practical reflection, confidence, and trusted peers for the journey.</p>
+    </div>
+    <div class="content-grid offer-detail-grid">
+      {emergingGroup.map((section, index) => (
+        <article class="content-card offer-detail-card">
+          <span class="card-number">{String(index + 1).padStart(2, "0")}</span>
+          <h3>{section.title}</h3>
+          <p>{section.body}</p>
+          {section.bullets && (
+            <ul class="check-list">
+              {section.bullets.map((bullet) => <li>{bullet}</li>)}
+            </ul>
+          )}
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="section-header center">
+      <p class="eyebrow">Common questions</p>
+      <h2>What to clarify before you join a room.</h2>
+    </div>
+    <div class="faq-list">
+      {faqs.map((faq) => (
+        <details>
+          <summary>{faq.q}</summary>
+          <p>{faq.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <CTA />
+</Base>
