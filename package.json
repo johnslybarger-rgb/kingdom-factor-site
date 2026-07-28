@@ -16,7 +16,7 @@
     "preview": "astro preview",
     "typecheck": "astro check",
     "verify": "npm run build && npm run typecheck && npm run emdash:seed:validate",
-    "emdash:note": "node -e \"console.log('EmDash seed/config present as planned CMS/Admin scaffold. Workers/Pages deploy does not require D1/R2 by default; use CRM or Convex if backend data is needed.')\"",
+    "emdash:note": "node -e \"console.log('EmDash runtime is enabled for Cloudflare Workers. Production requires the configured D1, R2, and KV bindings; deployment remains approval-gated.')\"",
     "tailwind:note": "node -e \"console.log('Tailwind token direction is captured in DESIGN.md; current verified build uses authored CSS to avoid Vite/Rolldown plugin mismatch in Railway.')\"",
     "emdash:seed:validate": "emdash seed seed/seed.json --validate --database ./.emdash/kingdom-factor.db",
     "emdash:seed:local": "emdash seed seed/seed.json --database ./.emdash/kingdom-factor.db --on-conflict update"
