@@ -4,7 +4,7 @@ import PageHero from "../components/PageHero.astro";
 import CTA from "../components/CTA.astro";
 import Schema from "../components/Schema.astro";
 
-type BookEntry = { title: string; subtitle?: string; url?: string | null };
+type BookEntry = { title: string; subtitle?: string; url?: string | null; linkLabel?: string };
 type BookGroup = { category: string; books: BookEntry[] };
 
 const johnAuthorPage = "https://www.amazon.com/author/drjohnslybarger";
@@ -13,6 +13,7 @@ const johnBookGroups: BookGroup[] = [
   {
     category: "Faith-based leadership",
     books: [
+      { title: "Stop Leading Alone", subtitle: "Real Conversations. Real Support. Real Leadership Growth.", url: "https://www.amazon.com/dp/B0GZBH8M19", linkLabel: "View this book -->" },
       { title: "The Leadership Circle: Peer Advisory Groups: A Christian Leader's Guide to Accountability, Authentic Connection, and Spiritual Growth", url: "https://www.amazon.com/dp/B0GQNS8Q4W" },
       { title: "Marketplace Ministry: The Christian Leader's Guidebook for Building a Kingdom Business", url: "https://www.amazon.com/dp/B0G45WDJL8" },
       { title: "Lead Like Jesus: A Biblical Blueprint for Servant Leadership Excellence", url: "https://www.amazon.com/dp/B0GM8VMQ3P" },
@@ -56,6 +57,7 @@ const johnBookGroups: BookGroup[] = [
 ];
 
 const jimBooks: BookEntry[] = [
+  { title: "Stop Leading Alone", subtitle: "Real Conversations. Real Support. Real Leadership Growth.", url: "https://www.amazon.com/dp/B0GZBH8M19", linkLabel: "View this book -->" },
   { title: "Rise in Peer Community", subtitle: "Soar Together as Christian Leaders", url: "https://www.amazon.com/dp/B0GX5CL9T3" },
   { title: "The Story You're Living", subtitle: "A Step-by-Step Guide to Matching Your Life With Your Deepest Values", url: "https://www.amazon.com/dp/B0GXV6RDXK" },
   { title: "Soar Like an Eagle", subtitle: "Finding Meaning and Confidence Through Life's Struggles", url: "https://www.amazon.com/dp/B0GLLVZ381" },
@@ -87,7 +89,7 @@ const jimBooks: BookEntry[] = [
               <h3>{book.title}</h3>
               {book.subtitle && <p class="book-subtitle">{book.subtitle}</p>}
               {book.url ? (
-                <a class="book-link" href={book.url} target="_blank" rel="noopener">View this book →</a>
+                <a class="book-link" href={book.url} target="_blank" rel="noopener">{book.linkLabel ?? "View this book →"}</a>
               ) : (
                 <span class="book-link book-link-pending">Purchase link coming soon</span>
               )}
@@ -110,7 +112,7 @@ const jimBooks: BookEntry[] = [
           <h3>{book.title}</h3>
           {book.subtitle && <p class="book-subtitle">{book.subtitle}</p>}
           {book.url ? (
-            <a class="book-link" href={book.url} target="_blank" rel="noopener">View this book →</a>
+            <a class="book-link" href={book.url} target="_blank" rel="noopener">{book.linkLabel ?? "View this book →"}</a>
           ) : (
             <span class="book-link book-link-pending">Purchase link coming soon</span>
           )}
