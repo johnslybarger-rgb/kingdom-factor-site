@@ -103,7 +103,9 @@ npm run verify
 
 ## Production boundary
 
-Production uses Cloudflare Workers with D1, R2, and KV. Do not run `wrangler deploy`, change DNS, modify bindings, create Cloudflare resources, change secrets, or publish a client-facing preview without explicit approval.
+Production uses Cloudflare Workers with D1, R2, and KV. Merging an approved pull request into `main` triggers `.github/workflows/deploy-cloudflare.yml`, which reruns `npm run verify` and deploys the exact merged commit. Treat the human merge as production-deployment approval.
+
+Do not run `wrangler deploy` manually, merge without human approval, change DNS, modify bindings, create Cloudflare resources, or change secrets. Wendy prepares and verifies the pull request; John or another authorized human reviews and merges it.
 
 ## Content guardrails
 
