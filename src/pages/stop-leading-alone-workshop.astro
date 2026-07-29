@@ -1,0 +1,639 @@
+---
+import Base from "../layouts/Base.astro";
+import Schema from "../components/Schema.astro";
+
+const pagePath = "/stop-leading-alone-workshop/";
+const pageUrl = "https://www.purpose-drivenconsulting.net/stop-leading-alone-workshop/";
+const pageTitle = "Stop Leading Alone Workshop";
+const pageDescription =
+  "Register for a free live workshop for Christian business and ministry leaders who want a practical biblical framework for wise counsel, healthier decisions, and Kingdom-minded leadership.";
+const reserveHref = "#reserve-seat";
+const emailReserveHref =
+  "mailto:john@purpose-drivenconsulting.net?subject=Reserve%20my%20spot%20for%20the%20Stop%20Leading%20Alone%20Workshop&body=Hi%20John%2C%0A%0AI%27d%20like%20to%20reserve%20my%20spot%20for%20the%20Stop%20Leading%20Alone%20workshop%20on%20Thursday%2C%20September%203%2C%202026%20from%204%3A00%20pm%20to%205%3A00%20pm%20MST.%0A%0AName%3A%0AEmail%3A%0AOrganization%3A%0A";
+const workshopDate = "Thursday, September 3, 2026";
+const workshopTime = "4:00pm to 5:00pm MST";
+---
+
+<Base title={pageTitle} description={pageDescription} canonical={pagePath} hideChrome>
+  <Schema
+    type="WebPage"
+    title={pageTitle}
+    description={pageDescription}
+    path={pagePath}
+    breadcrumbs={[{ name: "Home", item: "/" }, { name: "Stop Leading Alone Workshop", item: pagePath }]}
+  />
+
+  <header class="workshop-header" aria-label="Stop Leading Alone workshop landing page header">
+    <a class="workshop-logo" href="/" aria-label="Purpose Driven Consulting and Kingdom Factor home">
+      <img src="/images/brand/kf-pdc-horizontal-dark.png" alt="Purpose Driven Consulting · Kingdom Factor" width="1486" height="244" />
+    </a>
+    <a class="workshop-header-button" href={reserveHref}>Reserve your spot</a>
+  </header>
+
+  <div class="workshop-page">
+    <section class="workshop-hero" aria-labelledby="workshop-title">
+      <div class="hero-copy-card">
+        <p class="hero-kicker">Reserve your spot</p>
+        <p class="hero-prehead">Free live training for Christian business and ministry leaders</p>
+        <h1 id="workshop-title">Stop Leading Alone.</h1>
+        <p class="hero-promise">
+          By the end of this workshop, you&rsquo;ll discover a practical, biblical framework that helps Christian business and ministry leaders stop carrying the burden of leadership alone and begin leading with a trusted circle of wise counsel.
+        </p>
+        <p class="hero-promise">
+          You&rsquo;ll learn how to make wiser decisions, strengthen your character, build healthier organizational cultures, and multiply your Kingdom impact without pretending to have all the answers, compromising your convictions, or sacrificing your family.
+        </p>
+        <p class="hero-date">{workshopDate} · {workshopTime}</p>
+        <div class="hero-actions">
+          <a class="workshop-button workshop-button-primary" href={reserveHref}>Save my seat!</a>
+          <p>Yes, I want to attend the free workshop.</p>
+        </div>
+      </div>
+      <div class="hero-image-card" aria-hidden="true">
+        <picture>
+          <source srcset="/images/generated/advisory-room-mobile.webp" media="(max-width: 640px)" />
+          <source srcset="/images/generated/advisory-room-1440.webp" media="(min-width: 981px)" />
+          <img src="/images/generated/advisory-room.webp" alt="" width="1200" height="900" />
+        </picture>
+        <div class="hero-image-caption">
+          <span>Real conversations.</span>
+          <span>Real support.</span>
+          <span>Real leadership growth.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="workshop-info-strip" aria-label="Workshop details">
+      <div>
+        <span aria-hidden="true">📅</span>
+        <strong>{workshopDate}</strong>
+        <small>{workshopTime}</small>
+      </div>
+      <div>
+        <span aria-hidden="true">👥</span>
+        <strong>Only 30 spots</strong>
+        <small>Very limited seating</small>
+      </div>
+      <div>
+        <span aria-hidden="true">✅</span>
+        <strong>Free live training</strong>
+        <small>For Christian business and ministry leaders</small>
+      </div>
+    </section>
+
+    <section class="workshop-learn-section" aria-labelledby="learn-title">
+      <div class="workshop-section-header">
+        <p class="workshop-eyebrow">What you&rsquo;ll learn</p>
+        <h2 id="learn-title">Here&rsquo;s just a fraction of what you&rsquo;ll learn in this free workshop.</h2>
+      </div>
+      <div class="secret-grid">
+        <article class="secret-card">
+          <span>Secret #1</span>
+          <h3>Seek wise counsel</h3>
+          <p>Move from self-reliance to a trusted circle that helps you think clearly, pray honestly, and make decisions with wisdom.</p>
+        </article>
+        <article class="secret-card">
+          <span>Secret #2</span>
+          <h3>Trust authentic relationships</h3>
+          <p>Learn why leaders need more than transactional networking when the decisions are complex and the stakes are personal.</p>
+        </article>
+        <article class="secret-card">
+          <span>Secret #3</span>
+          <h3>Practice shared leadership</h3>
+          <p>Stop carrying everything yourself and build healthier patterns for counsel, accountability, culture, and Kingdom impact.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="workshop-cta-panel" aria-labelledby="first-cta-title">
+      <div>
+        <p class="workshop-eyebrow">Limited seating</p>
+        <h2 id="first-cta-title">Be the first to save your seat.</h2>
+        <p>
+          Save your seat for <strong>Stop Leading Alone: How Christian Business and Ministry Leaders Can Stop Leading Alone and Make Better Decisions Without Compromising Their Faith, Family, or Calling</strong>.
+        </p>
+        <p>Click the button below to reserve your seat.</p>
+      </div>
+      <a class="workshop-button workshop-button-primary" href={reserveHref}>Save my seat!</a>
+    </section>
+
+    <section class="hosts-section" aria-labelledby="hosts-title">
+      <div class="workshop-section-header center">
+        <p class="workshop-eyebrow">About your hosts</p>
+        <h2 id="hosts-title">Dr. John S. Lybarger and James “Jim” C. Lybarger</h2>
+      </div>
+      <div class="host-grid">
+        <article class="host-card">
+          <img src="/images/people/john-lybarger-2026.jpg" alt="John S. Lybarger, Ph.D." width="448" height="448" />
+          <h3>John S. Lybarger, Ph.D.</h3>
+          <p>
+            John S. Lybarger, Ph.D., is an organizational psychologist, Master Certified Coach (MCC), and ordained minister with over 30 years of experience in leadership development and nearly two decades in senior executive roles. When he&rsquo;s not coaching, he&rsquo;s playing with his two dogs, Lili and Leo.
+          </p>
+        </article>
+        <article class="host-card">
+          <img src="/images/people/jim-lybarger-headshot.jpg" alt="James “Jim” C. Lybarger" width="1170" height="1092" />
+          <h3>James “Jim” C. Lybarger</h3>
+          <p>
+            James “Jim” C. Lybarger is a business mentor, Christian life coach, executive with Purpose Driven Consulting, and Certified Kingdom Factor Coach. A retired California Department of Corrections officer with more than seventeen years of service, Jim brings a grounded, real-world perspective on personal change, responsibility, and second chances to everything he does. When he&rsquo;s not coaching, he&rsquo;s building something new in his shop.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="reserve-seat" class="final-reserve-section" aria-labelledby="reserve-title">
+      <div class="reserve-card">
+        <p class="workshop-eyebrow">Reserve your seat</p>
+        <h2 id="reserve-title">Ready to stop leading alone?</h2>
+        <p>
+          This free live workshop is scheduled for <strong>{workshopDate}, {workshopTime}</strong>. Seating is limited to 30 spots.
+        </p>
+        <div class="reserve-actions">
+          <a class="workshop-button workshop-button-primary" href={emailReserveHref}>Email to save my seat</a>
+          <a class="workshop-button workshop-button-secondary" href={pageUrl}>Open/share this landing page</a>
+        </div>
+        <p class="reserve-note">Landing page link: <a href={pageUrl}>{pageUrl}</a></p>
+      </div>
+    </section>
+  </div>
+
+  <footer class="workshop-footer">
+    <p>Copyright © 2026 Purpose Driven Consulting, LLC. All Rights Reserved.</p>
+  </footer>
+</Base>
+
+<style>
+  :global(body) {
+    background: #f7f0e5;
+  }
+
+  :global(.js-reveal-ready .workshop-page .kf-reveal),
+  :global(.workshop-page .kf-reveal) {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .workshop-header {
+    position: sticky;
+    top: 0;
+    z-index: 60;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.9rem clamp(1rem, 4vw, 2.5rem);
+    background: rgba(255, 250, 242, 0.94);
+    border-bottom: 1px solid rgba(168, 148, 131, 0.35);
+    box-shadow: 0 10px 30px rgba(64, 32, 22, 0.06);
+    backdrop-filter: blur(18px);
+  }
+
+  .workshop-logo {
+    display: inline-flex;
+    align-items: center;
+    min-width: 0;
+  }
+
+  .workshop-logo img {
+    width: min(260px, 54vw);
+    height: auto;
+    display: block;
+  }
+
+  .workshop-header-button,
+  .workshop-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 999px;
+    font-weight: 900;
+    transition: transform 0.24s ease, box-shadow 0.24s ease, background 0.24s ease;
+  }
+
+  .workshop-header-button {
+    background: #641f24;
+    color: #fffaf2;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  .workshop-button {
+    border: 1px solid transparent;
+    padding: 0.95rem 1.35rem;
+    min-height: 48px;
+  }
+
+  .workshop-button:hover,
+  .workshop-header-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 32px rgba(64, 32, 22, 0.16);
+  }
+
+  .workshop-button-primary {
+    background: #641f24;
+    color: #fffaf2;
+  }
+
+  .workshop-button-secondary {
+    background: transparent;
+    color: #641f24;
+    border-color: rgba(100, 31, 36, 0.36);
+  }
+
+  .workshop-page {
+    overflow: hidden;
+  }
+
+  .workshop-hero {
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: clamp(2.5rem, 5vw, 5.5rem) clamp(1rem, 4vw, 2rem);
+    display: grid;
+    grid-template-columns: minmax(0, 0.78fr) minmax(320px, 1.22fr);
+    gap: clamp(1.4rem, 4vw, 3rem);
+    align-items: stretch;
+  }
+
+  .hero-copy-card,
+  .hero-image-card,
+  .secret-card,
+  .workshop-cta-panel,
+  .host-card,
+  .reserve-card {
+    border-radius: 32px;
+    box-shadow: 0 24px 70px rgba(64, 32, 22, 0.1);
+  }
+
+  .hero-copy-card {
+    background: rgba(255, 250, 242, 0.92);
+    border: 1px solid rgba(168, 148, 131, 0.32);
+    padding: clamp(1.5rem, 3vw, 2.6rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero-kicker,
+  .workshop-eyebrow {
+    margin: 0 0 0.8rem;
+    color: #641f24;
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .hero-prehead {
+    color: #b58a44;
+    font-size: 0.83rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    line-height: 1.35;
+    margin: 0 0 1rem;
+    text-transform: uppercase;
+  }
+
+  .hero-copy-card h1 {
+    color: #3f1216;
+    font-size: clamp(2.55rem, 5vw, 5rem);
+    line-height: 0.98;
+    max-width: 9ch;
+  }
+
+  .hero-promise {
+    color: #504741;
+    font-size: clamp(1rem, 1.15vw, 1.08rem);
+    line-height: 1.66;
+    margin-top: 1rem;
+  }
+
+  .hero-date {
+    margin: 1.35rem 0 0;
+    color: #3f1216;
+    font-weight: 900;
+  }
+
+  .hero-actions {
+    margin-top: 1.5rem;
+    display: grid;
+    gap: 0.55rem;
+    justify-items: start;
+  }
+
+  .hero-actions p {
+    color: #6a5b51;
+    font-size: 0.92rem;
+    font-weight: 700;
+  }
+
+  .hero-image-card {
+    position: relative;
+    min-height: 620px;
+    overflow: hidden;
+    background: #201717;
+  }
+
+  .hero-image-card picture,
+  .hero-image-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-image-card picture {
+    position: absolute;
+    inset: 0;
+  }
+
+  .hero-image-card img {
+    object-fit: cover;
+    opacity: 0.88;
+    transform: scale(1.015);
+  }
+
+  .hero-image-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(36, 32, 31, 0.06) 38%, rgba(36, 32, 31, 0.82));
+  }
+
+  .hero-image-caption {
+    position: absolute;
+    left: clamp(1rem, 4vw, 2rem);
+    right: clamp(1rem, 4vw, 2rem);
+    bottom: clamp(1rem, 4vw, 2rem);
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+  }
+
+  .hero-image-caption span {
+    border-radius: 999px;
+    background: rgba(255, 250, 242, 0.9);
+    color: #3f1216;
+    padding: 0.7rem 0.95rem;
+    font-weight: 900;
+    box-shadow: 0 12px 28px rgba(18, 10, 8, 0.22);
+  }
+
+  .workshop-info-strip {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1px;
+    background: #0f6f74;
+    color: #fffaf2;
+  }
+
+  .workshop-info-strip > div {
+    min-height: 120px;
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    gap: 0.25rem;
+    padding: 1.2rem;
+    text-align: center;
+    background: #0f7b80;
+  }
+
+  .workshop-info-strip span {
+    font-size: 1.55rem;
+  }
+
+  .workshop-info-strip strong {
+    font-size: clamp(1rem, 1.4vw, 1.25rem);
+  }
+
+  .workshop-info-strip small {
+    color: rgba(255, 250, 242, 0.82);
+    font-weight: 700;
+  }
+
+  .workshop-learn-section,
+  .hosts-section,
+  .final-reserve-section {
+    padding: clamp(4rem, 7vw, 7rem) clamp(1rem, 4vw, 2rem);
+  }
+
+  .workshop-section-header {
+    max-width: 860px;
+    margin: 0 auto clamp(2rem, 4vw, 3rem);
+  }
+
+  .workshop-section-header.center {
+    text-align: center;
+  }
+
+  .workshop-section-header h2,
+  .workshop-cta-panel h2,
+  .reserve-card h2 {
+    color: #3f1216;
+    font-size: clamp(2rem, 3.7vw, 3.35rem);
+    line-height: 1.08;
+  }
+
+  .secret-grid,
+  .host-grid {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+  }
+
+  .secret-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .secret-card {
+    min-height: 280px;
+    padding: clamp(1.4rem, 2.4vw, 2rem);
+    background: #fffaf2;
+    border: 1px solid rgba(168, 148, 131, 0.35);
+  }
+
+  .secret-card span {
+    display: inline-flex;
+    margin-bottom: 1rem;
+    color: #b58a44;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .secret-card h3,
+  .host-card h3 {
+    color: #3f1216;
+    margin-bottom: 0.8rem;
+  }
+
+  .secret-card p,
+  .host-card p,
+  .workshop-cta-panel p,
+  .reserve-card p {
+    color: #504741;
+  }
+
+  .workshop-cta-panel {
+    max-width: 1080px;
+    margin: 0 auto clamp(3.5rem, 6vw, 6rem);
+    padding: clamp(1.8rem, 4vw, 3.4rem);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    background: #fffaf2;
+    border: 1px solid rgba(168, 148, 131, 0.35);
+  }
+
+  .workshop-cta-panel div {
+    max-width: 760px;
+  }
+
+  .workshop-cta-panel p {
+    margin-top: 1rem;
+    font-size: 1.06rem;
+  }
+
+  .hosts-section {
+    background: #0f7b80;
+    color: #fffaf2;
+  }
+
+  .hosts-section .workshop-eyebrow,
+  .hosts-section h2 {
+    color: #fffaf2;
+  }
+
+  .host-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .host-card {
+    background: rgba(255, 250, 242, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.54);
+    padding: clamp(1.5rem, 3vw, 2.4rem);
+  }
+
+  .host-card img {
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    border: 4px solid rgba(213, 178, 111, 0.45);
+    box-shadow: 0 18px 44px rgba(15, 8, 7, 0.18);
+    margin-bottom: 1.2rem;
+  }
+
+  .final-reserve-section {
+    background:
+      radial-gradient(circle at 20% 20%, rgba(213, 178, 111, 0.18), transparent 34%),
+      linear-gradient(135deg, #3f1216, #641f24);
+  }
+
+  .reserve-card {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: clamp(2rem, 5vw, 4rem);
+    background: #fffaf2;
+    text-align: center;
+  }
+
+  .reserve-card p {
+    max-width: 700px;
+    margin: 1rem auto 0;
+    font-size: 1.08rem;
+  }
+
+  .reserve-actions {
+    margin-top: 1.6rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.85rem;
+  }
+
+  .reserve-note {
+    font-size: 0.88rem !important;
+    color: #6a5b51 !important;
+    overflow-wrap: anywhere;
+  }
+
+  .reserve-note a {
+    color: #641f24;
+    font-weight: 800;
+  }
+
+  .workshop-footer {
+    padding: 1.5rem clamp(1rem, 4vw, 2rem);
+    background: #201717;
+    color: #dfd2bf;
+    text-align: center;
+  }
+
+  .workshop-footer p {
+    margin: 0;
+  }
+
+  @media (max-width: 980px) {
+    .workshop-hero,
+    .secret-grid,
+    .host-grid,
+    .workshop-info-strip {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-image-card {
+      min-height: 430px;
+    }
+
+    .workshop-cta-panel {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .workshop-header-button {
+      padding: 0.68rem 0.82rem;
+      font-size: 0.78rem;
+    }
+
+    .hero-copy-card,
+    .hero-image-card,
+    .secret-card,
+    .workshop-cta-panel,
+    .host-card,
+    .reserve-card {
+      border-radius: 24px;
+    }
+
+    .hero-copy-card h1 {
+      max-width: 100%;
+    }
+
+    .hero-image-card {
+      min-height: 340px;
+    }
+
+    .hero-image-caption {
+      gap: 0.45rem;
+    }
+
+    .hero-image-caption span {
+      font-size: 0.82rem;
+      padding: 0.55rem 0.7rem;
+    }
+
+    .workshop-button,
+    .workshop-header-button {
+      width: 100%;
+    }
+
+    .workshop-header {
+      align-items: stretch;
+      flex-direction: column;
+    }
+  }
+</style>
