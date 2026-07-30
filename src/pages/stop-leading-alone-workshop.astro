@@ -7,9 +7,7 @@ const pageUrl = "https://www.purpose-drivenconsulting.net/stop-leading-alone-wor
 const pageTitle = "Stop Leading Alone Workshop";
 const pageDescription =
   "Register for a free live workshop for Christian business and ministry leaders who want a practical biblical framework for wise counsel, healthier decisions, and Kingdom-minded leadership.";
-const reserveHref = "#reserve-seat";
-const emailReserveHref =
-  "mailto:john@purpose-drivenconsulting.net?subject=Reserve%20my%20spot%20for%20the%20Stop%20Leading%20Alone%20Workshop&body=Hi%20John%2C%0A%0AI%27d%20like%20to%20reserve%20my%20spot%20for%20the%20Stop%20Leading%20Alone%20workshop%20on%20Thursday%2C%20September%203%2C%202026%20from%204%3A00%20pm%20to%205%3A00%20pm%20MST.%0A%0AName%3A%0AEmail%3A%0AOrganization%3A%0A";
+const reserveHref = "https://api.gohighroad.com/widget/booking/aMbCwI7xuhwJzaPFAeuz";
 const workshopDate = "Thursday, September 3, 2026";
 const workshopTime = "4:00pm to 5:00pm MST";
 ---
@@ -147,7 +145,7 @@ const workshopTime = "4:00pm to 5:00pm MST";
           This free live workshop is scheduled for <strong>{workshopDate}, {workshopTime}</strong>. Seating is limited to 30 spots.
         </p>
         <div class="reserve-actions">
-          <a class="workshop-button workshop-button-primary" href={emailReserveHref}>Email to save my seat</a>
+          <a class="workshop-button workshop-button-primary" href={reserveHref}>Save my seat</a>
           <a class="workshop-button workshop-button-secondary" href={pageUrl}>Open/share this landing page</a>
         </div>
         <p class="reserve-note">Landing page link: <a href={pageUrl}>{pageUrl}</a></p>
