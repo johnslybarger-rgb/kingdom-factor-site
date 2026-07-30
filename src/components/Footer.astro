@@ -4,7 +4,7 @@ import { nav } from "../lib/site";
 <footer class="site-footer">
   <div class="footer-grid refined-footer-grid">
     <div class="footer-intro">
-      <img class="footer-logo footer-logo-square" src="/images/brand/kf-pdc-footer-square.png" alt="Kingdom Factor · Purpose Driven Consulting LLC" width="202" height="202" />
+      <img class="footer-logo footer-logo-wide" src="/images/brand/kf-pdc-lead-better-together.png" alt="Purpose Driven Consulting, LLC and Kingdom Factor — Lead Better Together" width="2172" height="724" />
       <p class="footer-tagline">Lead with wisdom. Never lead alone.</p>
       <p>Peer advisory, executive coaching, and marketplace ministry for Christian business owners and leaders who want wisdom in the room.</p>
     </div>
@@ -32,6 +32,14 @@ import { nav } from "../lib/site";
 </footer>
 
 <style>
+  .footer-logo-wide {
+    width: min(520px, 100%);
+    height: auto;
+    padding: 0;
+    background: transparent;
+    border-radius: 18px;
+    object-fit: contain;
+  }
   .footer-tagline {
     font-family: "Libre Baskerville", Georgia, serif;
     font-size: clamp(1.15rem, 1.6vw, 1.5rem);

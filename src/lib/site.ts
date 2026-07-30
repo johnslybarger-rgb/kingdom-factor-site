@@ -123,6 +123,7 @@ export const people = [
 ];
 
 export const bookHighlights = [
+  "Stop Leading Alone",
   "Marketplace Ministry",
   "The Leadership Circle: Peer Advisory Groups",
   "Biblical Accountability",
