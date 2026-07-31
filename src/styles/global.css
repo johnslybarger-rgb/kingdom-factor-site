@@ -3584,3 +3584,19 @@ img, svg, video, canvas, picture {
   }
 }
 
+/* 2026-07-30 — Apply page fit conversation: reduce the gap between the hero copy and booking cards. */
+.page-hero:has(+ .apply-book-section) {
+  padding-bottom: clamp(1.25rem, 2vw, 2rem) !important;
+}
+.apply-book-section {
+  padding-top: clamp(1rem, 2vw, 1.75rem) !important;
+}
+@media (max-width: 760px) {
+  .page-hero:has(+ .apply-book-section) {
+    padding-bottom: 1.15rem !important;
+  }
+  .apply-book-section {
+    padding-top: 1.15rem !important;
+  }
+}
+
