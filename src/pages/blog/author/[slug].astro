@@ -15,7 +15,8 @@ try {
   author = res?.entry ?? null;
   if (author) {
     const postsRes = await getEmDashCollection("posts", { status: "published", orderBy: { published_at: "desc" } });
-    posts = (postsRes?.entries ?? []).filter((p: any) => p?.data?.author === slug);
+    const authorIdentifiers = new Set([slug, author.id, author.data?.slug, author.slug].filter(Boolean));
+    posts = (postsRes?.entries ?? []).filter((p: any) => authorIdentifiers.has(p?.data?.author));
   }
 } catch {
   author = null;
@@ -26,6 +27,7 @@ if (!author) {
 }
 
 const name = author.data?.name ?? "Kingdom Factor author";
+const authorPageSlug = author.data?.slug ?? author.slug ?? slug;
 const metaTitle = `${name} | Kingdom Factor`;
 const metaDescription = author.data?.bio ?? `Articles by ${name} on Christian leadership, peer advisory, and marketplace ministry.`;
 const postSlug = (p: any) => p?.data?.slug ?? p?.id;
@@ -37,8 +39,8 @@ const fmtDate = (v: unknown) => {
     : d.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
 };
 ---
-<Base title={metaTitle} description={metaDescription} canonical={`/blog/author/${slug}/`}>
-  <Schema type="WebPage" title={metaTitle} description={metaDescription} path={`/blog/author/${slug}/`} breadcrumbs={[{ name: "Home", item: "/" }, { name: "Blog", item: "/blog/" }, { name, item: `/blog/author/${slug}/` }]} />
+<Base title={metaTitle} description={metaDescription} canonical={`/blog/author/${authorPageSlug}/`}>
+  <Schema type="WebPage" title={metaTitle} description={metaDescription} path={`/blog/author/${authorPageSlug}/`} breadcrumbs={[{ name: "Home", item: "/" }, { name: "Blog", item: "/blog/" }, { name, item: `/blog/author/${authorPageSlug}/` }]} />
 
   <section class="author-hero">
     <p class="author-breadcrumb"><a href="/blog/">← Back to all articles</a></p>
