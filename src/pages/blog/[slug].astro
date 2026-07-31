@@ -30,6 +30,7 @@ const metaTitle = post.data?.meta_title ?? `${title} | Kingdom Factor`;
 const metaDescription = post.data?.meta_description ?? post.data?.excerpt ?? "";
 const body = Array.isArray(post.data?.content) ? post.data.content : null;
 const authorSlug = post.data?.author;
+const authorPageSlug = author?.data?.slug ?? author?.slug ?? authorSlug;
 const fmtDate = (v: unknown) => {
   if (!v) return "";
   const d = new Date(v as string);
@@ -54,7 +55,7 @@ const publishedDate = fmtDate(post.data?.published_at);
           )}
           <span class="post-byline-text">
             <span class="post-byline-name">
-              By <a href={`/blog/author/${authorSlug}/`}>{author.data?.name}</a>
+              By <a href={`/blog/author/${authorPageSlug}/`}>{author.data?.name}</a>
             </span>
             {author.data?.bio && <span class="post-byline-bio">{author.data.bio}</span>}
             {publishedDate && <span class="post-byline-date">{publishedDate}</span>}
@@ -79,7 +80,7 @@ const publishedDate = fmtDate(post.data?.published_at);
         <div>
           <p class="eyebrow">About the author</p>
           <h2>
-            <a href={`/blog/author/${authorSlug}/`}>{author.data?.name}</a>
+            <a href={`/blog/author/${authorPageSlug}/`}>{author.data?.name}</a>
           </h2>
           {author.data?.role && <p class="post-author-role">{author.data.role}</p>}
           {author.data?.full_bio && <p>{author.data.full_bio}</p>}
