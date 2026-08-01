@@ -123,7 +123,21 @@ const phases: Phase[] = [
       </ul>
       <p>The goal isn't inspiration for its own sake; it's wiser decisions, stronger execution, and a leader who's thriving at the intersection of faith, business, and family.</p>
       <p><strong>Ready to explore if this is the right fit?</strong> Start with a fit conversation, and we'll discern together whether one-on-one coaching, peer advisory, or another path is the best next step for you.</p>
-      <a class="btn btn-primary" href="https://jlybarger.kingdomfactor.us/meeting-length" target="_blank" rel="noopener">Fit Conversation</a>
+      <div class="executive-coach-selector" aria-labelledby="executive-coach-selector-title">
+        <h3 id="executive-coach-selector-title">Choose your coach</h3>
+        <div class="kci-pricing-grid">
+          <article class="kci-price-card">
+            <p class="kci-price-coach">Dr. John S. Lybarger</p>
+            <p class="kci-price-role">Executive coaching for established owners, executives, and senior leaders.</p>
+            <a class="btn btn-primary" href="https://jlybarger.kingdomfactor.us/meeting-length" target="_blank" rel="noopener">Request a fit conversation</a>
+          </article>
+          <article class="kci-price-card">
+            <p class="kci-price-coach">James C. &quot;Jim&quot; Lybarger</p>
+            <p class="kci-price-role">Coaching for emerging owners, founders, and bi-vocational leaders.</p>
+            <a class="btn btn-primary" href="http://jclybarger.kingdomfactor.us/meeting-length" target="_blank" rel="noopener">Request a fit conversation</a>
+          </article>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -295,13 +309,13 @@ const phases: Phase[] = [
           <p class="kci-price-coach">Dr. John S. Lybarger</p>
           <p class="kci-price-role">Executive coaching for established owners, executives, and senior leaders.</p>
           <p class="kci-price-note">Full 90-day intensive, all tools and templates, access to a peer advisory group and monthly coaching during the intensive.</p>
-          <a class="btn btn-primary" href="/apply/">Request a fit conversation</a>
+          <a class="btn btn-primary" href="https://jlybarger.kingdomfactor.us/meeting-length" target="_blank" rel="noopener">Request a fit conversation</a>
         </article>
         <article class="kci-price-card">
           <p class="kci-price-coach">James C. "Jim" Lybarger</p>
           <p class="kci-price-role">Coaching for emerging owners, founders, and bi-vocational leaders.</p>
           <p class="kci-price-note">Full 90-day intensive, all tools and templates, access to a peer advisory group and monthly coaching during the intensive.</p>
-          <a class="btn btn-primary" href="/apply/">Request a fit conversation</a>
+          <a class="btn btn-primary" href="http://jclybarger.kingdomfactor.us/meeting-length" target="_blank" rel="noopener">Request a fit conversation</a>
         </article>
       </div>
     </div>
@@ -405,6 +419,17 @@ const phases: Phase[] = [
   }
   .executive-coaching-intro .btn {
     margin-top: 0.35rem;
+  }
+  .executive-coach-selector {
+    margin-top: clamp(1.75rem, 3vw, 2.4rem);
+  }
+  .executive-coach-selector h3 {
+    font-family: var(--display, "Cormorant Garamond", "Source Serif Pro", Georgia, serif);
+    font-size: clamp(1.7rem, 2.6vw, 2.25rem);
+    line-height: 1.15;
+    color: var(--burgundy-dark, #4a0f15);
+    margin: 0 0 0.3rem;
+    letter-spacing: -0.01em;
   }
 
   .kci-streams {
