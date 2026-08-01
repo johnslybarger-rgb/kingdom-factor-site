@@ -1,0 +1,141 @@
+---
+import { site } from "../lib/site";
+
+const lastUpdated = "August 1, 2026";
+---
+
+<section class="legal-page privacy-policy-page">
+  <p class="eyebrow">Privacy policy</p>
+  <h1>Privacy Policy</h1>
+  <p class="legal-updated">Last updated: {lastUpdated}</p>
+
+  <p>
+    Purpose Driven Consulting, LLC and Kingdom Factor ("we," "us," or "our") respect your privacy. This policy explains how we may collect, use, share, and protect information when you visit <a href="https://www.purpose-drivenconsulting.net">purpose-drivenconsulting.net</a>, read our resources, contact us, request a fit conversation, use scheduling links, or submit a website change request.
+  </p>
+
+  <p>
+    This page is written to give clear website privacy expectations. It is not a coaching agreement, consulting agreement, or separate confidentiality agreement. If you become a client, additional terms may apply to that relationship.
+  </p>
+
+  <h2>Information we collect</h2>
+  <p>We may collect the following types of information:</p>
+  <ul>
+    <li><strong>Information you choose to share.</strong> This may include your name, email address, phone number, company or organization, role, business stage, message details, scheduling details, request type, screenshots, reference links, and other information you send through email, phone, scheduling tools, forms, or the hidden website change request portal.</li>
+    <li><strong>Website and technical information.</strong> Our site and hosting providers may process basic technical details such as IP address, browser type, device information, pages viewed, referring page, timestamps, and similar information needed to operate, secure, diagnose, and improve the website.</li>
+    <li><strong>Scheduling and third-party tool information.</strong> If you use a scheduling link or another tool linked from this site, that tool may collect information needed to book, confirm, or manage the meeting. Those providers may have their own privacy policies.</li>
+  </ul>
+
+  <h2>How we use information</h2>
+  <p>We may use information to:</p>
+  <ul>
+    <li>respond to questions, requests, and website change submissions;</li>
+    <li>schedule and prepare for fit conversations, coaching, advisory, or consulting discussions;</li>
+    <li>provide resources, services, follow-up, and client support;</li>
+    <li>operate, secure, troubleshoot, and improve the website;</li>
+    <li>protect against spam, abuse, fraud, or unauthorized access;</li>
+    <li>maintain business records and comply with applicable legal obligations.</li>
+  </ul>
+
+  <h2>Cookies and similar technologies</h2>
+  <p>
+    The website may use essential cookies, logs, or similar technologies that help the site work, keep it secure, and understand basic performance. If we add new analytics, advertising, or tracking tools that materially change these practices, this policy should be updated.
+  </p>
+
+  <h2>How we share information</h2>
+  <p>
+    We do not sell personal information. We may share information with trusted service providers who help us operate the website and business, such as hosting and security providers, website/CMS tools, scheduling tools, email or communication tools, and project-management tools used for website requests. These providers are expected to use information only for the services they provide to us.
+  </p>
+  <p>
+    We may also disclose information if required by law, to protect rights and safety, to prevent misuse of the site, or in connection with a business transition such as a merger, acquisition, or transfer of assets.
+  </p>
+
+  <h2>Email, phone, and text communication</h2>
+  <p>
+    If you contact us or give us your contact information, we may use it to respond and continue the conversation you started. If you choose to receive email or text updates, you can ask us to stop. We do not sell phone numbers or text-message opt-in data.
+  </p>
+
+  <h2>Confidential or sensitive information</h2>
+  <p>
+    Please do not send confidential, sensitive, or protected information through the website unless we have agreed on the appropriate secure process. Initial website requests, emails, and scheduling forms are intended for general contact and fit-conversation coordination.
+  </p>
+
+  <h2>Data retention</h2>
+  <p>
+    We keep information for as long as reasonably needed for the purposes described in this policy, including responding to requests, providing services, maintaining records, resolving disputes, and meeting legal or business obligations. Retention periods may vary based on the type of information and context.
+  </p>
+
+  <h2>Your choices and data deletion requests</h2>
+  <p>
+    You may ask us to update, correct, or delete personal information you have provided, subject to legal, security, and recordkeeping limits. To request deletion, email <a href={`mailto:${site.email}`}>{site.email}</a> with the subject line <strong>Data Deletion Request</strong> and include your name, the email address connected to your request, and a brief description of what you would like deleted.
+  </p>
+  <p>
+    You may also unsubscribe from marketing emails when an unsubscribe option is provided or contact us directly to ask that we stop sending non-essential communications.
+  </p>
+
+  <h2>Security</h2>
+  <p>
+    We use reasonable safeguards designed to protect information. No website, email system, or internet transmission is completely secure, so please use care when deciding what to send online.
+  </p>
+
+  <h2>Children's privacy</h2>
+  <p>
+    This website is intended for adults and business or ministry leaders. We do not knowingly collect personal information from children under 13.
+  </p>
+
+  <h2>Links to other websites</h2>
+  <p>
+    This site may link to third-party websites, scheduling pages, book retailers, or resources. We are not responsible for the privacy practices or content of those outside sites. Please review their privacy policies before sharing information with them.
+  </p>
+
+  <h2>Updates to this policy</h2>
+  <p>
+    We may update this policy from time to time. The "Last updated" date above shows when this page was last revised.
+  </p>
+
+  <h2>Contact</h2>
+  <p>
+    If you have questions about this privacy policy or how your information is handled, contact Purpose Driven Consulting, LLC at <a href={`mailto:${site.email}`}>{site.email}</a> or visit the <a href="/contact/">contact page</a>.
+  </p>
+</section>
+
+<style>
+  .privacy-policy-page {
+    color: #453a35;
+  }
+
+  :global(.privacy-policy-page.kf-reveal) {
+    opacity: 1;
+    transform: none;
+  }
+
+  .privacy-policy-page p,
+  .privacy-policy-page li {
+    line-height: 1.72;
+  }
+
+  .privacy-policy-page p + p,
+  .privacy-policy-page p + ul,
+  .privacy-policy-page ul + p {
+    margin-top: 1rem;
+  }
+
+  .privacy-policy-page ul {
+    margin: 1rem 0 0;
+    padding-left: 1.25rem;
+  }
+
+  .privacy-policy-page li + li {
+    margin-top: 0.7rem;
+  }
+
+  .privacy-policy-page a {
+    color: var(--burgundy, #641f24);
+    font-weight: 800;
+  }
+
+  .legal-updated {
+    color: #6a5a50;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+  }
+</style>
