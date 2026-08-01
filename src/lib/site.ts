@@ -44,7 +44,7 @@ export const offers = [
       "A trusted circle for wise counsel, accountability, shared learning, and faith-integrated decision-making.",
   },
   {
-    title: "Executive Coaching Intensive",
+    title: "Executive Coaching",
     href: "/executive-coaching/",
     audience: "Established owners, executives, and senior leaders",
     summary:
