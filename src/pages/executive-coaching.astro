@@ -87,7 +87,7 @@ const phases: Phase[] = [
   },
 ];
 ---
-<Base title="Kingdom Culture Intensive — Executive Coaching with Dr. John Lybarger" description="A 90-day executive coaching intensive for Christian business owners and senior leaders: confidential 1:1 coaching plus peer advisory to align faith, culture, and performance." canonical="/executive-coaching/">
+<Base title="Executive Coaching with Dr. John Lybarger — Kingdom Culture Intensive" description="Confidential one-on-one executive coaching for Christian executives, owners, and senior leaders, plus the Kingdom Culture Intensive for leaders ready to align faith, culture, and performance." canonical="/executive-coaching/">
   <Schema
     type={schemaType}
     title={page.title}
@@ -107,6 +107,25 @@ const phases: Phase[] = [
     image={page.heroImage}
     imageMobile={page.heroImageMobile}
   />
+
+  <section class="executive-coaching-intro">
+    <div class="executive-coaching-inner">
+      <p class="eyebrow">Executive Coaching</p>
+      <h2>One-on-One Executive Coaching</h2>
+      <p>Leadership carries a weight that's hard to set down: decisions about people, profit, culture, and calling that you can't always process out loud with your team, your board, or even your family. This is a confidential space to do exactly that.</p>
+      <p>I blend organizational psychology, decades of private-sector experience, and Spirit-led discernment to help Christian executives, owners, and senior leaders think clearly, decide wisely, and lead from a place of conviction rather than pressure. Every conversation is grounded in Scripture and held in strict confidence, so you can bring the real questions, not the polished version.</p>
+      <p>Coaching engagements are built around what you're actually facing, and typically move through four areas:</p>
+      <ul class="executive-coaching-list">
+        <li><strong>Purpose and calling</strong> — getting clear on why you lead, not just what you lead</li>
+        <li><strong>Strategy and execution</strong> — turning discernment into concrete next steps and faithful follow-through</li>
+        <li><strong>Culture and team health</strong> — building organizations where people and performance both flourish</li>
+        <li><strong>Personal and spiritual resilience</strong> — sustaining the leader, not just the leadership</li>
+      </ul>
+      <p>The goal isn't inspiration for its own sake; it's wiser decisions, stronger execution, and a leader who's thriving at the intersection of faith, business, and family.</p>
+      <p><strong>Ready to explore if this is the right fit?</strong> Start with a fit conversation, and we'll discern together whether one-on-one coaching, peer advisory, or another path is the best next step for you.</p>
+      <a class="btn btn-primary" href="https://jlybarger.kingdomfactor.us/meeting-length" target="_blank" rel="noopener">Fit Conversation</a>
+    </div>
+  </section>
 
   <section class="kci-narrative">
     <div class="kci-narrative-inner">
@@ -309,7 +328,8 @@ const phases: Phase[] = [
 </Base>
 
 <style>
-  /* --------- Kingdom Culture Intensive long-form sections ---------- */
+  /* --------- Executive Coaching + Kingdom Culture Intensive long-form sections ---------- */
+  .executive-coaching-intro,
   .kci-narrative,
   .kci-streams,
   .kci-structure,
@@ -319,6 +339,7 @@ const phases: Phase[] = [
     margin: 0 auto;
     padding: clamp(2.75rem, 5vw, 4.5rem) clamp(1rem, 4vw, 2rem);
   }
+  .executive-coaching-inner,
   .kci-narrative-inner,
   .kci-streams-inner,
   .kci-structure-inner,
@@ -327,6 +348,7 @@ const phases: Phase[] = [
     max-width: 880px;
     margin: 0 auto;
   }
+  .executive-coaching-intro h2,
   .kci-narrative h2,
   .kci-streams h2,
   .kci-structure h2,
@@ -336,6 +358,7 @@ const phases: Phase[] = [
     text-wrap: balance;
     margin-bottom: 1.1rem;
   }
+  .executive-coaching-intro p,
   .kci-narrative p,
   .kci-streams p,
   .kci-structure p,
@@ -344,6 +367,44 @@ const phases: Phase[] = [
     line-height: 1.72;
     color: #4d423b;
     margin-bottom: 1rem;
+  }
+
+  .executive-coaching-intro {
+    background: linear-gradient(135deg, rgba(255, 250, 242, 0.72), rgba(213, 178, 111, 0.1));
+    max-width: none;
+    padding-left: clamp(1rem, 4vw, 2rem);
+    padding-right: clamp(1rem, 4vw, 2rem);
+  }
+  .executive-coaching-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.2rem 0 1.35rem;
+    display: grid;
+    gap: 0.85rem;
+  }
+  .executive-coaching-list li {
+    position: relative;
+    padding-left: 1.45rem;
+    font-size: clamp(1.02rem, 1.15vw, 1.13rem);
+    line-height: 1.65;
+    color: #4d423b;
+  }
+  .executive-coaching-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.68em;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: var(--burgundy, #641f24);
+  }
+  .executive-coaching-list strong,
+  .executive-coaching-intro strong {
+    color: var(--burgundy-dark, #4a0f15);
+  }
+  .executive-coaching-intro .btn {
+    margin-top: 0.35rem;
   }
 
   .kci-streams {
