@@ -1,0 +1,791 @@
+---
+import Base from "../layouts/Base.astro";
+import CTA from "../components/CTA.astro";
+import Schema from "../components/Schema.astro";
+import { site } from "../lib/site";
+
+const pagePath = "/stop-leading-alone-free-resources/";
+const pageUrl = new URL(pagePath, site.url).toString();
+const pageTitle = "Stop Leading Alone Free Resources";
+const pageDescription =
+  "Free printable worksheets and reflection tools from Stop Leading Alone for Christian leaders who want clarity, support, resilience, and a wiser room.";
+const amazonUrl = "https://www.amazon.com/dp/B0GZBH8M19";
+const johnConsultUrl = "https://jlybarger.kingdomfactor.us/meeting-length";
+const jimConsultUrl = "https://jclybarger.kingdomfactor.us/meeting-length";
+
+const campaignLinks = [
+  {
+    video: "Video 1",
+    keyword: "ALONE",
+    title: "The 5 Signs You're Leading Alone",
+    id: "the-5-signs-youre-leading-alone",
+    description: "Name the warning signs that leadership weight has become too private.",
+  },
+  {
+    video: "Video 4",
+    keyword: "CLARITY",
+    title: "Decision Clarity Checklist",
+    id: "decision-clarity-checklist",
+    description: "Slow down a high-stakes decision until calling, character, people, and next steps are clear.",
+  },
+  {
+    video: "Video 7",
+    keyword: "TEAM",
+    title: "Team Alignment Assessment",
+    id: "team-alignment-assessment",
+    description: "Check whether your team has the clarity, trust, and rhythm needed to move together.",
+  },
+  {
+    video: "Video 8",
+    keyword: "SILOS",
+    title: "5 Questions to Break Down Silos",
+    id: "five-questions-to-break-down-silos",
+    description: "Use five leadership questions to start rebuilding communication across teams.",
+  },
+  {
+    video: "Video 10",
+    keyword: "CALLING",
+    title: "The Calling Reflection Guide",
+    id: "the-calling-reflection-guide",
+    description: "Reflect on what God has entrusted to you and where strategy may need realignment.",
+  },
+  {
+    video: "Video 13",
+    keyword: "IRON",
+    title: "Why Leaders Need a Wiser Room",
+    id: "why-leaders-need-a-wiser-room",
+    description: "Discern whether you have the right confidential space for truth, counsel, and support.",
+  },
+  {
+    video: "Video 16",
+    keyword: "RESET",
+    title: "The Resilience Reset 5-Day Challenge",
+    id: "the-resilience-reset-5-day-challenge",
+    description: "A five-day reset for depleted leaders who need margin, honesty, and wise support.",
+  },
+];
+
+const resourceSections = [
+  {
+    eyebrow: "Resource 01 · Comment keyword ALONE",
+    title: "The 5 Signs You're Leading Alone",
+    id: "the-5-signs-youre-leading-alone",
+    bestFor: "Leaders who look strong on the outside and still carry too much alone.",
+    purpose: "Use this quick check to name where isolation may be shaping your leadership.",
+    checklistTitle: "Check the signs that fit your current season.",
+    checklist: [
+      "I carry major decisions privately longer than is wise.",
+      "People see me as strong, yet few know what leadership is costing me.",
+      "I have friends, mentors, or advisors, and still lack a confidential room for real leadership weight.",
+      "My pace is spilling into my soul, family, team, or culture.",
+      "I am making high-stakes choices without steady faith-aligned counsel.",
+    ],
+    prompts: [
+      "Which sign is most active right now?",
+      "What has this pattern protected me from?",
+      "What is this pattern now costing me?",
+      "Who could help me carry this with wisdom and truth?",
+    ],
+    nextStep:
+      "Choose one trusted person and say, “I am carrying more than I usually say, and I need a wiser way to process it.”",
+  },
+  {
+    eyebrow: "Resource 02 · Comment keyword CLARITY",
+    title: "Decision Clarity Checklist",
+    id: "decision-clarity-checklist",
+    bestFor: "A difficult decision that needs more than speed, pressure, or instinct.",
+    purpose: "Use these questions before you choose, delay, delegate, or respond.",
+    checklistTitle: "Work through the five clarity questions.",
+    checklist: [
+      "Calling: What has God entrusted to me to steward here?",
+      "Character: What kind of person does this decision require me to become?",
+      "People: Who is affected, and how do I honor their dignity?",
+      "Counsel: Who can help me see what I am missing?",
+      "Next step: What is the most faithful action I can take now?",
+    ],
+    prompts: [
+      "What is the real decision underneath the noise?",
+      "What value or conviction is at stake?",
+      "What fear may be making delay or compromise feel easier?",
+      "What would clarity, courage, and integrity look like this week?",
+    ],
+    nextStep:
+      "Bring your answers to a coach, trusted peer, or advisory room before making a decision that carries real weight.",
+  },
+  {
+    eyebrow: "Resource 03 · Comment keyword TEAM",
+    title: "Team Alignment Assessment",
+    id: "team-alignment-assessment",
+    bestFor: "Owners, executives, pastors, and team leaders who sense drift before people say it out loud.",
+    purpose: "Use this assessment to see whether your team is moving with shared clarity and trust.",
+    checklistTitle: "Rate each area from 1–5, then note what needs attention.",
+    checklist: [
+      "Purpose: We know what matters most in this season.",
+      "Roles: People know what they own and what they need from others.",
+      "Communication: Important information travels early and clearly.",
+      "Trust: People can tell the truth without fear or image management.",
+      "Decisions: We know how decisions are made and who needs to be in the room.",
+      "Values: Our daily behavior reflects what we say we believe.",
+    ],
+    prompts: [
+      "Where is the team most aligned right now?",
+      "Where is drift showing up first?",
+      "What conversation have we delayed?",
+      "What one rhythm would help this team move together?",
+    ],
+    nextStep:
+      "Pick one alignment gap and schedule a direct, respectful conversation with the people closest to it.",
+  },
+  {
+    eyebrow: "Resource 04 · Comment keyword SILOS",
+    title: "5 Questions to Break Down Silos",
+    id: "five-questions-to-break-down-silos",
+    bestFor: "Teams or departments that are working hard and not working together.",
+    purpose: "Use these questions to shift from blame to shared ownership.",
+    checklistTitle: "Ask these five questions in a leadership meeting.",
+    checklist: [
+      "What information is not moving across the organization quickly enough?",
+      "Where have we optimized one area while weakening the whole?",
+      "Which decision rights or handoffs are unclear?",
+      "What shared outcome should pull us back together?",
+      "What rhythm will keep the right people in the same conversation?",
+    ],
+    prompts: [
+      "Which silo is creating the greatest cost right now?",
+      "What has leadership modeled that may have reinforced it?",
+      "Who needs to be invited into the next conversation?",
+      "What one handoff or meeting rhythm should change first?",
+    ],
+    nextStep:
+      "Choose one shared outcome and gather the leaders who must own it together.",
+  },
+  {
+    eyebrow: "Resource 05 · Comment keyword CALLING",
+    title: "The Calling Reflection Guide",
+    id: "the-calling-reflection-guide",
+    bestFor: "Leaders who have built something meaningful and want to ensure it reflects their calling.",
+    purpose: "Use these prompts to reconnect success, strategy, and stewardship.",
+    checklistTitle: "Reflect honestly before changing direction or doubling down.",
+    checklist: [
+      "What work has God clearly placed in my hand right now?",
+      "Where does my current strategy reflect that calling?",
+      "Where does my current strategy compete with that calling?",
+      "What fruit am I hoping this work produces in people, culture, and legacy?",
+      "What support do I need to lead this calling faithfully?",
+    ],
+    prompts: [
+      "What am I building that feels aligned with my calling?",
+      "What am I building that feels impressive and not fully faithful?",
+      "Where have I confused growth with obedience?",
+      "What would the next faithful step look like?",
+    ],
+    nextStep:
+      "Write one sentence that names your current assignment. Use it to test the next decision on your calendar.",
+  },
+  {
+    eyebrow: "Resource 06 · Comment keyword IRON",
+    title: "Why Leaders Need a Wiser Room",
+    id: "why-leaders-need-a-wiser-room",
+    bestFor: "Christian executives, founders, owners, and ministry leaders who need more than advice from a distance.",
+    purpose: "Use this tool to evaluate whether you have a trusted room for truth, counsel, and support.",
+    checklistTitle: "A wiser room should make these things possible.",
+    checklist: [
+      "Confidentiality: I can process real issues without public performance.",
+      "Peer wisdom: People understand the weight of leadership because they carry it too.",
+      "Faith-integrated counsel: Scripture, prayer, and practical leadership wisdom belong together.",
+      "Grace and truth: People encourage me and challenge me.",
+      "Accountability: Commitments are remembered and followed up.",
+    ],
+    prompts: [
+      "Where do I currently go when the decision is complex?",
+      "Who can ask me the questions I may avoid asking myself?",
+      "Where do I need counsel that is both faithful and practical?",
+      "What would change if I had a wiser room this quarter?",
+    ],
+    nextStep:
+      "If you do not have this kind of room, start a fit conversation about peer advisory, coaching, or consulting.",
+  },
+  {
+    eyebrow: "Resource 07 · Comment keyword RESET",
+    title: "The Resilience Reset 5-Day Challenge",
+    id: "the-resilience-reset-5-day-challenge",
+    bestFor: "Depleted leaders who have been calling exhaustion faithfulness.",
+    purpose: "Use one small practice each day to rebuild margin and tell the truth about what you carry.",
+    checklistTitle: "Five-day reset rhythm.",
+    checklist: [
+      "Day 1 — Name the weight: Write down what you are carrying that most people do not see.",
+      "Day 2 — Restore one rhythm: Protect one short block for prayer, quiet, sleep, movement, or Scripture.",
+      "Day 3 — Tell the truth: Share one honest sentence with a trusted person.",
+      "Day 4 — Receive support: Ask one person for counsel, prayer, or practical help.",
+      "Day 5 — Take one faithful step: Choose the next small act of stewardship instead of trying to fix everything.",
+    ],
+    prompts: [
+      "What am I calling faithfulness that may actually be depletion?",
+      "Where do I need to stop performing strength?",
+      "What rhythm would help me lead with more peace and presence?",
+      "Who should not have to wait until I am in crisis to hear the truth?",
+    ],
+    nextStep:
+      "At the end of five days, decide what support you need for the next thirty days. Do not return to carrying it all alone.",
+  },
+];
+---
+<Base title={pageTitle} description={pageDescription} canonical={pagePath}>
+  <Schema
+    type="WebPage"
+    title={pageTitle}
+    description={pageDescription}
+    path={pagePath}
+    breadcrumbs={[{ name: "Home", item: "/" }, { name: "Stop Leading Alone Free Resources", item: pagePath }]}
+  />
+
+  <section class="resource-hero" aria-labelledby="free-resources-title">
+    <div class="hero-copy">
+      <p class="eyebrow">Free resources from the Stop Leading Alone campaign</p>
+      <h1 id="free-resources-title">Stop Leading Alone free resources</h1>
+      <p>
+        Use these printable tools to name what you are carrying, think clearly about hard decisions, align your team, and take one faithful next step toward a wiser room.
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#campaign-resource-links">Find your resource</a>
+        <a class="btn btn-secondary" href={amazonUrl} target="_blank" rel="noopener">Buy the book</a>
+      </div>
+    </div>
+    <aside class="hero-resource-card" aria-label="Stop Leading Alone resource summary">
+      <img src="/images/brand/kf-pdc-horizontal-dark.png" alt="Purpose Driven Consulting and Kingdom Factor" width="1486" height="244" />
+      <h2>Real conversations. Real support. Real leadership growth.</h2>
+      <p>
+        Each section has its own anchor, so LinkedIn and Facebook replies can send people directly to the resource they requested.
+      </p>
+      <div class="mini-link-list">
+        <a href={johnConsultUrl} target="_blank" rel="noopener">Schedule with John</a>
+        <a href={jimConsultUrl} target="_blank" rel="noopener">Schedule with Jim</a>
+        <a href={pageUrl}>{pageUrl}</a>
+      </div>
+    </aside>
+  </section>
+
+  <section id="campaign-resource-links" class="shortcut-section" aria-labelledby="shortcut-title">
+    <div class="section-header center">
+      <p class="eyebrow">Campaign resource links</p>
+      <h2 id="shortcut-title">Choose the resource that matches the comment keyword.</h2>
+      <p>
+        These anchors match the Stop Leading Alone video campaign reply workflow. Visitors can print one resource or print the whole page.
+      </p>
+    </div>
+    <div class="shortcut-grid">
+      {campaignLinks.map((item) => (
+        <a class="shortcut-card" href={`#${item.id}`}>
+          <span>{item.video} · {item.keyword}</span>
+          <strong>{item.title}</strong>
+          <small>{item.description}</small>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section id="resources" class="resources-section" aria-label="Printable resources">
+    {resourceSections.map((resource, index) => (
+      <article class="resource-card" id={resource.id} data-resource-title={resource.title}>
+        <div class="resource-card-head">
+          <div>
+            <p class="eyebrow">{resource.eyebrow}</p>
+            <h2>{resource.title}</h2>
+          </div>
+          <button class="print-resource-button" type="button" data-print-resource={resource.id}>Print this resource</button>
+        </div>
+
+        <div class="resource-intro-grid">
+          <p><strong>Purpose:</strong> {resource.purpose}</p>
+          <p><strong>Best for:</strong> {resource.bestFor}</p>
+        </div>
+
+        <section class="tool-panel" aria-labelledby={`${resource.id}-checklist-title`}>
+          <h3 id={`${resource.id}-checklist-title`}>{resource.checklistTitle}</h3>
+          <div class="checklist-grid">
+            {resource.checklist.map((item, itemIndex) => (
+              <label>
+                <input class="resource-input" type="checkbox" data-save-key={`${resource.id}-check-${itemIndex}`} />
+                <span>{item}</span>
+              </label>
+            ))}
+          </div>
+        </section>
+
+        <section class="tool-panel" aria-labelledby={`${resource.id}-prompts-title`}>
+          <h3 id={`${resource.id}-prompts-title`}>Reflection notes</h3>
+          <div class="prompt-grid">
+            {resource.prompts.map((prompt, promptIndex) => (
+              <label class="field">
+                <span>{prompt}</span>
+                <textarea class="resource-input" rows="3" data-save-key={`${resource.id}-prompt-${promptIndex}`}></textarea>
+              </label>
+            ))}
+          </div>
+        </section>
+
+        <section class="next-step-panel" aria-labelledby={`${resource.id}-next-step-title`}>
+          <div>
+            <p class="eyebrow">Next faithful step</p>
+            <h3 id={`${resource.id}-next-step-title`}>{resource.nextStep}</h3>
+          </div>
+          <div class="next-step-actions">
+            <a class="btn btn-primary" href={index === 6 ? johnConsultUrl : johnConsultUrl} target="_blank" rel="noopener">Schedule with John</a>
+            <a class="btn btn-secondary" href={jimConsultUrl} target="_blank" rel="noopener">Schedule with Jim</a>
+          </div>
+        </section>
+      </article>
+    ))}
+  </section>
+
+  <section class="share-section" aria-labelledby="share-title">
+    <div>
+      <p class="eyebrow">For campaign replies</p>
+      <h2 id="share-title">Direct anchor links</h2>
+      <p>Use these links in approved LinkedIn and Facebook replies after the page is live.</p>
+    </div>
+    <div class="share-link-table">
+      {campaignLinks.map((item) => (
+        <p><strong>{item.keyword}</strong> <a href={`${pagePath}#${item.id}`}>{pagePath}#{item.id}</a></p>
+      ))}
+    </div>
+  </section>
+
+  <CTA
+    title="Ready for a wiser room?"
+    text="If one of these resources named what you are carrying, take the next faithful step. A fit conversation can help you discern whether peer advisory, executive coaching, or consulting is the right path for this season."
+  />
+</Base>
+
+<script is:inline>
+  (() => {
+    const storagePrefix = "stop-leading-alone-free-resources:";
+
+    function storageKey(input) {
+      return `${storagePrefix}${input.dataset.saveKey || input.name || input.id}`;
+    }
+
+    function restoreInput(input) {
+      const saved = window.localStorage.getItem(storageKey(input));
+      if (saved === null) return;
+      if (input.type === "checkbox") {
+        input.checked = saved === "true";
+        return;
+      }
+      input.value = saved;
+    }
+
+    function saveInput(input) {
+      if (input.type === "checkbox") {
+        window.localStorage.setItem(storageKey(input), String(input.checked));
+        return;
+      }
+      window.localStorage.setItem(storageKey(input), input.value);
+    }
+
+    function printResource(id) {
+      const resources = [...document.querySelectorAll(".resource-card")];
+      resources.forEach((resource) => resource.classList.toggle("print-hidden", resource.id !== id));
+      window.print();
+      window.setTimeout(() => resources.forEach((resource) => resource.classList.remove("print-hidden")), 500);
+    }
+
+    document.querySelectorAll(".resource-input").forEach((input) => {
+      restoreInput(input);
+      input.addEventListener(input.type === "checkbox" ? "change" : "input", () => saveInput(input));
+    });
+
+    document.querySelectorAll("[data-print-resource]").forEach((button) => {
+      button.addEventListener("click", () => printResource(button.dataset.printResource));
+    });
+  })();
+</script>
+
+<style>
+  :global(html) {
+    scroll-padding-top: 7rem;
+  }
+
+  :global(.resource-hero.kf-reveal),
+  :global(.shortcut-section.kf-reveal),
+  :global(.resources-section.kf-reveal),
+  :global(.share-section.kf-reveal),
+  :global(.shortcut-section .section-header.kf-reveal),
+  :global(.cta-band.kf-reveal) {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .resource-hero {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: clamp(3.5rem, 7vw, 7rem) clamp(1rem, 4vw, 2rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: center;
+  }
+
+  .resource-hero h1 {
+    max-width: 14ch;
+  }
+
+  .resource-hero .hero-copy > p:not(.eyebrow) {
+    max-width: 64ch;
+    color: #504741;
+    font-size: clamp(1.05rem, 1.35vw, 1.2rem);
+    line-height: 1.65;
+    margin-top: 1.25rem;
+  }
+
+  .hero-resource-card {
+    background:
+      radial-gradient(circle at 18% 12%, rgba(213, 178, 111, 0.22), transparent 34%),
+      linear-gradient(145deg, var(--warm-white), #efe0cc);
+    border: 1px solid rgba(168, 148, 131, 0.45);
+    border-radius: 34px;
+    padding: clamp(1.5rem, 3vw, 2.4rem);
+    box-shadow: 0 24px 70px rgba(64, 32, 22, 0.12);
+  }
+
+  .hero-resource-card img {
+    display: block;
+    width: min(360px, 100%);
+    margin-bottom: clamp(1.4rem, 3vw, 2rem);
+  }
+
+  .hero-resource-card h2 {
+    color: var(--burgundy-dark);
+    margin-bottom: 0.8rem;
+  }
+
+  .hero-resource-card p,
+  .shortcut-section .section-header p,
+  .share-section p {
+    color: #5f524b;
+  }
+
+  .mini-link-list {
+    display: grid;
+    gap: 0.65rem;
+    margin-top: 1.35rem;
+  }
+
+  .mini-link-list a {
+    display: block;
+    overflow-wrap: anywhere;
+    color: var(--burgundy);
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  .shortcut-section,
+  .resources-section,
+  .share-section {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: clamp(3rem, 6vw, 5.5rem) clamp(1rem, 4vw, 2rem);
+  }
+
+  .shortcut-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+    gap: 1rem;
+  }
+
+  .shortcut-card {
+    display: grid;
+    gap: 0.65rem;
+    min-height: 210px;
+    padding: clamp(1.2rem, 2.3vw, 1.7rem);
+    background: var(--warm-white);
+    border: 1px solid rgba(168, 148, 131, 0.42);
+    border-radius: 24px;
+    text-decoration: none;
+    box-shadow: 0 18px 45px rgba(64, 32, 22, 0.06);
+    transition: transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease;
+  }
+
+  .shortcut-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(100, 31, 36, 0.42);
+    box-shadow: 0 24px 55px rgba(64, 32, 22, 0.11);
+  }
+
+  .shortcut-card span {
+    color: var(--brass);
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .shortcut-card strong {
+    color: var(--burgundy-dark);
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: clamp(1.2rem, 1.7vw, 1.45rem);
+    line-height: 1.18;
+  }
+
+  .shortcut-card small {
+    color: #5f524b;
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .resources-section {
+    display: grid;
+    gap: clamp(1.6rem, 3vw, 2.4rem);
+  }
+
+  .resource-card {
+    scroll-margin-top: 7rem;
+    background: var(--warm-white);
+    border: 1px solid rgba(168, 148, 131, 0.45);
+    border-radius: 30px;
+    padding: clamp(1.35rem, 3vw, 2.5rem);
+    box-shadow: 0 24px 65px rgba(64, 32, 22, 0.08);
+  }
+
+  .resource-card-head,
+  .next-step-panel,
+  .share-section {
+    display: flex;
+    justify-content: space-between;
+    gap: clamp(1rem, 3vw, 2rem);
+    align-items: flex-start;
+  }
+
+  .resource-card h2 {
+    color: var(--burgundy-dark);
+  }
+
+  .print-resource-button {
+    border: 1px solid rgba(100, 31, 36, 0.18);
+    background: #fff7eb;
+    color: var(--burgundy-dark);
+    border-radius: 999px;
+    padding: 0.78rem 1rem;
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 900;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .resource-intro-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: clamp(1.2rem, 2.4vw, 1.8rem);
+  }
+
+  .resource-intro-grid p,
+  .tool-panel,
+  .next-step-panel {
+    background: rgba(255, 247, 235, 0.72);
+    border: 1px solid rgba(168, 148, 131, 0.35);
+    border-radius: 22px;
+    padding: clamp(1rem, 2vw, 1.4rem);
+  }
+
+  .resource-intro-grid p,
+  .tool-panel p {
+    color: #504741;
+  }
+
+  .tool-panel {
+    margin-top: 1rem;
+  }
+
+  .tool-panel h3,
+  .next-step-panel h3 {
+    color: var(--burgundy-dark);
+  }
+
+  .checklist-grid,
+  .prompt-grid {
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .checklist-grid label {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.75rem;
+    align-items: start;
+    background: rgba(255, 250, 242, 0.88);
+    border: 1px solid rgba(168, 148, 131, 0.28);
+    border-radius: 16px;
+    padding: 0.9rem 1rem;
+    color: #453a35;
+    line-height: 1.55;
+  }
+
+  .checklist-grid input {
+    width: 1.1rem;
+    height: 1.1rem;
+    margin-top: 0.25rem;
+    accent-color: var(--burgundy);
+  }
+
+  .prompt-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .field {
+    display: grid;
+    gap: 0.45rem;
+    color: var(--burgundy-dark);
+    font-weight: 800;
+  }
+
+  .field textarea {
+    width: 100%;
+    resize: vertical;
+    min-height: 7rem;
+    border: 1px solid rgba(168, 148, 131, 0.42);
+    border-radius: 16px;
+    padding: 0.9rem 1rem;
+    background: #fffdf8;
+    color: var(--ink);
+    font: inherit;
+    font-weight: 500;
+  }
+
+  .next-step-panel {
+    margin-top: 1rem;
+    align-items: center;
+    background: linear-gradient(135deg, var(--burgundy-dark), var(--burgundy));
+    color: var(--warm-white);
+  }
+
+  .next-step-panel .eyebrow,
+  .next-step-panel h3 {
+    color: var(--warm-white);
+  }
+
+  .next-step-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: flex-end;
+  }
+
+  .next-step-actions .btn-secondary {
+    background: rgba(255, 250, 242, 0.08);
+    border-color: rgba(255, 250, 242, 0.58);
+    color: var(--warm-white);
+  }
+
+  .share-section {
+    align-items: stretch;
+  }
+
+  .share-link-table {
+    flex: 1 1 520px;
+    display: grid;
+    gap: 0.55rem;
+    background: var(--warm-white);
+    border: 1px solid rgba(168, 148, 131, 0.42);
+    border-radius: 24px;
+    padding: clamp(1rem, 2vw, 1.5rem);
+  }
+
+  .share-link-table p {
+    display: grid;
+    grid-template-columns: 5.5rem minmax(0, 1fr);
+    gap: 0.75rem;
+    align-items: baseline;
+  }
+
+  .share-link-table strong {
+    color: var(--burgundy-dark);
+  }
+
+  .share-link-table a {
+    color: var(--burgundy);
+    font-weight: 800;
+    overflow-wrap: anywhere;
+    text-decoration: none;
+  }
+
+  @media (max-width: 900px) {
+    .resource-hero,
+    .resource-intro-grid,
+    .prompt-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .resource-card-head,
+    .next-step-panel,
+    .share-section {
+      display: grid;
+    }
+
+    .next-step-actions {
+      justify-content: flex-start;
+    }
+
+    .print-resource-button {
+      width: fit-content;
+    }
+  }
+
+  @media print {
+    :global(.site-header),
+    :global(.site-footer),
+    .resource-hero,
+    .shortcut-section,
+    .share-section,
+    .print-resource-button,
+    .next-step-actions,
+    :global(.cta-band) {
+      display: none !important;
+    }
+
+    :global(body) {
+      background: #fff;
+      color: #000;
+    }
+
+    .resources-section {
+      max-width: none;
+      padding: 0;
+    }
+
+    .resource-card {
+      box-shadow: none;
+      border: 0;
+      border-radius: 0;
+      padding: 0;
+      break-after: page;
+    }
+
+    .resource-card.print-hidden {
+      display: none !important;
+    }
+
+    .resource-card-head,
+    .resource-intro-grid,
+    .tool-panel,
+    .next-step-panel {
+      border-color: #999;
+      background: #fff;
+      color: #000;
+    }
+
+    .next-step-panel .eyebrow,
+    .next-step-panel h3,
+    .resource-card h2,
+    .tool-panel h3 {
+      color: #000;
+    }
+
+    .field textarea {
+      min-height: 5rem;
+      border-color: #999;
+    }
+  }
+</style>

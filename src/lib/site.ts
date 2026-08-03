@@ -27,6 +27,7 @@ export const publicRoutes = [
   { path: "/purpose-driven-consulting/", label: "Purpose Driven Consulting", priority: "0.8" },
   { path: "/books/", label: "Books and Resources", priority: "0.8" },
   { path: "/stop-leading-alone-workshop/", label: "Stop Leading Alone Workshop", priority: "0.8" },
+  { path: "/stop-leading-alone-free-resources/", label: "Stop Leading Alone Free Resources", priority: "0.7" },
   { path: "/blog/", label: "Blog and Resources", priority: "0.7" },
   { path: "/about/", label: "About Purpose Driven Consulting and Kingdom Factor", priority: "0.7" },
   { path: "/apply/", label: "Apply", priority: "0.7" },
