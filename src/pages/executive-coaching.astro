@@ -108,6 +108,23 @@ const phases: Phase[] = [
     imageMobile={page.heroImageMobile}
   />
 
+  <section class="coaching-philosophy-video" aria-labelledby="coaching-philosophy-title">
+    <div class="coaching-philosophy-inner">
+      <p class="eyebrow">A personal introduction</p>
+      <h2 id="coaching-philosophy-title">My Coaching Philosophy</h2>
+      <video
+        controls
+        playsinline
+        preload="metadata"
+        poster="/images/video-posters/my-coaching-philosophy.jpg"
+        aria-label="My Coaching Philosophy by Dr. John S. Lybarger"
+      >
+        <source src="/videos/my-coaching-philosophy.mp4" type="video/mp4" />
+        Your browser does not support embedded video. <a href="/videos/my-coaching-philosophy.mp4">Download My Coaching Philosophy</a>.
+      </video>
+    </div>
+  </section>
+
   <section class="executive-coaching-intro">
     <div class="executive-coaching-inner">
       <p class="eyebrow">Executive Coaching</p>
@@ -343,6 +360,31 @@ const phases: Phase[] = [
 
 <style>
   /* --------- Executive Coaching + Kingdom Culture Intensive long-form sections ---------- */
+  .coaching-philosophy-video {
+    max-width: none;
+    margin: 0 auto;
+    padding: clamp(2.75rem, 5vw, 4.5rem) clamp(1rem, 4vw, 2rem);
+    background: #fff;
+  }
+  .coaching-philosophy-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .coaching-philosophy-video h2 {
+    font-size: clamp(2rem, 3.6vw, 3.1rem);
+    text-wrap: balance;
+    margin-bottom: 1.35rem;
+  }
+  .coaching-philosophy-video video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 20px;
+    background: #24191a;
+    box-shadow: 0 20px 55px rgba(55, 28, 29, 0.18);
+  }
+
   .executive-coaching-intro,
   .kci-narrative,
   .kci-streams,
