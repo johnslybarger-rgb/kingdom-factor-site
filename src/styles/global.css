@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Libre+Baskerville:wght@400;700&display=swap');
 
 :root {
-  --ink: #171313;
-  --charcoal: #24201f;
-  --burgundy: #641f24;
-  --burgundy-dark: #3f1216;
-  --cream: #f7f0e5;
-  --warm-white: #fffaf2;
-  --stone: #d8cbbb;
-  --taupe: #a89483;
-  --brass: #b58a44;
-  --gold: #d5b26f;
+  --ink: #102a43;
+  --charcoal: #0b1f3a;
+  --burgundy: #1e5f9c;
+  --burgundy-dark: #0f2547;
+  --cream: #eef7ff;
+  --warm-white: #ffffff;
+  --stone: #c9dcec;
+  --taupe: #7895ad;
+  --brass: #a5262d;
+  --gold: #b9dcff;
   --max: 1180px;
   --radius: 24px;
   color-scheme: light;
@@ -3778,6 +3778,169 @@ img, svg, video, canvas, picture {
     margin-top: 1rem !important;
     margin-bottom: 1.35rem !important;
     padding: 1.25rem .9rem !important;
+  }
+}
+
+/* 2026-09-26 — PDC + Kingdom Factor logo palette and navigation visibility. */
+:root {
+  --ink: #102a43;
+  --charcoal: #0b1f3a;
+  --burgundy: #1e5f9c;
+  --burgundy-dark: #0f2547;
+  --cream: #eef7ff;
+  --warm-white: #ffffff;
+  --stone: #c9dcec;
+  --taupe: #7895ad;
+  --brass: #a5262d;
+  --gold: #b9dcff;
+}
+
+body {
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 50% 0, rgba(147, 197, 253, .24), transparent 34rem),
+    var(--cream);
+}
+
+.site-header {
+  min-height: 84px;
+  background: rgba(255, 255, 255, .94) !important;
+  border-bottom-color: rgba(30, 95, 156, .22) !important;
+  box-shadow: 0 10px 30px rgba(15, 37, 71, .09) !important;
+}
+
+.site-header .desktop-nav {
+  gap: clamp(.2rem, .65vw, .75rem) !important;
+  font-size: clamp(.96rem, 1.05vw, 1.08rem) !important;
+  font-weight: 750;
+}
+
+.site-header .desktop-nav a {
+  color: var(--burgundy-dark) !important;
+  font-size: clamp(.94rem, 1vw, 1rem) !important;
+  padding: .72rem .5rem;
+  border-radius: 999px;
+  line-height: 1.2;
+  transition: color .2s ease, background .2s ease;
+}
+
+.site-header .desktop-nav a:hover,
+.site-header .desktop-nav a:focus-visible {
+  color: #174f84 !important;
+  background: #e2f1ff;
+}
+
+.header-cta,
+.btn-primary {
+  background: linear-gradient(135deg, #174f84, #2674b8) !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 24px rgba(30, 95, 156, .2);
+}
+
+.header-cta {
+  padding: .78rem 1.08rem;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.site-header .mobile-nav.global-menu .menu-glyph {
+  background: #1e5f9c !important;
+  box-shadow: 0 12px 26px rgba(30, 95, 156, .24), inset 0 1px 0 rgba(255,255,255,.3) !important;
+}
+
+.mobile-menu-panel {
+  background: rgba(255, 255, 255, .99) !important;
+  border-color: rgba(30, 95, 156, .25) !important;
+  box-shadow: 0 30px 90px rgba(15, 37, 71, .25) !important;
+}
+
+.mobile-menu-panel nav a {
+  color: var(--burgundy-dark) !important;
+  font-size: 1.05rem;
+  padding: 1rem 1.05rem;
+  background: #f5faff !important;
+  border-color: #d4e7f7 !important;
+}
+
+.home-brand-masthead {
+  display: grid;
+  place-items: center;
+  padding: clamp(1.25rem, 3vw, 2.4rem) clamp(1rem, 4vw, 2.5rem) clamp(.75rem, 2vw, 1.4rem);
+  background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(226,241,255,.78));
+  border-bottom: 1px solid rgba(30, 95, 156, .16);
+}
+
+.home-brand-masthead img {
+  display: block;
+  width: min(900px, 100%);
+  height: auto;
+  border-radius: clamp(16px, 2vw, 26px);
+  box-shadow: 0 24px 60px rgba(15, 37, 71, .16);
+}
+
+.eyebrow,
+.text-link,
+.offer-card a {
+  color: #1e5f9c;
+}
+
+.decision-room-lines p,
+.council-model-intro > p:not(.eyebrow),
+.council-lane p,
+.section-header p:not(.eyebrow) {
+  color: #334e68;
+}
+
+.btn-secondary {
+  border-color: #7895ad;
+  color: #0f2547;
+}
+
+.pillar-card,
+.offer-card,
+.content-card,
+.lane-card,
+.form-placeholder,
+.person-card,
+details {
+  border-color: #c9dcec;
+  box-shadow: 0 18px 45px rgba(15, 37, 71, .08);
+}
+
+.lane-card.executive,
+.source-panel,
+.cta-band,
+.site-footer {
+  background: linear-gradient(145deg, #0b1f3a, #143f70) !important;
+}
+
+.lane-card.community,
+.keyword-grid span {
+  background: linear-gradient(145deg, #ffffff, #dceeff) !important;
+}
+
+.site-footer p,
+.site-footer li,
+.footer-bottom {
+  color: #d9eaff;
+}
+
+.site-footer h2,
+.site-footer a:hover {
+  color: #b9dcff;
+}
+
+@media (max-width: 980px) {
+  .site-header { min-height: 76px; }
+}
+
+@media (max-width: 640px) {
+  .home-brand-masthead {
+    padding: .85rem .75rem .65rem;
+  }
+  .home-brand-masthead img {
+    border-radius: 14px;
+    box-shadow: 0 14px 34px rgba(15, 37, 71, .14);
   }
 }
 
