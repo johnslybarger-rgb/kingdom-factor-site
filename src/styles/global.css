@@ -3944,3 +3944,264 @@ details {
   }
 }
 
+/* 2026-09-26 — Final light-blue continuity and unobstructed image treatment. */
+:root {
+  --surface-blue: #f5faff;
+  --surface-blue-strong: #e2f1ff;
+  --surface-blue-glass: rgba(238, 247, 255, .96);
+  --line-blue: rgba(30, 95, 156, .26);
+  --shadow-blue: rgba(15, 37, 71, .12);
+  --copy-blue: #334e68;
+}
+
+/* Replace the remaining cream, tan, and brown surfaces with the logo's light blues. */
+.home-hero .hero-copy,
+.executive-hero .hero-copy,
+.hero-copy-card,
+.hero-resource-card,
+.authority-panel,
+.cta-signup,
+.blog-category-chip,
+.blog-empty,
+.post-author-card,
+.feedback-field input,
+.feedback-field select,
+.feedback-field textarea,
+.kci-streams,
+.kci-pricing,
+.kci-phase,
+.kci-structure-meta > div,
+.email-signup,
+.resource-section,
+.book-group {
+  background: var(--surface-blue-glass) !important;
+  border-color: var(--line-blue) !important;
+  box-shadow: 0 18px 44px var(--shadow-blue) !important;
+}
+
+.trust-strip span,
+.keyword-grid span,
+.book-cloud span,
+.source-list span,
+.home-hero .hero-proof-strip span,
+.executive-hero .hero-proof-strip span,
+.decision-cues span,
+.hero-proof-strip span {
+  color: var(--burgundy-dark) !important;
+  background: var(--surface-blue) !important;
+  border-color: var(--line-blue) !important;
+}
+
+.story-list article,
+.lane-card.executive,
+.lane-card.community {
+  color: var(--ink) !important;
+  background: linear-gradient(145deg, #ffffff, var(--surface-blue-strong)) !important;
+  border-color: var(--line-blue) !important;
+}
+
+.story-list h3,
+.lane-card.executive h3,
+.lane-card.executive .eyebrow,
+.lane-card.executive .text-link,
+.lane-card.community h3 {
+  color: var(--burgundy-dark) !important;
+}
+
+.home-hero .hero-copy > p:not(.eyebrow),
+.executive-hero .hero-copy > p:not(.eyebrow),
+.cta-band .cta-signup-copy > p:last-child,
+.story-list p,
+.person-card p,
+.authority-copy p:not(.eyebrow),
+.council-lane p {
+  color: var(--copy-blue) !important;
+}
+
+.home-hero .btn-secondary,
+.executive-hero .btn-secondary {
+  color: var(--burgundy-dark) !important;
+  background: var(--surface-blue-strong) !important;
+  border-color: rgba(30, 95, 156, .42) !important;
+}
+
+.home-hero .btn-primary:hover,
+.executive-hero .btn-primary:hover,
+.editorial-hero .btn-primary:hover {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #174f84, #2674b8) !important;
+}
+
+.source-panel .eyebrow,
+.cta-band .eyebrow,
+.site-footer h2 {
+  color: #b9dcff !important;
+}
+
+.home-hero .eyebrow,
+.executive-hero .eyebrow {
+  color: var(--burgundy) !important;
+}
+
+/* Keep every photograph fully visible inside its box; only a restrained blue tint remains. */
+.route-hero-visual,
+.photo-hero-card,
+.image-feature-card,
+.hero-image-card {
+  background: var(--surface-blue-strong) !important;
+}
+
+.route-hero-visual::after,
+.photo-hero-card::after,
+.hero-image-card::after {
+  background: linear-gradient(180deg, transparent 64%, rgba(15, 37, 71, .18)) !important;
+}
+
+.image-feature-card::after {
+  background: linear-gradient(180deg, transparent 68%, rgba(15, 37, 71, .24)) !important;
+}
+
+.route-hero-visual img:not(.photo-card-caption img),
+.photo-hero-card picture > img,
+.image-feature-card > img,
+.hero-image-card img {
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+.route-hero-visual .photo-card-caption,
+.photo-card-caption,
+.hero-image-caption {
+  color: var(--burgundy-dark) !important;
+  background: rgba(238, 247, 255, .94) !important;
+  border-color: rgba(255, 255, 255, .86) !important;
+}
+
+.coaching-philosophy-video video {
+  background: var(--surface-blue-strong) !important;
+}
+
+@media (max-width: 980px) {
+  .home-hero.executive-hero,
+  .editorial-hero {
+    background:
+      linear-gradient(180deg, rgba(245, 250, 255, .96), rgba(226, 241, 255, .88)),
+      url('/images/generated/advisory-room-mobile.webp') center / cover no-repeat !important;
+  }
+}
+
+/* Cool every remaining high-visibility card, control, and workshop surface. */
+.pillar-card,
+.offer-card,
+.content-card,
+.person-card,
+.book-card,
+details,
+.compact-faq details,
+.secret-card,
+.workshop-cta-panel,
+.host-card,
+.reserve-card,
+.pdc-partnership,
+.pdc-service-card,
+.tool-panel,
+.next-step-panel,
+.resource-card,
+.reflection-item,
+.newsletter-intro,
+.newsletter-card {
+  background: linear-gradient(145deg, #ffffff, #eef7ff) !important;
+  border-color: var(--line-blue) !important;
+}
+
+.compact-faq details p,
+details p,
+.faq-bullets,
+.secret-card p,
+.host-card p,
+.workshop-cta-panel p,
+.reserve-card p {
+  color: var(--copy-blue) !important;
+}
+
+.home-hero .btn-primary,
+.executive-hero .btn-primary,
+.workshop-header-button,
+.workshop-button-primary {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #174f84, #2674b8) !important;
+  border-color: transparent !important;
+}
+
+body:has(.workshop-page) {
+  background: #eef7ff !important;
+}
+
+.workshop-header {
+  background: rgba(245, 250, 255, .96) !important;
+  border-bottom-color: var(--line-blue) !important;
+  box-shadow: 0 10px 30px rgba(15, 37, 71, .08) !important;
+}
+
+.workshop-page .hero-kicker,
+.workshop-page .hero-prehead,
+.workshop-page .workshop-eyebrow,
+.workshop-page .secret-card span {
+  color: #1e5f9c !important;
+}
+
+.workshop-page h1,
+.workshop-page h2,
+.workshop-page h3,
+.workshop-page .hero-date,
+.workshop-page .reserve-note a {
+  color: #0f2547 !important;
+}
+
+.workshop-page .hero-promise,
+.workshop-page .hero-actions p,
+.workshop-page .reserve-note {
+  color: var(--copy-blue) !important;
+}
+
+.workshop-info-strip,
+.workshop-info-strip > div,
+.hosts-section {
+  background: linear-gradient(145deg, #1e5f9c, #2674b8) !important;
+}
+
+.workshop-info-strip,
+.workshop-info-strip strong,
+.workshop-info-strip small,
+.hosts-section .workshop-eyebrow,
+.hosts-section h2 {
+  color: #ffffff !important;
+}
+
+.final-reserve-section {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(185, 220, 255, .3), transparent 34%),
+    linear-gradient(135deg, #0f2547, #1e5f9c) !important;
+}
+
+.workshop-footer {
+  color: #d9eaff !important;
+  background: #0b1f3a !important;
+}
+
+.print-resource-button,
+.resource-field,
+.reflection-field {
+  color: var(--burgundy-dark) !important;
+  background: var(--surface-blue) !important;
+  border-color: var(--line-blue) !important;
+}
+
+.premium-card::after {
+  background: radial-gradient(circle, rgba(185, 220, 255, .42), transparent 68%) !important;
+}
+
+.image-feature-card::after {
+  background: none !important;
+}
+
