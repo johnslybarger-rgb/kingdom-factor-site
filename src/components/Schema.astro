@@ -2,12 +2,17 @@
 import { site } from "../lib/site";
 
 interface Props {
-  type?: "Organization" | "WebPage" | "Service" | "FAQPage";
+  type?: "Organization" | "WebPage" | "Service" | "FAQPage" | "BlogPosting";
   title?: string;
   description?: string;
   path?: string;
   breadcrumbs?: { name: string; item: string }[];
   faqs?: { q: string; a: string }[];
+  authorName?: string;
+  authorPath?: string;
+  datePublished?: string;
+  dateModified?: string;
+  image?: string;
 }
 
 const {
@@ -17,6 +22,11 @@ const {
   path = Astro.url.pathname,
   breadcrumbs = [],
   faqs = [],
+  authorName,
+  authorPath,
+  datePublished,
+  dateModified,
+  image,
 } = Astro.props;
 
 const url = new URL(path, site.url).toString();
@@ -24,9 +34,20 @@ const graph: Record<string, unknown>[] = [
   {
     "@type": "Organization",
     "@id": `${site.url}/#organization`,
-    name: site.name,
+    name: site.organization.name,
+    legalName: site.organization.legalName,
+    alternateName: site.name,
     url: site.url,
     description: site.description,
+    founder: {
+      "@type": "Person",
+      name: site.organization.founder,
+    },
+    brand: {
+      "@type": "Brand",
+      name: site.organization.brand,
+      description: `${site.name} is the faith-integrated leadership ministry of ${site.organization.legalName}.`,
+    },
   },
   {
     "@type": "WebSite",
@@ -38,7 +59,7 @@ const graph: Record<string, unknown>[] = [
   },
 ];
 
-if (type !== "Organization") {
+if (type !== "Organization" && type !== "BlogPosting") {
   graph.push({
     "@type": type === "FAQPage" ? "FAQPage" : "WebPage",
     "@id": `${url}#webpage`,
@@ -56,6 +77,42 @@ if (type !== "Organization") {
           })),
         }
       : {}),
+  });
+}
+
+if (type === "BlogPosting") {
+  graph.push({
+    "@type": "BlogPosting",
+    "@id": `${url}#article`,
+    url,
+    headline: title,
+    description,
+    mainEntityOfPage: { "@id": `${url}#webpage` },
+    isPartOf: { "@id": `${site.url}/#website` },
+    publisher: { "@id": `${site.url}/#organization` },
+    ...(authorName
+      ? {
+          author: {
+            "@type": "Person",
+            name: authorName,
+            ...(authorPath ? { url: new URL(authorPath, site.url).toString() } : {}),
+          },
+        }
+      : {}),
+    ...(datePublished ? { datePublished } : {}),
+    ...(dateModified ? { dateModified } : {}),
+    ...(image ? { image: new URL(image, site.url).toString() } : {}),
+  });
+
+  graph.push({
+    "@type": "WebPage",
+    "@id": `${url}#webpage`,
+    url,
+    name: title,
+    description,
+    isPartOf: { "@id": `${site.url}/#website` },
+    about: { "@id": `${site.url}/#organization` },
+    mainEntity: { "@id": `${url}#article` },
   });
 }
 

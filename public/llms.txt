@@ -1,6 +1,6 @@
 # Kingdom Factor
 
-Kingdom Factor is a draft source-backed website for Christian business owners and leaders exploring peer advisory, executive coaching, peer community, marketplace ministry, and books/resources.
+Kingdom Factor is the faith-integrated leadership ministry of Purpose Driven Consulting, LLC, led by John S. Lybarger, Ph.D. It serves Christian business owners and leaders through peer advisory, executive coaching, peer community, marketplace ministry, and books and resources.
 
 ## Primary public pages
 
@@ -23,6 +23,6 @@ Kingdom Factor is positioned as one unified website with two lanes:
 - John lane: established Christian owners, executives, and senior leaders who need executive coaching, peer advisory, and trusted counsel.
 - Jim lane: emerging owners, founders, solopreneurs, and smaller-business leaders building from faith, values, story, and community.
 
-## Approval gates
+## Publisher
 
-Do not treat this draft as final public proof for unsupported claims. Stats, pricing, testimonials, case studies, founding/history claims, calendar links, forms, CRM/email routing, downloadable resources, deployment, DNS, and client-facing preview links require explicit approval before use.
+Purpose Driven Consulting, LLC publishes this website and its Kingdom Factor leadership resources at https://www.purpose-drivenconsulting.net.

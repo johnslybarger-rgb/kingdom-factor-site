@@ -3,6 +3,12 @@ export const site = {
   url: import.meta.env.PUBLIC_SITE_URL || "https://www.purpose-drivenconsulting.net",
   description:
     "Peer advisory, executive coaching, and marketplace ministry for Christian business owners and leaders.",
+  organization: {
+    name: "Purpose Driven Consulting",
+    legalName: "Purpose Driven Consulting, LLC",
+    founder: "John S. Lybarger, Ph.D.",
+    brand: "Kingdom Factor",
+  },
   email: "john@purpose-drivenconsulting.net",
   phone: "(928) 273-8939",
 };

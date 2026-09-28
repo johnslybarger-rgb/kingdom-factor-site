@@ -12,10 +12,14 @@ interface Props {
   noindex?: boolean;
   hideChrome?: boolean;
   hideEmailSignup?: boolean;
+  ogType?: "website" | "article";
+  publishedTime?: string;
+  modifiedTime?: string;
 }
 
-const { title, description = site.description, canonical = Astro.url.pathname, noindex = false, hideChrome = false, hideEmailSignup = false } = Astro.props;
-const pageTitle = title === site.name ? site.name : `${title} | ${site.name}`;
+const { title, description = site.description, canonical = Astro.url.pathname, noindex = false, hideChrome = false, hideEmailSignup = false, ogType = "website", publishedTime, modifiedTime } = Astro.props;
+const brandedTitle = new RegExp(`\\s*\\|\\s*${site.name.replace(/[.*+?^${}()|[\\]\\]/g, "\\$&")}\\s*$`, "i");
+const pageTitle = title === site.name || brandedTitle.test(title) ? title : `${title} | ${site.name}`;
 const canonicalUrl = new URL(canonical, site.url).toString();
 ---
 
@@ -30,8 +34,10 @@ const canonicalUrl = new URL(canonical, site.url).toString();
     <link rel="canonical" href={canonicalUrl} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonicalUrl} />
+    {ogType === "article" && publishedTime && <meta property="article:published_time" content={publishedTime} />}
+    {ogType === "article" && modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
     <meta name="theme-color" content="#0f2547" />
   </head>
   <body>
