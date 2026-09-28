@@ -40,10 +40,17 @@ const fmtDate = (v: unknown) => {
     ? ""
     : d.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
 };
+const isoDate = (v: unknown) => {
+  if (!v) return undefined;
+  const d = new Date(v as string);
+  return Number.isNaN(d.getTime()) ? undefined : d.toISOString();
+};
 // EmDash's runtime query helpers place system dates inside `entry.data`
 // using camelCase. Keep the other shapes as fallbacks for older adapters.
-const publishedAt = post.data?.publishedAt ?? post.publishedAt ?? post.data?.published_at;
-const modifiedAt = post.data?.updatedAt ?? post.updatedAt ?? publishedAt;
+const rawPublishedAt = post.data?.publishedAt ?? post.publishedAt ?? post.data?.published_at;
+const rawModifiedAt = post.data?.updatedAt ?? post.updatedAt ?? rawPublishedAt;
+const publishedAt = isoDate(rawPublishedAt);
+const modifiedAt = isoDate(rawModifiedAt) ?? publishedAt;
 const publishedDate = fmtDate(publishedAt);
 const readerQuestion = getReaderQuestion(slug);
 ---
