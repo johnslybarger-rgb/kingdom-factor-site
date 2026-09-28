@@ -37,6 +37,7 @@ const postSlug = (p: any) => p?.data?.slug ?? p?.id;
 const authorOf = (p: any) => authorsBySlug[p?.data?.author];
 const authorPageSlug = (p: any) => authorOf(p)?.data?.slug ?? authorOf(p)?.slug ?? p?.data?.author;
 const authorName = (p: any) => authorOf(p)?.data?.name ?? "Kingdom Factor";
+const publishedAt = (p: any) => p?.data?.publishedAt ?? p?.publishedAt ?? p?.data?.published_at;
 const fmtDate = (v: unknown) => {
   if (!v) return "";
   const d = new Date(v as string);
@@ -78,7 +79,7 @@ const fmtDate = (v: unknown) => {
               By {authorOf(post)
                 ? <a href={`/blog/author/${authorPageSlug(post)}/`}>{authorName(post)}</a>
                 : <span>{authorName(post)}</span>}
-              {fmtDate(post.publishedAt ?? post.data?.published_at) && <span class="blog-dot"> · <time datetime={post.publishedAt ?? post.data?.published_at}>{fmtDate(post.publishedAt ?? post.data?.published_at)}</time></span>}
+              {fmtDate(publishedAt(post)) && <span class="blog-dot"> · <time datetime={publishedAt(post)}>{fmtDate(publishedAt(post))}</time></span>}
             </p>
             <a class="blog-card-link" href={`/blog/${postSlug(post)}/`}>Read the article →</a>
           </article>
