@@ -40,8 +40,10 @@ const fmtDate = (v: unknown) => {
     ? ""
     : d.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
 };
-const publishedAt = post.publishedAt ?? post.data?.published_at;
-const modifiedAt = post.updatedAt ?? publishedAt;
+// EmDash's runtime query helpers place system dates inside `entry.data`
+// using camelCase. Keep the other shapes as fallbacks for older adapters.
+const publishedAt = post.data?.publishedAt ?? post.publishedAt ?? post.data?.published_at;
+const modifiedAt = post.data?.updatedAt ?? post.updatedAt ?? publishedAt;
 const publishedDate = fmtDate(publishedAt);
 const readerQuestion = getReaderQuestion(slug);
 ---
