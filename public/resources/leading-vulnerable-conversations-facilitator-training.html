@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Facilitator Training: Leading Vulnerable Conversations | Starting Point Men</title>
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=gambetta@500,600&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F6F2; --surface:#FFFFFF; --surface-2:#F1EFE9; --border:#D4D1CA;
+    --text:#28251D; --muted:#5F5E5A; --faint:#8C8B86;
+    --accent:#01696F; --accent-dark:#0C4E54; --accent-soft:#E3EFEF;
+    --warn:#964219; --warn-soft:#F6ECE5; --good:#437A22; --good-soft:#EAF1E4;
+    --serif:'Gambetta', Georgia, 'Times New Roman', serif;
+    --sans:'Satoshi', 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+    --radius:10px; --maxw:880px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.6}
+  a{color:var(--accent)}
+  a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+  /* Layout */
+  .layout{display:grid;grid-template-columns:260px 1fr;min-height:100vh}
+  nav.toc{position:sticky;top:0;height:100vh;overflow-y:auto;padding:28px 20px;border-right:1px solid var(--border);background:var(--surface-2)}
+  nav.toc .brand{font-family:var(--serif);font-size:19px;font-weight:600;line-height:1.25;margin:0 0 4px}
+  nav.toc .sub{font-size:13px;color:var(--muted);margin:0 0 20px}
+  nav.toc ol{list-style:none;margin:0;padding:0}
+  nav.toc li{margin:0}
+  nav.toc a{display:flex;justify-content:space-between;gap:8px;padding:7px 10px;border-radius:6px;text-decoration:none;color:var(--text);font-size:14.5px}
+  nav.toc a:hover{background:var(--accent-soft)}
+  nav.toc .grp{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:18px 10px 6px;font-weight:700}
+  nav.toc .prog{font-size:12px;color:var(--muted);white-space:nowrap}
+  nav.toc .prog.done{color:var(--good);font-weight:700}
+  .toc-actions{margin-top:22px;display:flex;flex-direction:column;gap:8px}
+  main{padding:40px 48px 80px}
+  .wrap{max-width:var(--maxw);margin:0 auto}
+
+  /* Type */
+  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.2;margin:0}
+  h1{font-size:clamp(32px,4vw,44px);letter-spacing:-.01em}
+  h2{font-size:30px;margin-bottom:10px}
+  h3{font-size:21px;margin:28px 0 10px}
+  h4{font-family:var(--sans);font-size:15px;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);margin:24px 0 8px}
+  p{margin:0 0 14px}
+  .eyebrow{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:8px}
+  .lede{font-size:19px;color:var(--muted);max-width:68ch}
+  .small{font-size:14px;color:var(--muted)}
+
+  /* Hero */
+  header.hero{padding:8px 0 28px;border-bottom:1px solid var(--border);margin-bottom:36px}
+  .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  .chip{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:5px 12px;font-size:14px}
+
+  section.block{margin:0 0 56px;scroll-margin-top:20px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px 24px;margin:16px 0}
+  .card.soft{background:var(--surface-2)}
+  blockquote{margin:16px 0;padding:14px 20px;border-left:4px solid var(--accent);background:var(--accent-soft);border-radius:0 var(--radius) var(--radius) 0;font-size:17px}
+  blockquote cite{display:block;margin-top:6px;font-size:13.5px;font-style:normal;color:var(--muted)}
+
+  /* Step header */
+  .step-head{display:flex;gap:18px;align-items:flex-start;margin-bottom:10px}
+  .step-num{flex:0 0 56px;height:56px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-family:var(--serif);font-size:26px;font-weight:600}
+  .step-head .tag{font-size:13px;color:var(--muted);margin-top:4px}
+
+  /* Framework grid */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:18px 0}
+  .fw{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;text-decoration:none;color:var(--text);display:block}
+  .fw:hover{border-color:var(--accent)}
+  .fw b{display:block;font-family:var(--serif);font-size:18px;margin:2px 0 4px}
+  .fw span{font-size:13px;color:var(--accent);font-weight:700;letter-spacing:.05em}
+  .fw p{font-size:14.5px;color:var(--muted);margin:0}
+
+  /* Tables */
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:15.5px;background:var(--surface)}
+  th,td{border:1px solid var(--border);padding:10px 12px;text-align:left;vertical-align:top}
+  th{background:var(--accent);color:#fff;font-weight:700}
+  td.no{background:var(--warn-soft)}
+  td.yes{background:var(--good-soft)}
+
+  /* Examples */
+  .ex{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}
+  .ex > div{border-radius:var(--radius);padding:16px 18px;border:1px solid var(--border)}
+  .ex .bad{background:var(--warn-soft);border-color:#E3C9B8}
+  .ex .good{background:var(--good-soft);border-color:#C9DBBC}
+  .ex .lbl{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+  .ex .bad .lbl{color:var(--warn)} .ex .good .lbl{color:var(--good)}
+  .dialogue p{margin:0 0 8px}
+  .dialogue .who{font-weight:700}
+  .stage{font-style:normal;color:var(--muted);font-size:14.5px}
+
+  /* Activity */
+  .activity{border:1px solid var(--accent);border-radius:var(--radius);background:var(--surface);margin:18px 0;overflow:hidden}
+  .activity .top{background:var(--accent);color:#fff;padding:10px 18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-weight:700}
+  .activity .top .time{font-weight:500;opacity:.95}
+  .activity .body{padding:16px 20px}
+  .activity ol,.activity ul{margin:0 0 10px;padding-left:22px}
+  .activity li{margin-bottom:6px}
+
+  /* Checklists */
+  .checklist{list-style:none;padding:0;margin:10px 0}
+  .checklist li{margin:0}
+  .checklist label{display:flex;gap:12px;align-items:flex-start;padding:9px 12px;border-radius:8px;cursor:pointer}
+  .checklist label:hover{background:var(--surface-2)}
+  .checklist input{width:20px;height:20px;margin-top:3px;accent-color:var(--accent);flex:0 0 auto}
+  .checklist input:checked + span{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--faint)}
+  .cl-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+  .cl-count{font-size:14px;color:var(--muted)}
+  .bar{height:6px;background:var(--surface-2);border-radius:999px;overflow:hidden;margin:6px 0 4px}
+  .bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+
+  /* Reflection */
+  .reflect ol{padding-left:22px;margin:6px 0 0}
+  .reflect li{margin-bottom:12px}
+  textarea{width:100%;min-height:64px;margin-top:6px;padding:10px 12px;border:1px solid var(--border);border-radius:8px;font:inherit;font-size:15.5px;background:#FFFEFB;resize:vertical;color:var(--text)}
+
+  /* Pitfalls */
+  .pitfalls{background:var(--warn-soft);border:1px solid #E3C9B8;border-radius:var(--radius);padding:14px 20px;margin:16px 0}
+  .pitfalls h4{color:var(--warn);margin-top:4px}
+  .pitfalls ul{margin:0;padding-left:20px}
+
+  details{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);margin:12px 0}
+  details summary{cursor:pointer;padding:14px 18px;font-weight:700;list-style:none}
+  details summary::-webkit-details-marker{display:none}
+  details summary::before{content:"+";display:inline-block;width:22px;color:var(--accent);font-weight:700}
+  details[open] summary::before{content:"\2212"}
+  details .inner{padding:0 20px 16px}
+
+  /* Self-assessment */
+  .sa-row{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--border)}
+  .sa-row:last-child{border-bottom:0}
+  .scale{display:flex;gap:4px}
+  .scale label{position:relative}
+  .scale input{position:absolute;opacity:0;width:1px;height:1px}
+  .scale span{display:grid;place-items:center;width:34px;height:34px;border:1px solid var(--border);border-radius:6px;font-size:14px;cursor:pointer;background:var(--surface)}
+  .scale input:checked + span{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .scale input:focus-visible + span{outline:3px solid var(--accent);outline-offset:2px}
+  .sa-result{margin-top:14px;padding:14px 18px;border-radius:8px;background:var(--accent-soft);font-weight:500}
+
+  .btn{appearance:none;border:1px solid var(--accent);background:var(--accent);color:#fff;border-radius:8px;padding:9px 14px;font:inherit;font-size:14.5px;font-weight:700;cursor:pointer}
+  .btn.ghost{background:transparent;color:var(--accent)}
+  .btn:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff}
+
+  .crisis{border:2px solid var(--warn);background:var(--warn-soft);border-radius:var(--radius);padding:16px 20px;margin:16px 0}
+  .crisis strong{color:var(--warn)}
+
+  footer{border-top:1px solid var(--border);padding-top:20px;margin-top:40px;font-size:14px;color:var(--muted)}
+
+  .menu-btn{display:none}
+  @media (max-width:960px){
+    .layout{grid-template-columns:1fr}
+    nav.toc{position:fixed;inset:0 auto 0 0;width:280px;transform:translateX(-100%);transition:transform .25s;z-index:20;box-shadow:0 0 30px rgba(0,0,0,.15)}
+    nav.toc.open{transform:none}
+    .menu-btn{display:inline-block;position:fixed;top:12px;right:12px;z-index:30}
+    main{min-width:0;padding:60px 20px 60px}
+    .wrap{width:100%;min-width:0}
+    table{display:block;max-width:100%;overflow-x:auto}
+    .ex{grid-template-columns:1fr}
+    .sa-row{grid-template-columns:1fr}
+  }
+  @media print{
+    body{background:#fff;font-size:12pt}
+    nav.toc,.menu-btn,.no-print,.bar{display:none!important}
+    .layout{display:block} main{padding:0}
+    details{border:none} details .inner{padding:0}
+    details:not([open]) > *:not(summary){display:block}
+    section.block{break-inside:auto}
+    .activity,.card,.ex > div,blockquote{break-inside:avoid}
+    textarea{border:1px solid #999;min-height:70px}
+    a{color:var(--text);text-decoration:none}
+  }
+</style>
+</head>
+<body>
+<button class="btn menu-btn no-print" id="menuBtn" aria-controls="toc" aria-expanded="false">Menu</button>
+<div class="layout">
+<nav class="toc" id="toc" aria-label="Curriculum contents">
+  <p class="brand">Leading Vulnerable Conversations</p>
+  <p class="sub">Starting Point Men facilitator training</p>
+  <ol>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#schedule">Training schedule</a></li>
+    <li><a href="#framework">The six steps at a glance</a></li>
+    <li><a href="#self-assessment">Self-assessment</a></li>
+  </ol>
+  <p class="grp">The six steps</p>
+  <ol>
+    <li><a href="#step1">1. Create safety <span class="prog" data-prog="step1"></span></a></li>
+    <li><a href="#step2">2. Model vulnerability <span class="prog" data-prog="step2"></span></a></li>
+    <li><a href="#step3">3. Open-ended questions <span class="prog" data-prog="step3"></span></a></li>
+    <li><a href="#step4">4. Listen without fixing <span class="prog" data-prog="step4"></span></a></li>
+    <li><a href="#step5">5. Reciprocate <span class="prog" data-prog="step5"></span></a></li>
+    <li><a href="#step6">6. Follow up <span class="prog" data-prog="step6"></span></a></li>
+  </ol>
+  <p class="grp">Putting it together</p>
+  <ol>
+    <li><a href="#case">Case study</a></li>
+    <li><a href="#practicum">Practicum and observer checklist</a></li>
+    <li><a href="#boundaries">Boundaries and referral</a></li>
+    <li><a href="#pregroup">Pre-group checklist <span class="prog" data-prog="pregroup"></span></a></li>
+    <li><a href="#commission">Readiness and commissioning <span class="prog" data-prog="commission"></span></a></li>
+  </ol>
+  <div class="toc-actions no-print">
+    <button class="btn" type="button" onclick="window.print()">Print or save as PDF</button>
+    <button class="btn ghost" type="button" id="resetBtn">Clear all checkmarks</button>
+  </div>
+</nav>
+
+<main>
+<div class="wrap">
+
+<header class="hero" id="overview">
+  <div class="eyebrow">Starting Point Men &middot; Facilitator Training Curriculum</div>
+  <h1>Leading Vulnerable Conversations</h1>
+  <p class="lede" style="margin-top:14px">A four-session training for men&rsquo;s group facilitators at Starting Point Church, built on the Step-by-Step Practice for Facilitating Vulnerable Conversation from Chapter 5 of <em>Building Authentic Men&rsquo;s Ministries for Today&rsquo;s Church</em> by John S. Lybarger, Ph.D.</p>
+  <div class="meta">
+    <span class="chip">4 sessions &middot; 90 minutes each</span>
+    <span class="chip">Field practice between sessions</span>
+    <span class="chip">For table leaders, group facilitators, mentors</span>
+  </div>
+</header>
+
+<section class="block">
+  <h2>Why This Training Exists</h2>
+  <blockquote>&ldquo;One of the most common challenges men face in building brotherhood is not knowing how to move conversation from surface to depth.&rdquo;<cite>Chapter 5, Step-by-Step Practice: Facilitating Vulnerable Conversation</cite></blockquote>
+  <p>Starting Point exists to help people &ldquo;seek Jesus, not religion.&rdquo; It welcomes the non-churched, the de-churched, and displaced Christians, and it says plainly that &ldquo;it&rsquo;s OK to have a lot of questions along the way.&rdquo; Men who come from those places will not open up because a leader tells them to. They open up when a facilitator makes it safe and shows them how. Chapter 2 puts it this way: men remove their masks &ldquo;when someone else demonstrates that it&rsquo;s safe to do so.&rdquo;</p>
+  <p>This curriculum trains facilitators in six learnable skills so every Starting Point men&rsquo;s table, Discovery Group, and mentoring pair can move from surface talk to real brotherhood.</p>
+
+  <h3>Learning Outcomes</h3>
+  <p>By the end of the training, each facilitator will be able to:</p>
+  <ul>
+    <li>Set up and maintain a confidentiality covenant, including its limits.</li>
+    <li>Prepare and share a calibrated personal disclosure that gives other men permission to be honest.</li>
+    <li>Ask open-ended questions that invite progressively deeper sharing without pressure.</li>
+    <li>Respond to disclosure with presence and validation instead of advice.</li>
+    <li>Match another man&rsquo;s vulnerability appropriately without hijacking the conversation.</li>
+    <li>Follow up in a way that shows men they were heard and are cared for over time.</li>
+    <li>Recognize when a situation goes beyond peer support and make a referral.</li>
+  </ul>
+</section>
+
+<section class="block" id="schedule">
+  <h2>Training Schedule</h2>
+  <p>Each session follows the same rhythm: open in prayer, review field practice, teach, model, practice in triads, reflect, and assign the next field practice.</p>
+  <table>
+    <thead><tr><th style="width:18%">Session</th><th style="width:30%">Focus</th><th>Flow (90 minutes)</th><th style="width:22%">Field Practice</th></tr></thead>
+    <tbody>
+      <tr><td><b>Session 1</b></td><td>Foundations and Step 1: Create Safety Through Confidentiality</td><td>Welcome and prayer (10) &middot; Why men hide (15) &middot; Step 1 teaching (15) &middot; Confidentiality Conversation practice (25) &middot; Space Audit walk-through (15) &middot; Reflection (10)</td><td>Complete the self-assessment. Audit your group&rsquo;s meeting space.</td></tr>
+      <tr><td><b>Session 2</b></td><td>Step 2: Model Vulnerability First and Step 3: Use Open-Ended Questions</td><td>Check-in (10) &middot; Strategic vulnerability (15) &middot; Build your 90-second share (20) &middot; Question makeover (15) &middot; Three-Question Framework in triads (20) &middot; Reflection (10)</td><td>Practice the Three-Question Framework over coffee with two or three trusted friends.</td></tr>
+      <tr><td><b>Session 3</b></td><td>Step 4: Listen Without Fixing and Step 5: Reciprocate Appropriately</td><td>Check-in (10) &middot; The urge to fix (10) &middot; Fix-it tally role-play (25) &middot; Match-the-depth scenarios (20) &middot; Silence practice (15) &middot; Reflection (10)</td><td>In three conversations this week, use only presence responses before any advice.</td></tr>
+      <tr><td><b>Session 4</b></td><td>Step 6: Follow Up and integration practicum</td><td>Check-in (10) &middot; Step 6 teaching and case study (20) &middot; Full practicum in triads with observer checklist (40) &middot; Boundaries and referral (10) &middot; Commissioning prayer (10)</td><td>Lead your first gathering using all six steps. Debrief with your coach within a week.</td></tr>
+    </tbody>
+  </table>
+  <p class="small">Suggested materials: printed Starting Point Men Group Covenant, this guide (printed or on screen), timer, index cards, and the church&rsquo;s referral list from the Integrated Care Network.</p>
+</section>
+
+<section class="block" id="framework">
+  <h2>The Six Steps at a Glance</h2>
+  <div class="grid">
+    <a class="fw" href="#step1"><span>STEP 1</span><b>Create Safety Through Confidentiality</b><p>&ldquo;What we share here stays here.&rdquo;</p></a>
+    <a class="fw" href="#step2"><span>STEP 2</span><b>Model Vulnerability First</b><p>Go first so others have permission to be honest.</p></a>
+    <a class="fw" href="#step3"><span>STEP 3</span><b>Use Open-Ended Questions</b><p>Move beyond yes/no to real invitations.</p></a>
+    <a class="fw" href="#step4"><span>STEP 4</span><b>Listen Without Fixing</b><p>Presence and validation over solutions.</p></a>
+    <a class="fw" href="#step5"><span>STEP 5</span><b>Reciprocate Appropriately</b><p>Match his depth to build mutual trust.</p></a>
+    <a class="fw" href="#step6"><span>STEP 6</span><b>Follow Up</b><p>Show him you were listening and still care.</p></a>
+  </div>
+</section>
+
+<section class="block" id="self-assessment">
+  <h2>Facilitator Self-Assessment</h2>
+  <p>Rate yourself before Session 1 and again after Session 4. 1 = rarely true of me, 5 = consistently true of me. Your answers stay on this page and are not saved or sent anywhere.</p>
+  <div class="card" id="saCard">
+    <div id="saRows"></div>
+    <div class="sa-result" id="saResult" aria-live="polite">Rate all six statements to see your summary.</div>
+  </div>
+</section>
+
+<!-- STEP 1 -->
+<section class="block" id="step1" data-module="step1">
+  <div class="step-head"><div class="step-num">1</div><div><h2>Create Safety Through Confidentiality</h2><div class="tag">Session 1</div></div></div>
+  <blockquote>&ldquo;Before any vulnerable sharing, establish explicit confidentiality: &lsquo;What we share here stays here. We don&rsquo;t repeat each other&rsquo;s stories, even to our wives, without permission.&rsquo; This boundary creates psychological safety necessary for honesty.&rdquo;<cite>Chapter 5</cite></blockquote>
+
+  <h4>Core Teaching</h4>
+  <p>Men will not risk honesty until they believe it is safe. Chapter 2 explains that the physical space &ldquo;creates the container, but relational agreements establish the culture.&rdquo; Every Starting Point men&rsquo;s group begins with the Group Covenant, which defines confidentiality, states its limits, and names consequences for breaches.</p>
+  <ul>
+    <li><b>Be specific.</b> Many men assume they can share prayer requests or group content with their wives. The covenant says clearly that they can&rsquo;t without permission.</li>
+    <li><b>State the limits.</b> &ldquo;Confidentiality will be maintained except in cases where someone is in immediate danger of harming themselves or others, or where abuse of a minor is disclosed.&rdquo;</li>
+    <li><b>Repeat it.</b> Open every gathering with &ldquo;As always, what&rsquo;s shared here stays here.&rdquo;</li>
+    <li><b>Model it.</b> Leaders never use a member&rsquo;s story as an illustration, prayer request, or example without explicit permission. One violation by a leader can destroy trust that took months to build.</li>
+  </ul>
+
+  <h4>Example</h4>
+  <div class="ex">
+    <div class="bad"><div class="lbl">Weak opening</div><p>&ldquo;Okay guys, you know the drill, keep it confidential. Who wants to share?&rdquo;</p><p class="small">Vague, assumed, and rushed. Men don&rsquo;t know what &ldquo;confidential&rdquo; covers.</p></div>
+    <div class="good"><div class="lbl">Strong opening</div><p>&ldquo;Before we start, a reminder: what we share here stays here. That means we don&rsquo;t repeat anyone&rsquo;s story, even to our wives, unless he gives permission. The one exception is if someone is in danger. Then we get help. Everyone good with that?&rdquo;</p><p class="small">Explicit, includes the limit, and invites agreement.</p></div>
+  </div>
+
+  <div class="activity">
+    <div class="top"><span>Activity 1A: The Confidentiality Conversation</span><span class="time">25 minutes &middot; whole group, then triads</span></div>
+    <div class="body">
+      <p>From the Chapter 2 coaching exercise. The trainer leads this with the whole group first, then each facilitator practices leading it in a triad.</p>
+      <ol>
+        <li>Ask: &ldquo;Think about a time when someone betrayed your trust by sharing something you told them in confidence. You don&rsquo;t need to share the details, but how did that betrayal affect you? How did it change your willingness to be vulnerable?&rdquo; Let several men respond.</li>
+        <li>Ask: &ldquo;Now imagine the opposite, a relationship where you knew, without doubt, that anything you shared would be protected. How would that safety change what you&rsquo;re willing to talk about?&rdquo;</li>
+        <li>Say: &ldquo;This covenant isn&rsquo;t just a piece of paper. It&rsquo;s a sacred promise we&rsquo;re making to each other&hellip; Can you make that promise?&rdquo; Have each man verbally affirm his commitment before signing.</li>
+        <li>In triads, each man takes a turn leading steps 1&ndash;3 in his own words. Observers give one &ldquo;keep&rdquo; and one &ldquo;try&rdquo; note.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="activity">
+    <div class="top"><span>Activity 1B: Space Audit Walk-Through</span><span class="time">15 minutes &middot; on site</span></div>
+    <div class="body">
+      <p>Walk through your meeting room as if you were a first-time guest, using the Chapter 2 Space Audit:</p>
+      <ul>
+        <li>Can conversations be overheard from outside? Have someone speak at normal volume while you listen from the hallway.</li>
+        <li>Does the seating create connection? Circles and ovals promote equality; rows and tables create distance.</li>
+        <li>What does the lighting communicate: institution or hospitality?</li>
+        <li>Is there visual privacy? Can blinds be closed?</li>
+        <li>Can men arrive and leave without walking through public areas?</li>
+      </ul>
+      <p>Write down three changes you can make within the next month.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="cl-head"><h4 style="margin:0">Step 1 Facilitator Checklist</h4><span class="cl-count" data-count="step1"></span></div>
+    <div class="bar"><i data-bar="step1"></i></div>
+    <ul class="checklist">
+      <li><label><input type="checkbox"><span>Group Covenant reviewed, discussed, and signed at the first meeting</span></label></li>
+      <li><label><input type="checkbox"><span>Confidentiality reminder given at the start of every gathering</span></label></li>
+      <li><label><input type="checkbox"><span>Limits of confidentiality stated plainly (danger to self or others, abuse of a minor)</span></label></li>
+      <li><label><input type="checkbox"><span>Men know that prayer requests and stories are not shared with spouses or friends without permission</span></label></li>
+      <li><label><input type="checkbox"><span>Meeting space checked for privacy, circle seating, and discreet entry and exit</span></label></li>
+      <li><label><input type="checkbox"><span>Covenant reviewed again whenever a new man joins</span></label></li>
+      <li><label><input type="checkbox"><span>I know the process for handling a breach and who to notify</span></label></li>
+    </ul>
+  </div>
+
+  <div class="pitfalls"><h4>Common Pitfalls</h4><ul>
+    <li>Assuming men know what confidentiality means</li>
+    <li>Skipping the reminder once the group &ldquo;feels safe&rdquo;</li>
+    <li>Leaders sharing a man&rsquo;s story in a sermon, prayer chain, or leader meeting with identifying details</li>
+    <li>Meeting in a room where hallway traffic can hear</li>
+  </ul></div>
+
+  <div class="card reflect"><h4 style="margin-top:0">Reflection Questions</h4><ol>
+    <li>When has someone broken your trust, and how did it change what you were willing to share afterward?<textarea aria-label="Reflection answer"></textarea></li>
+    <li>What would make a skeptical or de-churched man believe your group is truly safe?<textarea aria-label="Reflection answer"></textarea></li>
+    <li>Is there any habit of yours (prayer chains, talking with your wife, leader updates) that could accidentally break confidentiality?<textarea aria-label="Reflection answer"></textarea></li>
+  </ol></div>
+</section>
+
+<!-- STEP 2 -->
+<section class="block" id="step2" data-module="step2">
+  <div class="step-head"><div class="step-num">2</div><div><h2>Model Vulnerability First</h2><div class="tag">Session 2</div></div></div>
+  <blockquote>&ldquo;Don&rsquo;t ask others to be vulnerable if you&rsquo;re not willing to go first. Share something real about your own struggle or failure. Your vulnerability gives others permission to be honest.&rdquo;<cite>Chapter 5</cite></blockquote>
+
+  <h4>Core Teaching</h4>
+  <p>Chapter 2 calls this <b>strategic vulnerability</b>: &ldquo;the intentional practice of going first, going deep, and going real to create permission for others to follow.&rdquo; It &ldquo;isn&rsquo;t emotional exhibitionism or therapeutic oversharing; it&rsquo;s a carefully calibrated leadership practice.&rdquo;</p>
+  <p>The facilitator sets the depth of the room. If he shares a polished testimony, men will polish theirs. If he shares something real, and it&rsquo;s received with grace, men learn that honesty is safe here. This reflects Starting Point&rsquo;s conviction that &ldquo;we all do it [sin]&hellip; and, even then, God will love us and passionately pursue us.&rdquo;</p>
+
+  <h4>Example: The Facilitator Goes First (from Chapter 2)</h4>
+  <div class="card soft dialogue">
+    <p><span class="who">Facilitator:</span> &ldquo;Before we go around the circle, I&rsquo;ll start. One thing going well: my daughter and I have been having breakfast together every Saturday&hellip; One challenge I&rsquo;m facing: I&rsquo;ve been struggling with anxiety about a work situation that feels out of my control, and it&rsquo;s affecting my sleep. One thing I&rsquo;m afraid to say out loud: I&rsquo;m afraid that if I don&rsquo;t perform perfectly at work, I&rsquo;ll lose my value, not just my job, but my worth as a person.&rdquo;</p>
+    <p class="stage">Pause. Let the disclosure settle. Make eye contact around the circle.</p>
+    <p><span class="who">Facilitator:</span> &ldquo;Okay, who wants to go next? Remember, you can share at whatever depth feels right for you.&rdquo;</p>
+  </div>
+
+  <div class="ex">
+    <div class="bad"><div class="lbl">Too safe</div><p>&ldquo;I guess my struggle is I need to be better about reading my Bible.&rdquo;</p><p class="small">True, but sanitized. It signals that the room is for tidy answers.</p></div>
+    <div class="good"><div class="lbl">Real and calibrated</div><p>&ldquo;Honestly, I&rsquo;ve been short with my kids all week, and I think it&rsquo;s because I&rsquo;m anxious about money. I haven&rsquo;t told my wife how worried I am.&rdquo;</p><p class="small">Specific, current, and honest without being graphic or unprocessed.</p></div>
+  </div>
+
+  <div class="activity">
+    <div class="top"><span>Activity 2A: Build Your 90-Second Share</span><span class="time">20 minutes &middot; individual, then pairs</span></div>
+    <div class="body">
+      <ol>
+        <li>On an index card, write your own answers to the Three-Question Framework: one thing going well, one current challenge, and one thing you&rsquo;re afraid to say out loud.</li>
+        <li>Check your share with the calibration test below.</li>
+        <li>Share it aloud with a partner in 90 seconds or less. Partner responds only with, &ldquo;Thank you for trusting me with that.&rdquo;</li>
+        <li>Switch roles. Then discuss: What did it feel like to go first? What did it feel like to hear it?</li>
+      </ol>
+      <table>
+        <thead><tr><th>Calibration Test</th><th>Ask Yourself</th></tr></thead>
+        <tbody>
+          <tr><td><b>Real</b></td><td>Is this a genuine, current struggle, not a polished past victory?</td></tr>
+          <tr><td><b>Processed</b></td><td>Am I stable enough with this to share it without needing the group to carry me through it tonight?</td></tr>
+          <tr><td><b>Purposeful</b></td><td>Does this share make room for others, or does it center me?</td></tr>
+          <tr><td><b>Appropriate</b></td><td>Is it free of graphic detail and of other people&rsquo;s private information (for example, my wife&rsquo;s story)?</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="cl-head"><h4 style="margin:0">Step 2 Facilitator Checklist</h4><span class="cl-count" data-count="step2"></span></div>
+    <div class="bar"><i data-bar="step2"></i></div>
+    <ul class="checklist">
+      <li><label><input type="checkbox"><span>I prepared my own share before the gathering</span></label></li>
+      <li><label><input type="checkbox"><span>My share passed the calibration test (real, processed, purposeful, appropriate)</span></label></li>
+      <li><label><input type="checkbox"><span>I went first before inviting others</span></label></li>
+      <li><label><input type="checkbox"><span>I paused after sharing and let it settle instead of rushing on</span></label></li>
+      <li><label><input type="checkbox"><span>I reminded men they can share at whatever depth feels right</span></label></li>
+      <li><label><input type="checkbox"><span>I kept my share brief so the focus moved to the group</span></label></li>
+    </ul>
+  </div>
+
+  <div class="pitfalls"><h4>Common Pitfalls</h4><ul>
+    <li>The sanitized testimony that only describes past victories</li>
+    <li>Oversharing raw or unprocessed pain that leaves the group caring for the leader</li>
+    <li>Sharing someone else&rsquo;s story, including a spouse&rsquo;s, without permission</li>
+    <li>Going first, then talking for ten minutes</li>
+  </ul></div>
+
+  <div class="card reflect"><h4 style="margin-top:0">Reflection Questions</h4><ol>
+    <li>What do you fear will happen if the men in your group see your real struggles?<textarea aria-label="Reflection answer"></textarea></li>
+    <li>Who modeled vulnerability for you, and what did it give you permission to do?<textarea aria-label="Reflection answer"></textarea></li>
+    <li>What is one area where you are tempted to share the polished version instead of the real one?<textarea aria-label="Reflection answer"></textarea></li>
+  </ol></div>
+</section>
+
+<!-- STEP 3 -->
+<section class="block" id="step3" data-module="step3">
+  <div class="step-head"><div class="step-num">3</div><div><h2>Use Open-Ended Questions</h2><div class="tag">Session 2</div></div></div>
+  <blockquote>&ldquo;Move beyond yes/no questions to open-ended invitations: &lsquo;What&rsquo;s been weighing on you lately?&rsquo; &lsquo;Where are you struggling right now?&rsquo; &lsquo;What would you want prayer for if you were being completely honest?&rsquo; &lsquo;What&rsquo;s one thing you haven&rsquo;t told anyone?&rsquo;&rdquo;<cite>Chapter 5</cite></blockquote>
+
+  <h4>Core Teaching</h4>
+  <p>Closed questions produce short answers and let men stay on the surface. Open-ended questions invite a story. Chapter 2&rsquo;s <b>Three-Question Framework</b> sequences questions so depth grows gradually and men keep a sense of control:</p>
+  <table>
+    <thead><tr><th style="width:36%">Question</th><th>Why It Works</th></tr></thead>
+    <tbody>
+      <tr><td>1. &ldquo;What&rsquo;s one thing going well in your life right now?&rdquo;</td><td>Starts from strength. Men relax when they can begin from a position of competence.</td></tr>
+      <tr><td>2. &ldquo;What&rsquo;s one challenge you&rsquo;re currently facing?&rdquo;</td><td>&ldquo;One challenge,&rdquo; not &ldquo;all your problems.&rdquo; The bounded invitation makes vulnerability manageable.</td></tr>
+      <tr><td>3. &ldquo;What&rsquo;s one thing you&rsquo;re afraid to say out loud?&rdquo;</td><td>&ldquo;This is where masks begin to crack.&rdquo; Naming the fear gives permission for it to be voiced.</td></tr>
+    </tbody>
+  </table>
+  <p>Never pressure disclosure. Some men need to witness others&rsquo; vulnerability before risking their own. &ldquo;That&rsquo;s not resistance; that&rsquo;s wisdom.&rdquo; Leave the invitation open: &ldquo;If anyone wants to share what came to mind, we&rsquo;re here to listen without judgment.&rdquo;</p>
+  <p><b>Welcome silence.</b> Notice your own anxiety when silence follows a question, and resist filling it. &ldquo;Silence is often where the deepest insights emerge.&rdquo;</p>
+
+  <div class="activity">
+    <div class="top"><span>Activity 3A: Question Makeover</span><span class="time">15 minutes &middot; pairs</span></div>
+    <div class="body">
+      <p>Rewrite each closed question as an open-ended one. Compare with the sample answers after you try.</p>
+      <table>
+        <thead><tr><th>Closed Question</th><th>Open-Ended Invitation</th></tr></thead>
+        <tbody>
+          <tr><td class="no">&ldquo;Is everything good at home?&rdquo;</td><td class="yes">&ldquo;What&rsquo;s life at home been like this week?&rdquo;</td></tr>
+          <tr><td class="no">&ldquo;Did you read your Bible this week?&rdquo;</td><td class="yes">&ldquo;Where have you sensed God, or felt His absence, this week?&rdquo;</td></tr>
+          <tr><td class="no">&ldquo;Are you stressed about work?&rdquo;</td><td class="yes">&ldquo;What&rsquo;s been weighing on you lately?&rdquo;</td></tr>
+          <tr><td class="no">&ldquo;Anything we can pray about?&rdquo;</td><td class="yes">&ldquo;What would you want prayer for if you were being completely honest?&rdquo;</td></tr>
+          <tr><td class="no">&ldquo;Do you and your son get along?&rdquo;</td><td class="yes">&ldquo;How would you describe where things are with your son right now?&rdquo;</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="activity">
+    <div class="top"><span>Activity 3B: Three-Question Triads</span><span class="time">20 minutes &middot; triads (facilitator, sharer, observer)</span></div>
+    <div class="body">
+      <ol>
+        <li>The facilitator asks the three questions in order. After each answer he asks one clarifying question: &ldquo;Can you say more about that?&rdquo; or &ldquo;What&rsquo;s that been like for you?&rdquo;</li>
+        <li>He practices soft eye contact, leans slightly forward, and resists interrupting or offering solutions.</li>
+        <li>The observer notes any closed questions, advice, or rushed silence.</li>
+        <li>Rotate roles so everyone facilitates once. Debrief: What felt safe? What made you more or less willing to go deeper?</li>
+      </ol>
+    </div>
+  </div>
+
+  <h4>Depth Ladder</h4>
+  <p>Chapter 5&rsquo;s Vulnerability Assessment describes five levels of sharing. Use it to notice where your group is and to invite the next level gently, not to grade men.</p>
+  <table>
+    <thead><tr><th style="width:12%">Level</th><th>What It Sounds Like</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Surface conversation only (weather, sports, work logistics)</td></tr>
+      <tr><td>2</td><td>Occasional sharing of opinions or preferences</td></tr>
+      <tr><td>3</td><td>Sharing challenges or struggles in general terms</td></tr>
+      <tr><td>4</td><td>Sharing specific struggles and asking for support</td></tr>
+      <tr><td>5</td><td>Complete transparency about failures, fears, and needs</td></tr>
+    </tbody>
+  </table>
+
+  <div class="card">
+    <div class="cl-head"><h4 style="margin:0">Step 3 Facilitator Checklist</h4><span class="cl-count" data-count="step3"></span></div>
+    <div class="bar"><i data-bar="step3"></i></div>
+    <ul class="checklist">
+      <li><label><input type="checkbox"><span>I prepared 3&ndash;5 open-ended questions before the gathering</span></label></li>
+      <li><label><input type="checkbox"><span>I started with strength before moving to struggle</span></label></li>
+      <li><label><input type="checkbox"><span>I asked about &ldquo;one&rdquo; challenge, not everything</span></label></li>
+      <li><label><input type="checkbox"><span>I asked follow-up questions instead of moving on quickly</span></label></li>
+      <li><label><input type="checkbox"><span>I allowed silence after questions without filling it</span></label></li>
+      <li><label><input type="checkbox"><span>I invited, and never pressured, disclosure</span></label></li>
+    </ul>
+  </div>
+
+  <div class="pitfalls"><h4>Common Pitfalls</h4><ul>
+    <li>Stacking several questions at once</li>
+    <li>Leading questions that contain the &ldquo;right&rdquo; answer</li>
+    <li>Jumping to the deepest question in the first meeting</li>
+    <li>Answering your own question when the silence gets uncomfortable</li>
+  </ul></div>
+
+  <div class="card reflect"><h4 style="margin-top:0">Reflection Questions</h4><ol>
+    <li>Which question would be hardest for you to answer honestly, and why?<textarea aria-label="Reflection answer"></textarea></li>
+    <li>How comfortable are you with 10 seconds of silence in a group? What do you usually do with it?<textarea aria-label="Reflection answer"></textarea></li>
+    <li>At what level of the depth ladder is your group now? What would a gentle next step look like?<textarea aria-label="Reflection answer"></textarea></li>
+  </ol></div>
+</section>
+
+<!-- STEP 4 -->
+<section class="block" id="step4" data-module="step4">
+  <div class="step-head"><div class="step-num">4</div><div><h2>Listen Without Fixing</h2><div class="tag">Session 3</div></div></div>
+  <blockquote>&ldquo;When someone shares vulnerability, resist the urge to immediately problem-solve. Practice saying: &lsquo;Thank you for trusting me with that&rsquo; or &lsquo;That sounds really hard&rsquo; or &lsquo;Tell me more about that.&rsquo; Your presence and validation are more valuable than your solutions.&rdquo;<cite>Chapter 5</cite></blockquote>
+
+  <h4>Core Teaching</h4>
+  <p>Many men are wired to solve problems. When a brother shares pain, advice can feel like help, but it often tells him, &ldquo;Your feelings are a problem to get rid of.&rdquo; Quick fixes shut down further sharing. Presence says, &ldquo;You&rsquo;re not alone, and you don&rsquo;t have to have it figured out.&rdquo; That is the grace Starting Point wants every man to experience.</p>
+  <p><b>Presence phrases to practice:</b></p>
+  <ul>
+    <li>&ldquo;Thank you for trusting me with that.&rdquo;</li>
+    <li>&ldquo;That sounds really hard.&rdquo;</li>
+    <li>&ldquo;Tell me more about that.&rdquo;</li>
+    <li>&ldquo;What&rsquo;s that been like for you?&rdquo;</li>
+    <li>&ldquo;Anyone else relate to that?&rdquo;</li>
+  </ul>
+
+  <h4>Example</h4>
+  <div class="ex">
+    <div class="bad"><div class="lbl">Fixing</div><p><b>Man:</b> &ldquo;My marriage feels distant. We&rsquo;re like roommates.&rdquo;</p><p><b>Leader:</b> &ldquo;You need a date night. My wife and I do Fridays. Also read <i>Love and Respect</i>.&rdquo;</p><p class="small">Fast, well-meaning, and it ends the conversation.</p></div>
+    <div class="good"><div class="lbl">Listening (from Chapter 2)</div><p><b>Man:</b> &ldquo;My marriage feels pretty distant right now. We&rsquo;re like roommates managing logistics, not partners.&rdquo;</p><p><b>Facilitator:</b> &ldquo;Thank you for that honesty. That takes courage. Can you say more about what &lsquo;distant&rsquo; feels like in your marriage?&rdquo;</p><p class="small">Later: &ldquo;That loneliness in the midst of a full house, that&rsquo;s a painful place to be. Anyone else relate to that?&rdquo;</p></div>
+  </div>
+
+  <div class="activity">
+    <div class="top"><span>Activity 4A: The Fix-It Tally</span><span class="time">25 minutes &middot; triads</span></div>
+    <div class="body">
+      <ol>
+        <li>The sharer describes a real, moderate challenge for three minutes (for example, a work conflict or a parenting frustration).</li>
+        <li>The listener may use only presence phrases and open-ended questions. No advice, no stories, no Scripture &ldquo;answers.&rdquo;</li>
+        <li>The observer keeps a tally of every fix attempt, including disguised ones (&ldquo;Have you thought about&hellip;?&rdquo;).</li>
+        <li>After three minutes, the sharer answers: &ldquo;When did you feel most heard? Was there a moment you felt managed?&rdquo;</li>
+        <li>Rotate. Then discuss as a group: What made it hard not to fix?</li>
+      </ol>
+      <p class="small">Advice has a place, but only when invited. Teach facilitators to ask, &ldquo;Would it help to hear what&rsquo;s worked for me, or do you just need us to listen tonight?&rdquo;</p>
+    </div>
+  </div>
+
+  <div class="activity">
+    <div class="top"><span>Activity 4B: The Silence Drill</span><span class="time">15 minutes &middot; pairs</span></div>
+    <div class="body">
+      <p>After the sharer finishes, the listener counts silently to five before saying anything. Repeat three times. Debrief: What did the silence make room for?</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="cl-head"><h4 style="margin:0">Step 4 Facilitator Checklist</h4><span class="cl-count" data-count="step4"></span></div>
+    <div class="bar"><i data-bar="step4"></i></div>
+    <ul class="checklist">
+      <li><label><input type="checkbox"><span>I thanked men for their honesty</span></label></li>
+      <li><label><input type="checkbox"><span>I used at least one &ldquo;tell me more&rdquo; question before responding</span></label></li>
+      <li><label><input type="checkbox"><span>I offered no advice unless the man asked for it</span></label></li>
+      <li><label><input type="checkbox"><span>I kept soft eye contact and open body language</span></label></li>
+      <li><label><input type="checkbox"><span>I redirected group members who jumped in to fix</span></label></li>
+      <li><label><input type="checkbox"><span>I invited others to relate (&ldquo;Anyone else relate to that?&rdquo;)</span></label></li>
+    </ul>
+  </div>
+
+  <div class="pitfalls"><h4>Common Pitfalls</h4><ul>
+    <li>Quick Bible-verse answers that close the conversation</li>
+    <li>&ldquo;At least&hellip;&rdquo; statements that minimize pain</li>
+    <li>Checking a phone or looking away while a man is sharing</li>
+    <li>Letting the group pile on with advice</li>
+  </ul></div>
+
+  <div class="card reflect"><h4 style="margin-top:0">Reflection Questions</h4><ol>
+    <li>When did someone listen to you without fixing? How did it affect you?<textarea aria-label="Reflection answer"></textarea></li>
+    <li>What is your usual &ldquo;fix&rdquo; reflex (advice, Scripture, a story, humor)? What need of yours does it serve?<textarea aria-label="Reflection answer"></textarea></li>
+    <li>How might Jesus&rsquo; way of asking questions shape the way you listen?<textarea aria-label="Reflection answer"></textarea></li>
+  </ol></div>
+</section>
+
+<!-- STEP 5 -->
+<section class="block" id="step5" data-module="step5">
+  <div class="step-head"><div class="step-num">5</div><div><h2>Reciprocate Appropriately</h2><div class="tag">Session 3</div></div></div>
+  <blockquote>&ldquo;If someone shares vulnerability, reciprocate with similar depth. If he shares about marriage struggles, don&rsquo;t respond with a story about your golf game. Match his vulnerability with your own, creating mutual trust.&rdquo;<cite>Chapter 5</cite></blockquote>
+
+  <h4>Core Teaching</h4>
+  <p>When a man takes a risk and nobody meets him there, he feels exposed and alone. When someone responds with similar depth, the risk becomes shared and trust grows. Reciprocity is about matching <i>depth</i>, not matching <i>story</i>. The goal is &ldquo;me too,&rdquo; not &ldquo;me more.&rdquo;</p>
+  <ul>
+    <li><b>Match the level.</b> Respond at about the same level of the depth ladder.</li>
+    <li><b>Keep it short.</b> Share briefly, then return the focus to him.</li>
+    <li><b>Don&rsquo;t one-up.</b> Your story should say &ldquo;you&rsquo;re not alone,&rdquo; not &ldquo;mine was worse.&rdquo;</li>
+    <li><b>Don&rsquo;t retreat.</b> Humor or a subject change after a deep share leaves him hanging.</li>
+  </ul>
+
+  <h4>Example</h4>
+  <div class="ex">
+    <div class="bad"><div class="lbl">Mismatched</div><p><b>Man:</b> &ldquo;I&rsquo;ve been struggling with pornography again, and I&rsquo;m ashamed.&rdquo;</p><p><b>Other man:</b> &ldquo;Yeah, we all have stuff. Hey, did anyone catch the game?&rdquo;</p><p class="small">Retreat to the surface. The man who took the risk is left exposed.</p></div>
+    <div class="good"><div class="lbl">Matched</div><p><b>Other man:</b> &ldquo;Thank you for saying that. I know that shame. I fought the same battle for years, and what finally helped was telling someone. You&rsquo;re not the only one in this room.&rdquo;</p><p class="small">Similar depth, brief, and turns the focus back to hope and brotherhood.</p></div>
+  </div>
+
+  <div class="activity">
+    <div class="top"><span>Activity 5A: Match the Depth</span><span class="time">20 minutes &middot; small groups</span></div>
+    <div class="body">
+      <p>For each disclosure, write one response that matches its depth and one that misses. Discuss why.</p>
+      <ol>
+        <li>&ldquo;Since the divorce, weekends without my kids are the loneliest days I&rsquo;ve ever had.&rdquo;</li>
+        <li>&ldquo;I lost my job two months ago, and I haven&rsquo;t told anyone at church.&rdquo;</li>
+        <li>&ldquo;Since my wife died, I don&rsquo;t know who I am anymore.&rdquo;</li>
+        <li>&ldquo;I don&rsquo;t even know if I believe in God. I just come because my wife wants me to.&rdquo;</li>
+      </ol>
+      <p class="small">Note for scenario 4: Starting Point welcomes doubt. A matched response might be, &ldquo;I&rsquo;m really glad you said that. I&rsquo;ve had seasons where I wasn&rsquo;t sure either. Honest questions are welcome here.&rdquo;</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="cl-head"><h4 style="margin:0">Step 5 Facilitator Checklist</h4><span class="cl-count" data-count="step5"></span></div>
+    <div class="bar"><i data-bar="step5"></i></div>
+    <ul class="checklist">
+      <li><label><input type="checkbox"><span>I responded to deep sharing with similar depth, not surface talk</span></label></li>
+      <li><label><input type="checkbox"><span>My reciprocal share was brief and returned the focus to him</span></label></li>
+      <li><label><input type="checkbox"><span>I avoided one-upping or comparing struggles</span></label></li>
+      <li><label><input type="checkbox"><span>I noticed and gently redirected humor or subject changes after a deep share</span></label></li>
+      <li><label><input type="checkbox"><span>I made sure no man was left &ldquo;hanging&rdquo; after taking a risk</span></label></li>
+    </ul>
+  </div>
+
+  <div class="pitfalls"><h4>Common Pitfalls</h4><ul>
+    <li>Hijacking the moment with a long personal story</li>
+    <li>Going much deeper than the sharer and making him uncomfortable</li>
+    <li>Nervous jokes that break the moment</li>
+    <li>Silence from the group that feels like judgment</li>
+  </ul></div>
+
+  <div class="card reflect"><h4 style="margin-top:0">Reflection Questions</h4><ol>
+    <li>When have you shared something real and had no one meet you there? What did you conclude?<textarea aria-label="Reflection answer"></textarea></li>
+    <li>What is the difference between &ldquo;me too&rdquo; and &ldquo;me more&rdquo; in your own conversations?<textarea aria-label="Reflection answer"></textarea></li>
+    <li>What story from your life could help another man feel less alone, and when would it be wise to share it?<textarea aria-label="Reflection answer"></textarea></li>
+  </ol></div>
+</section>
+
+<!-- STEP 6 -->
+<section class="block" id="step6" data-module="step6">
+  <div class="step-head"><div class="step-num">6</div><div><h2>Follow Up</h2><div class="tag">Session 4</div></div></div>
+  <blockquote>&ldquo;After someone shares something significant, follow up in your next conversation: &lsquo;How are you doing with that situation you shared last time?&rsquo; This communicates that you were actually listening and that you care about his ongoing journey, not just the moment of disclosure.&rdquo;<cite>Chapter 5</cite></blockquote>
+
+  <h4>Core Teaching</h4>
+  <p>Vulnerability is a moment; brotherhood is a journey. Follow-up turns a disclosure into a relationship. It also protects men after a vulnerability hangover, the second-guessing that often comes the day after sharing something real.</p>
+  <ul>
+    <li><b>Within a few days:</b> A short text or call after a significant share.</li>
+    <li><b>At the next gathering:</b> A private check-in, never putting him on the spot in front of the group.</li>
+    <li><b>Keep notes carefully:</b> If you jot reminders, use no identifying details and keep them private.</li>
+    <li><b>Notice absence:</b> When a man stops showing up, reach out. His silence may be a signal.</li>
+  </ul>
+
+  <h4>Example Messages</h4>
+  <div class="ex">
+    <div class="good"><div class="lbl">Text after a significant share</div><p>&ldquo;Hey brother, I&rsquo;ve been praying for you since Thursday. Thanks again for trusting us. No need to reply, just wanted you to know.&rdquo;</p></div>
+    <div class="good"><div class="lbl">Next-gathering check-in (private)</div><p>&ldquo;How are you doing with that situation you shared last time?&rdquo;</p></div>
+  </div>
+  <div class="ex">
+    <div class="bad"><div class="lbl">Public follow-up</div><p>&ldquo;So Mike, update us all on the marriage thing.&rdquo;</p><p class="small">Puts him on the spot and treats his story as group property.</p></div>
+    <div class="good"><div class="lbl">Reaching out after absence (from Chapter 5)</div><p>&ldquo;I know we don&rsquo;t know each other well, but I&rsquo;m concerned about you. Would you be willing to meet for coffee? No agenda, I just want to check in.&rdquo;</p></div>
+  </div>
+
+  <div class="activity">
+    <div class="top"><span>Activity 6A: Follow-Up Plan Card</span><span class="time">10 minutes &middot; individual</span></div>
+    <div class="body">
+      <p>Think of the men in your group, or the men you expect to lead. On an index card, write:</p>
+      <ol>
+        <li>The name or initials of one man who shared something significant recently</li>
+        <li>How you will follow up (text, call, coffee) and by what day</li>
+        <li>The exact words you will use</li>
+        <li>How you will pray for him this week</li>
+      </ol>
+      <p class="small">Keep the card private and destroy it once you&rsquo;ve followed up.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="cl-head"><h4 style="margin:0">Step 6 Facilitator Checklist</h4><span class="cl-count" data-count="step6"></span></div>
+    <div class="bar"><i data-bar="step6"></i></div>
+    <ul class="checklist">
+      <li><label><input type="checkbox"><span>I followed up within a few days with every man who shared something significant</span></label></li>
+      <li><label><input type="checkbox"><span>I checked in privately at the next gathering</span></label></li>
+      <li><label><input type="checkbox"><span>I prayed for the men in my group between meetings</span></label></li>
+      <li><label><input type="checkbox"><span>I reached out to any man who missed two gatherings in a row</span></label></li>
+      <li><label><input type="checkbox"><span>Any notes I kept are private and free of identifying details</span></label></li>
+      <li><label><input type="checkbox"><span>I passed any safety or care concerns to the pastoral team or Care and Recovery Lead</span></label></li>
+    </ul>
+  </div>
+
+  <div class="pitfalls"><h4>Common Pitfalls</h4><ul>
+    <li>Forgetting what a man shared, which tells him it didn&rsquo;t matter</li>
+    <li>Following up publicly instead of privately</li>
+    <li>Accepting &ldquo;just busy&rdquo; when your gut says something is wrong</li>
+    <li>Carrying every man alone instead of involving other brothers and the care team</li>
+  </ul></div>
+
+  <div class="card reflect"><h4 style="margin-top:0">Reflection Questions</h4><ol>
+    <li>When did someone follow up with you after a hard season? What did it communicate?<textarea aria-label="Reflection answer"></textarea></li>
+    <li>What system will you use so follow-up doesn&rsquo;t depend on memory?<textarea aria-label="Reflection answer"></textarea></li>
+    <li>Who is one man you should check on this week?<textarea aria-label="Reflection answer"></textarea></li>
+  </ol></div>
+</section>
+
+<!-- CASE STUDY -->
+<section class="block" id="case">
+  <h2>Case Study: The Brotherhood That Saved a Life</h2>
+  <p class="small">Summarized from Chapter 5. Use in Session 4 (20 minutes).</p>
+  <div class="card">
+    <p>Nick attended his church&rsquo;s men&rsquo;s breakfast for three years and considered himself &ldquo;involved.&rdquo; When his marriage began falling apart and he began having suicidal thoughts, he didn&rsquo;t call anyone. He sat alone in his car in a parking garage.</p>
+    <p>Three men from that breakfast, James, Albert, and Steven, had been meeting weekly in a small brotherhood group for a year, sharing their real struggles. When Nick stopped attending, James noticed and texted him. Nick replied, &ldquo;Yeah, just busy. Work stuff.&rdquo; James had learned not to accept surface answers when his gut said something was wrong, so he called: &ldquo;I know we don&rsquo;t know each other well, but I&rsquo;m concerned about you. Would you be willing to meet for coffee?&rdquo;</p>
+    <p>Over coffee James asked, &ldquo;How are you really doing?&rdquo; Nick broke down. James responded, &ldquo;Thank you for trusting me with this. You&rsquo;re not alone. I&rsquo;ve been where you are, and I have brothers who&rsquo;ve walked with me through it. Will you let us walk with you?&rdquo; The brothers welcomed Nick, met with him weekly, helped him find a Christian therapist, encouraged him to see his doctor, and walked with him through marriage counseling.</p>
+  </div>
+  <h4>Discussion Questions</h4>
+  <ol>
+    <li>Three years of breakfasts did not create a place where Nick could be honest. What was missing?</li>
+    <li>Find each of the six steps in James&rsquo;s actions. Which was most important?</li>
+    <li>How did James&rsquo;s own brotherhood group prepare him for this moment?</li>
+    <li>James combined brotherhood with professional care. Why does that matter?</li>
+    <li>Who at Starting Point might be sitting in the parking lot right now? What would it take to notice him?</li>
+  </ol>
+</section>
+
+<!-- PRACTICUM -->
+<section class="block" id="practicum">
+  <h2>Practicum and Observer Checklist</h2>
+  <div class="activity">
+    <div class="top"><span>Session 4 Practicum: Lead a Full Conversation</span><span class="time">40 minutes &middot; triads, three 12-minute rounds</span></div>
+    <div class="body">
+      <ol>
+        <li>The facilitator opens with the confidentiality reminder, shares his 90-second share, asks the three questions, listens, reciprocates, and closes by naming how he will follow up.</li>
+        <li>The sharer responds honestly at a comfortable depth.</li>
+        <li>The observer uses the checklist below, then gives two strengths and one growth area.</li>
+        <li>Rotate so each man facilitates once.</li>
+      </ol>
+    </div>
+  </div>
+  <table>
+    <thead><tr><th style="width:26%">Step</th><th>Observer Looks For</th><th style="width:16%">Seen?</th></tr></thead>
+    <tbody>
+      <tr><td>1. Safety</td><td>Clear confidentiality reminder, including limits</td><td>&#9744; Yes &#9744; Partly</td></tr>
+      <tr><td>2. Model first</td><td>Real, calibrated, brief share before inviting others</td><td>&#9744; Yes &#9744; Partly</td></tr>
+      <tr><td>3. Open questions</td><td>Open-ended questions in sequence; silence allowed</td><td>&#9744; Yes &#9744; Partly</td></tr>
+      <tr><td>4. Listen</td><td>Presence phrases; no unrequested advice</td><td>&#9744; Yes &#9744; Partly</td></tr>
+      <tr><td>5. Reciprocate</td><td>Matched depth without hijacking</td><td>&#9744; Yes &#9744; Partly</td></tr>
+      <tr><td>6. Follow up</td><td>Specific, private follow-up plan named</td><td>&#9744; Yes &#9744; Partly</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- BOUNDARIES -->
+<section class="block" id="boundaries">
+  <h2>Boundaries and Referral</h2>
+  <p>Facilitators are brothers and guides, not therapists. Chapter 6 describes a mental-health-aware ministry as one that combines &ldquo;spiritual support combined with appropriate professional referral, compassion without overstepping boundaries.&rdquo; It models the pastor&rsquo;s response: &ldquo;I&rsquo;m not equipped to be your therapist. What I can do is walk with you, pray with you, and help you find the professional help you need.&rdquo;</p>
+  <div class="crisis" role="note">
+    <p style="margin:0 0 8px"><strong>If a man is in immediate danger</strong> of harming himself or someone else, or if abuse of a minor is disclosed, confidentiality does not apply. Stay with him, call <b>911</b> in an emergency, and contact the pastoral team.</p>
+    <p style="margin:0">For suicidal thoughts or emotional crisis, call or text <b>988</b> (Suicide &amp; Crisis Lifeline).</p>
+  </div>
+  <details>
+    <summary>Signs a conversation needs more than the group</summary>
+    <div class="inner"><ul>
+      <li>Talk of suicide, hopelessness, or &ldquo;everyone would be better off without me&rdquo;</li>
+      <li>Disclosure of abuse, violence, or a threat to someone&rsquo;s safety</li>
+      <li>Addiction that is escalating or affecting work or family</li>
+      <li>Trauma symptoms, persistent depression, or anxiety that disrupts daily life</li>
+      <li>Marriage crisis involving separation, infidelity, or safety concerns</li>
+    </ul><p class="small">When in doubt, consult the pastoral team or the Care and Recovery Lead and use Starting Point&rsquo;s referral list. Faith, therapy, and community work together; seeking counseling is not a failure of faith.</p></div>
+  </details>
+</section>
+
+<!-- PRE-GROUP -->
+<section class="block" id="pregroup" data-module="pregroup">
+  <h2>Before Every Gathering: Pre-Group Checklist</h2>
+  <div class="card">
+    <div class="cl-head"><h4 style="margin:0">Pre-Group Checklist</h4><span class="cl-count" data-count="pregroup"></span></div>
+    <div class="bar"><i data-bar="pregroup"></i></div>
+    <ul class="checklist">
+      <li><label><input type="checkbox"><span>I prayed for the men by name and asked the Holy Spirit to lead the conversation</span></label></li>
+      <li><label><input type="checkbox"><span>The room is set in a circle, private, and welcoming</span></label></li>
+      <li><label><input type="checkbox"><span>Covenant copies are ready for any new men</span></label></li>
+      <li><label><input type="checkbox"><span>I prepared my own calibrated share</span></label></li>
+      <li><label><input type="checkbox"><span>I prepared 3&ndash;5 open-ended questions</span></label></li>
+      <li><label><input type="checkbox"><span>I reviewed who needs follow-up from last time</span></label></li>
+      <li><label><input type="checkbox"><span>I have the referral list and crisis numbers with me</span></label></li>
+      <li><label><input type="checkbox"><span>My phone is silenced</span></label></li>
+    </ul>
+  </div>
+</section>
+
+<!-- COMMISSION -->
+<section class="block" id="commission" data-module="commission">
+  <h2>Readiness and Commissioning</h2>
+  <p>A facilitator is ready to lead a Starting Point men&rsquo;s group when he has completed the items below with his trainer or coach.</p>
+  <div class="card">
+    <div class="cl-head"><h4 style="margin:0">Readiness Checklist</h4><span class="cl-count" data-count="commission"></span></div>
+    <div class="bar"><i data-bar="commission"></i></div>
+    <ul class="checklist">
+      <li><label><input type="checkbox"><span>Attended all four sessions (or made up missed content with the trainer)</span></label></li>
+      <li><label><input type="checkbox"><span>Completed the self-assessment before and after training</span></label></li>
+      <li><label><input type="checkbox"><span>Completed all four field practice assignments</span></label></li>
+      <li><label><input type="checkbox"><span>Facilitated the practicum with an observer and received feedback</span></label></li>
+      <li><label><input type="checkbox"><span>Signed the Starting Point Men Group Covenant as a leader</span></label></li>
+      <li><label><input type="checkbox"><span>Knows the crisis protocol and referral process</span></label></li>
+      <li><label><input type="checkbox"><span>Is in his own group, triad, or mentoring relationship</span></label></li>
+      <li><label><input type="checkbox"><span>Has identified a potential apprentice</span></label></li>
+    </ul>
+  </div>
+  <h3>Commissioning Prayer</h3>
+  <blockquote>Father, thank You for these men who are willing to go first. Give them courage to be honest, ears to listen without fixing, and hearts that follow up with love. Make every circle they lead a place where shame loses its power and grace is experienced. Fill them with Your Holy Spirit, protect the trust men place in them, and let them never lead alone. In Jesus&rsquo; name, Amen.</blockquote>
+</section>
+
+<footer>
+  <p>Starting Point Men &middot; Starting Point Church, Prescott, Arizona. Curriculum adapted from <em>Building Authentic Men&rsquo;s Ministries for Today&rsquo;s Church: A Blueprint for Real Faith, Real Relationships, Real Transformation</em> by John S. Lybarger, Ph.D., Purpose Driven Consulting LLC (Chapters 2, 5, and 6). Starting Point beliefs quoted from <a href="https://mysp.church/pages/what-we-believe" target="_blank" rel="noopener">What We Believe</a>.</p>
+  <p>This training prepares peer facilitators. It is not clinical training and does not replace professional mental health care.</p>
+</footer>
+
+</div>
+</main>
+</div>
+
+<script>
+(function(){
+  // Checklist progress (in-memory only)
+  const modules = document.querySelectorAll('[data-module]');
+  function update(mod){
+    const id = mod.dataset.module;
+    const boxes = mod.querySelectorAll('.checklist input[type=checkbox]');
+    const done = [...boxes].filter(b=>b.checked).length;
+    const total = boxes.length;
+    const c = document.querySelector('[data-count="'+id+'"]');
+    if(c) c.textContent = done + ' of ' + total + ' complete';
+    const bar = document.querySelector('[data-bar="'+id+'"]');
+    if(bar) bar.style.width = (total? (done/total*100):0) + '%';
+    const p = document.querySelector('[data-prog="'+id+'"]');
+    if(p){ p.textContent = done + '/' + total; p.classList.toggle('done', done===total && total>0); }
+  }
+  modules.forEach(m=>{
+    m.querySelectorAll('.checklist input').forEach(b=>b.addEventListener('change',()=>update(m)));
+    update(m);
+  });
+  document.getElementById('resetBtn').addEventListener('click',()=>{
+    document.querySelectorAll('.checklist input').forEach(b=>b.checked=false);
+    modules.forEach(update);
+  });
+
+  // Self-assessment
+  const items = [
+    ['Create safety', 'I clearly explain confidentiality, including its limits, and I protect what men share.'],
+    ['Model vulnerability', 'I go first and share real struggles in a calibrated way.'],
+    ['Open-ended questions', 'I ask open-ended questions and am comfortable with silence.'],
+    ['Listen without fixing', 'I listen and validate before offering any advice.'],
+    ['Reciprocate', 'I match another man\u2019s depth without taking over the conversation.'],
+    ['Follow up', 'I consistently follow up with men after they share something significant.']
+  ];
+  const rows = document.getElementById('saRows');
+  items.forEach((it,i)=>{
+    const row = document.createElement('div');
+    row.className='sa-row';
+    row.setAttribute('role','radiogroup');
+    row.setAttribute('aria-label', it[0]);
+    let scale = '<div class="scale">';
+    for(let v=1; v<=5; v++){
+      scale += '<label><input type="radio" name="sa'+i+'" value="'+v+'" aria-label="'+it[0]+': '+v+'"><span>'+v+'</span></label>';
+    }
+    scale += '</div>';
+    row.innerHTML = '<div><b>'+(i+1)+'. '+it[0]+'</b><br><span class="small">'+it[1]+'</span></div>' + scale;
+    rows.appendChild(row);
+  });
+  const result = document.getElementById('saResult');
+  rows.addEventListener('change',()=>{
+    const vals = items.map((_,i)=>{const c=rows.querySelector('input[name=sa'+i+']:checked');return c?+c.value:null;});
+    if(vals.some(v=>v===null)){ result.textContent = 'Rated ' + vals.filter(v=>v!==null).length + ' of 6 statements.'; return; }
+    const total = vals.reduce((a,b)=>a+b,0);
+    const min = Math.min(...vals);
+    const low = items.filter((_,i)=>vals[i]===min).map(x=>x[0]).join(', ');
+    let band = total>=26 ? 'Strong foundation. Focus on coaching others and refining your growth area.' :
+               total>=18 ? 'Growing. Give extra attention to your lowest-rated step during training and field practice.' :
+               'Beginning. That\u2019s a good place to start. Every step here can be learned and practiced.';
+    result.textContent = 'Total: ' + total + ' of 30. ' + band + ' Growth focus: ' + low + '.';
+  });
+
+  // Mobile menu
+  const btn = document.getElementById('menuBtn'), toc = document.getElementById('toc');
+  btn.addEventListener('click',()=>{const o=toc.classList.toggle('open');btn.setAttribute('aria-expanded',o);});
+  toc.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{toc.classList.remove('open');btn.setAttribute('aria-expanded','false');}));
+})();
+</script>
+</body>
+</html>
