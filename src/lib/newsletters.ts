@@ -26,6 +26,77 @@ export interface NewsletterIssue {
 
 export const newsletters: NewsletterIssue[] = [
   {
+    slug: "october-2026",
+    month: "October 2026",
+    publishedLabel: "Monthly Leadership Letter · October 2026",
+    title: "The Decision You Already Know You Need to Make",
+    description:
+      "A practical courage and integrity check for Christian leaders facing a hard decision, drawn from Stop Leading Alone.",
+    subject: "The Decision You Already Know You Need to Make",
+    preheader:
+      "A four-question courage check for acting with truth and integrity under pressure.",
+    theme: "Courageous integrity turns private conviction into faithful action, even while fear is present.",
+    letter: [
+      "Some leadership decisions are unclear. Others are painfully clear. You already know the conversation that needs to happen, the boundary that needs to be set, or the truth that needs to be named.",
+      "Delay can look wise for a while. You gather one more fact, wait for a cleaner moment, or protect short-term peace. Meanwhile, the strain grows in you, your relationships, and your culture.",
+      "Stop Leading Alone joins courage with integrity. Courage gives conviction movement. Integrity keeps that movement aligned with what is true, good, and entrusted by God.",
+    ],
+    reflectionQuestion: "What do I already know is true, and what faithful action does it require?",
+    quote: "Courage is not the absence of fear. It is the willingness to do what is true and necessary while fear is still present.",
+    signsTitle: "Three signs that delay may be wearing the clothes of wisdom",
+    signs: [
+      {
+        title: "You keep waiting for a painless moment.",
+        text: "The same issue remains after more time, more thought, and more prayer. The hoped-for clean option never arrives.",
+      },
+      {
+        title: "You call comfort “peace.”",
+        text: "You preserve short-term ease while trust thins, expectations blur, or a needed boundary remains unspoken.",
+      },
+      {
+        title: "You need to control the outcome before you act.",
+        text: "You know the faithful step, yet you hesitate until approval, certainty, or protection from criticism feels guaranteed.",
+      },
+    ],
+    signsClosing: "These signs are not a call to rush. They are an invitation to discern whether delay is serving wisdom or protecting fear.",
+    frameworkTitle: "Four movements toward courageous integrity",
+    frameworkIntro: "Faithful action grows when conviction, motive, and behavior come back into alignment.",
+    shifts: [
+      { from: "clarity alone", to: "truth expressed in action" },
+      { from: "strategic delay", to: "wise, timely response" },
+      { from: "self-protection", to: "stewardship of what God entrusted" },
+      { from: "private conviction", to: "public obedience with dignity" },
+    ],
+    practiceTitle: "Take a 15-minute courage and integrity pause",
+    practiceIntro: "Bring one delayed decision before God and write a plain answer to each question.",
+    practice: [
+      {
+        title: "Name the truth.",
+        text: "What do I already know is true here?",
+      },
+      {
+        title: "Surface the fear.",
+        text: "What am I afraid I will lose if I act?",
+      },
+      {
+        title: "Define faithful action.",
+        text: "What would courage with integrity look like in one specific conversation, boundary, or decision?",
+      },
+      {
+        title: "Invite wise support.",
+        text: "Who can help me test my motives, prepare well, and follow through without shame?",
+      },
+    ],
+    resource: {
+      title: "Courage & Integrity Under Pressure",
+      text: "Use this decision worksheet to name the pressure, identify what fear is protecting, clarify the truthful action, and prepare to act with both courage and care.",
+      href: "/stop-leading-alone-free-resources/#courage-integrity-worksheet",
+      label: "Open the decision worksheet",
+    },
+    continueTitle: "Let truth become faithful action.",
+    continueText: "Explore Stop Leading Alone and other books by John and Jim, or learn how Purpose Driven Consulting and Kingdom Factor help Christian leaders grow through executive coaching, consulting, and peer advisory community.",
+  },
+  {
     slug: "september-2026",
     month: "September 2026",
     publishedLabel: "Monthly Leadership Letter · September 2026",

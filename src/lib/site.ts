@@ -38,6 +38,7 @@ export const publicRoutes = [
   { path: "/stop-leading-alone-free-resources/", label: "Stop Leading Alone Free Resources", priority: "0.7" },
   { path: "/blog/", label: "Blog and Resources", priority: "0.7" },
   { path: "/newsletter/", label: "Monthly Newsletter", priority: "0.7" },
+  { path: "/newsletter/october-2026/", label: "October 2026 Newsletter", priority: "0.6" },
   { path: "/newsletter/september-2026/", label: "September 2026 Newsletter", priority: "0.6" },
   { path: "/newsletter/august-2026/", label: "August 2026 Newsletter", priority: "0.6" },
   { path: "/about/", label: "About Purpose Driven Consulting and Kingdom Factor", priority: "0.7" },
